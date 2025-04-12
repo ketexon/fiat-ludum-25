@@ -154,6 +154,8 @@ GameObject:
   - component: {fileID: 3451075893050435869}
   - component: {fileID: 6484673054315524371}
   - component: {fileID: 2232122052273127485}
+  - component: {fileID: 5235927302352857906}
+  - component: {fileID: 6176035925593228641}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -284,3 +286,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f522cd42f948afa679c58cb93420ebff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  osText: '<size=50%>____      _   _                   _          _
+
+    |  _ \ ___|
+    \ | | _____   ____ _  | |    __ _| |__  ___
+
+    | |_) / _ \  \| |/ _ \ \ / /
+    _` | | |   / _` | ''_ \/ __|
+
+    |  _ <  __/ |\  | (_) \ V / (_| | | |__| (_|
+    | |_) \__ \
+
+    |_| \_\___|_| \_|\___/ \_/ \__,_| |_____\__,_|_.__/|___</size>'
+  osName: KetexOS
+--- !u!114 &5235927302352857906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690e367884134f6a909a2e4e8882113e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CommandName: help
+  CommandDescription: shows list of commands, or usage for specific command
+  CommandUsage: 'help [command]'
+--- !u!114 &6176035925593228641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bfcfe8ee75416badec1023920a921c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CommandName: clear
+  CommandDescription: clears the terminal buffer
+  CommandUsage: clear

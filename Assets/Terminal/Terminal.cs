@@ -3,6 +3,13 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+public struct TerminalState
+{
+    public string Username;
+    public string RoverName;
+}
+
 public class Terminal : MonoBehaviour
 {
     public TMP_Text text;
@@ -13,6 +20,7 @@ public class Terminal : MonoBehaviour
     [SerializeField] TerminalProgram startProgram;
 
     [System.NonSerialized] public bool TakingInput = true;
+    [System.NonSerialized] public TerminalState State = new();
 
     private bool InputPromptVisible => TakingInput && String.IsNullOrEmpty(bufferQueue);
 
@@ -149,12 +157,9 @@ public class Terminal : MonoBehaviour
             case '\b':
                 DeleteChar();
                 return;
-        }
-
-        if (!char.IsControl(ch))
-        {
-            InsertChar(ch);
-            return;
+            case var _ when !char.IsControl(ch):
+                InsertChar(ch);
+                return;
         }
     }
 

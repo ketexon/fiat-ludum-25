@@ -19,10 +19,6 @@ public class Login : TerminalProgram {
 
 	public override bool InputHidden => state is State.Password;
 
-	string username;
-	string password;
-	string securityQuestion;
-
 	public override void OnSubmit()
 	{
 		base.OnSubmit();
@@ -36,17 +32,16 @@ public class Login : TerminalProgram {
 		switch (state)
 		{
 			case State.Username:
-				username = Terminal.Input;
+				Terminal.State.Username = Terminal.Input;
 				state = State.Password;
 				break;
 
 			case State.Password:
-				password = Terminal.Input;
 				state = State.Security;
 				break;
 
 			case State.Security:
-				securityQuestion = Terminal.Input;
+				Terminal.State.RoverName = Terminal.Input;
 				state = State.Starting;
 				StartCoroutine(StartShellCoro());
 				break;
@@ -63,6 +58,6 @@ public class Login : TerminalProgram {
 		}
 
 		Terminal.Clear();
-		Terminal.SwitchProgram<Tutorial>();
+		Terminal.SwitchProgram<Shell>();
 	}
 }
