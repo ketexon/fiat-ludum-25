@@ -65,11 +65,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "hello> command.cmd\n<size=50%>\n ____      _   _                   _         
-    _         \r\n|  _ \\ ___| \\ | | _____   ____ _  | |    __ _| |__  ___ \r\n|
-    |_) / _ \\  \\| |/ _ \\ \\ / / _` | | |   / _` | '_ \\/ __|\r\n|  _ <  __/ |\\ 
-    | (_) \\ V / (_| | | |__| (_| | |_) \\__ \\\r\n|_| \\_\\___|_| \\_|\\___/ \\_/
-    \\__,_| |_____\\__,_|_.__/|___/\r\n</size>\nhello>"
+  m_text: "<size=50%>\n ____      _   _                   _          _         \r\n| 
+    _ \\ ___| \\ | | _____   ____ _  | |    __ _| |__  ___ \r\n| |_) / _ \\  \\|
+    |/ _ \\ \\ / / _` | | |   / _` | '_ \\/ __|\r\n|  _ <  __/ |\\  | (_) \\ V /
+    (_| | | |__| (_| | |_) \\__ \\\r\n|_| \\_\\___|_| \\_|\\___/ \\_/ \\__,_| |_____\\__,_|_.__/|___/\r\n</size>\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 598095018fb1d574bbfa91e25117023a, type: 2}
   m_sharedMaterial: {fileID: 8651865422201726021, guid: 598095018fb1d574bbfa91e25117023a, type: 2}
@@ -152,6 +151,9 @@ GameObject:
   - component: {fileID: 2878252850256559264}
   - component: {fileID: 7586311099693353349}
   - component: {fileID: 7481692342603601645}
+  - component: {fileID: 3451075893050435869}
+  - component: {fileID: 6484673054315524371}
+  - component: {fileID: 2232122052273127485}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -193,7 +195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 9094391426596536235}
   blinkInterval: 0.5
+  outputInterval: 0.01
   playerInput: {fileID: 0}
+  startProgram: {fileID: 3451075893050435869}
 --- !u!222 &7586311099693353349
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -232,3 +236,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3451075893050435869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063d9a7c506129ed0a437790ecc54a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6484673054315524371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfb13b0d16bb19a8890a552c5f0158c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  osText: '<size=50%> ____      _   _                   _          _
+
+    |  _ \
+    ___| \ | | _____   ____ _  | |    __ _| |__  ___
+
+    | |_) / _ \  \| |/ _ \
+    \ / / _` | | |   / _` | ''_ \/ __|
+
+    |  _ <  __/ |\  | (_) \ V / (_| | | |__|
+    (_| | |_) \__ \
+
+    |_| \_\___|_| \_|\___/ \_/ \__,_| |_____\__,_|_.__/|___/</size>'
+--- !u!114 &2232122052273127485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f522cd42f948afa679c58cb93420ebff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

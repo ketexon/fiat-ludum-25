@@ -3,30 +3,62 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class Terminal : MonoBehaviour
 {
     public TMP_Text text;
 
     [SerializeField] private float blinkInterval = 0.5f;
+    [SerializeField] private float outputInterval = 0.03f;
     [SerializeField] private PlayerInput playerInput;
-    
+    [SerializeField] TerminalProgram startProgram;
+
+    [System.NonSerialized] public bool TakingInput = true;
+
+    private bool InputPromptVisible => TakingInput && String.IsNullOrEmpty(bufferQueue);
+
+    TerminalProgram program = null;
+
     private string buffer = "";
-    private string input = "";
+    private string bufferQueue = "";
+
+    public string Input { get; private set; } = "";
     private int cursorPos = 0;
     private bool cursorVisible = true;
 
-    private string username;
-
     private Coroutine blinkCoroutine = null;
 
-    private string Prompt => $"{username}@KetexOS:~$ ";
-    
+    private string InputWithCursor {
+        get {
+            string inputMasked;
+            if (cursorVisible)
+            {
+                inputMasked = (
+                    Input[..cursorPos]
+                    + "<mark color=#00ff00>f</mark>"
+                );
+                if (cursorPos+1 < Input.Length)
+                {
+                    inputMasked += Input[(cursorPos+1)..];
+                }
+            }
+            else
+            {
+                inputMasked = Input;
+            }
+            return inputMasked;
+        }
+    }
+
+    private string InputHidden => new('*', Input.Length);
+
+    private string TransformedInput => program.InputHidden ? InputHidden : Input;
+
+
     private void OnEnable()
     {
         Keyboard.current.onTextInput += OnChar;
     }
-    
+
     private void OnDisable()
     {
         Keyboard.current.onTextInput -= OnChar;
@@ -39,28 +71,75 @@ public class Terminal : MonoBehaviour
 
     private void Start()
     {
+        program = startProgram;
+        program.Terminal = this;
+        program.enabled = true;
+
+        StartCoroutine(BufferUpdateCoro());
         Blink();
-        Render();
     }
 
     private void Update()
     {
         Render();
-        Debug.Log($"CursorPos: {cursorPos}");
     }
 
-    public void Println(string msg)
-    {
-        buffer += msg + "\n";
+    private IEnumerator BufferUpdateCoro(){
+        while (true)
+        {
+            while (bufferQueue.Length > 0)
+            {
+                char ch = bufferQueue[0];
+                if(ch == '<'){
+                    int next = bufferQueue.IndexOf('<', 1);
+                    int end = bufferQueue.IndexOf('>');
+                    if(end != -1 && (next == -1 || end < next)){
+                        string tag = bufferQueue[..(end+1)];
+                        buffer += tag;
+                        bufferQueue = bufferQueue[(end+1)..];
+                        continue;
+                    }
+                }
+                if(char.IsWhiteSpace(ch)){
+                    do {
+                        buffer += ch;
+                        bufferQueue = bufferQueue[1..];
+                        ch = bufferQueue[0];
+                    } while (char.IsWhiteSpace(ch));
+                }
+                else{
+                    buffer += ch;
+                    bufferQueue = bufferQueue[1..];
+                }
+                yield return new WaitForSeconds(outputInterval);
+            }
+            yield return null;
+        }
     }
 
-    private void OnChar(char ch)
+    public void Println(string msg, bool force = false)
     {
-        Debug.Log((int) ch);
-        
+        Print(msg + '\n', force);
+    }
+
+    public void Print(string msg, bool force = false){
+        if(force){
+            buffer += msg;
+            return;
+        }
+        bufferQueue += msg;
+    }
+
+    public void Clear(){
+        buffer = "";
+        bufferQueue = "";
+    }
+
+	private void OnChar(char ch)
+    {
         if (ch is '\n' or '\r')
         {
-            SubmitCommand();
+            OnSubmit();
             return;
         }
 
@@ -72,22 +151,22 @@ public class Terminal : MonoBehaviour
 
         if (!char.IsControl(ch))
         {
-            InsertChar(ch);;
+            InsertChar(ch);
             return;
         }
     }
 
     private void InsertChar(char ch)
     {
-        input = input[..cursorPos] + ch + input[cursorPos..];
+        Input = Input[..cursorPos] + ch + Input[cursorPos..];
         cursorPos++;
         Blink();
     }
-    
+
     private void DeleteChar()
     {
         if (cursorPos == 0) return;
-        input = input[..(cursorPos - 1)] + input[cursorPos..];
+        Input = Input[..(cursorPos - 1)] + Input[cursorPos..];
         cursorPos--;
         Blink();
     }
@@ -110,47 +189,63 @@ public class Terminal : MonoBehaviour
 
     void UpdateCursorPos(int delta)
     {
-        cursorPos = cursorPos + delta;
+        cursorPos += delta;
         if (cursorPos < 0)
         {
             cursorPos = 0;
         }
-        else if (cursorPos > input.Length)
+        else if (cursorPos > Input.Length)
         {
-            cursorPos = input.Length;
+            cursorPos = Input.Length;
         }
+    }
+
+    public void SwitchProgram<T>() where T : TerminalProgram
+    {
+        if (program != null)
+        {
+            program.enabled = false;
+        }
+        program = GetComponent<T>();
+        if (program == null)
+        {
+            Debug.LogError($"Program {typeof(T)} not found on {gameObject.name}");
+        }
+        program.Terminal = this;
+        program.enabled = true;
+        ClearInput();
     }
 
     void ChangeHistory(int delta)
     {
-        
+
     }
 
-    private void SubmitCommand()
-    {
-        
+    private void ClearInput(){
+        Input = "";
+        cursorPos = 0;
     }
 
-    private void Render()
+    private void OnSubmit()
     {
-        string inputMasked;
-        if (cursorVisible)
-        {
-            inputMasked = (
-                input[..cursorPos]
-                + "<mark color=#00ff00>f</mark>"
-            );
-            if (cursorPos+1 < input.Length)
+        Println(program.Prompt + TransformedInput, true);
+        program.OnSubmit();
+        ClearInput();
+    }
+
+    private void Render(){
+        text.text = buffer;
+        if(InputPromptVisible){
+            text.text += program.Prompt;
+            if(program.InputHidden)
             {
-                inputMasked += input[(cursorPos+1)..];
+                text.text += InputHidden;
+            }
+            else
+            {
+                text.text += InputWithCursor;
             }
         }
-        else
-        {
-            inputMasked = input;
-        }
-
-        text.text = buffer + Prompt + inputMasked;
     }
 
     private void Blink(bool value = false)
@@ -161,7 +256,6 @@ public class Terminal : MonoBehaviour
             yield return new WaitForSeconds(blinkInterval);
             blinkCoroutine = null;
             Blink(!cursorVisible);
-            Render();
         }
         if (blinkCoroutine != null)
         {
