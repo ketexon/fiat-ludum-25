@@ -141,16 +141,14 @@ public class Terminal : MonoBehaviour
 	private void OnChar(char ch)
     {
         if(!InputPromptVisible) return;
-        if (ch is '\n' or '\r')
+        switch (ch)
         {
-            OnSubmit();
-            return;
-        }
-
-        if (ch is '\b')
-        {
-            DeleteChar();
-            return;
+            case '\n' or '\r':
+                OnSubmit();
+                return;
+            case '\b':
+                DeleteChar();
+                return;
         }
 
         if (!char.IsControl(ch))
