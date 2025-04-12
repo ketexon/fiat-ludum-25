@@ -43,7 +43,7 @@ public class Shell : TerminalProgram
 		Terminal.TakingInput = true;
 		Terminal.Println(osText);
 		
-		var commandList = GetComponents<ShellCommand>();
+		var commandList = GetComponentsInChildren<ShellCommand>();
 		foreach (var command in commandList)
 		{
 			command.Terminal = Terminal;
