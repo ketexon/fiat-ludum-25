@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public struct TerminalState
@@ -14,14 +15,19 @@ public class Terminal : MonoBehaviour
 {
     public TMP_Text text;
 
+    [SerializeField] public ScreenLights ScreenLights;
     [SerializeField] private float blinkInterval = 0.5f;
     [SerializeField] private float outputInterval = 0.03f;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] TerminalProgram startProgram;
 
     [System.NonSerialized] public bool TakingInput = true;
+    [System.NonSerialized] public bool Visible = true;
     [System.NonSerialized] public TerminalState State = new();
 
+    [System.NonSerialized]
+    public UnityEvent<Vector2> MoveEvent = new();
+    
     private bool InputPromptVisible => TakingInput && String.IsNullOrEmpty(bufferQueue);
 
     TerminalProgram program = null;
@@ -194,6 +200,11 @@ public class Terminal : MonoBehaviour
         }
     }
 
+    public void OnMove(InputAction.CallbackContext ctx)
+    {
+        MoveEvent.Invoke(ctx.ReadValue<Vector2>());
+    }
+
     void UpdateCursorPos(int delta)
     {
         cursorPos += delta;
@@ -213,7 +224,7 @@ public class Terminal : MonoBehaviour
         {
             program.enabled = false;
         }
-        program = GetComponent<T>();
+        program = GetComponentInChildren<T>();
         if (program == null)
         {
             Debug.LogError($"Program {typeof(T)} not found on {gameObject.name}");
@@ -240,7 +251,9 @@ public class Terminal : MonoBehaviour
         ClearInput();
     }
 
-    private void Render(){
+    private void Render()
+    {
+        if (!Visible) return;
         text.text = buffer;
         if(InputPromptVisible){
             text.text += program.Prompt;

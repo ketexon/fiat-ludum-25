@@ -237,6 +237,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306cdcf6bff6daa4cb046493e2242713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &294733974 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2812955289586787719, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+  m_PrefabInstance: {fileID: 456751773632202570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb76ea72ec5e3744e8738e13d849c93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +308,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 62.7
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -977,6 +988,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1530748762}
+    - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: ScreenLights
+      value: 
+      objectReference: {fileID: 294733974}
     - target: {fileID: 1028855382099350848, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Name
       value: Rover

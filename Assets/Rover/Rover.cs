@@ -23,9 +23,6 @@ public class Rover : MonoBehaviour
 
     void Update()
     {
-        // Log the input direction for debugging
-        Debug.Log(dir);
-
         // Convert the input direction to movement and rotation
         Vector3 moveDirection = transform.forward * dir.y; // Forward/backward movement
         float rotation = dir.x; // Left/right rotation

@@ -12,8 +12,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Power
+    second: {fileID: 2100000, guid: 95000c9e6f5eadf4b87529a9588acf7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Screen
     second: {fileID: 2100000, guid: abb3eda04bf1d574a84d225698f3b598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Status
+    second: {fileID: 2100000, guid: f7b0d8eff3eb518488509e6175a6c54b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
