@@ -101,11 +101,14 @@ public class Terminal : MonoBehaviour
                     }
                 }
                 if(char.IsWhiteSpace(ch)){
-                    do {
+                    // skip all whitespace
+                    while(true){
                         buffer += ch;
                         bufferQueue = bufferQueue[1..];
+                        if(bufferQueue.Length == 0) break;
                         ch = bufferQueue[0];
-                    } while (char.IsWhiteSpace(ch));
+                        if(!char.IsWhiteSpace(ch)) break;
+                    }
                 }
                 else{
                     buffer += ch;
