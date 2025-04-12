@@ -140,6 +140,7 @@ public class Terminal : MonoBehaviour
 
 	private void OnChar(char ch)
     {
+        if(!InputPromptVisible) return;
         if (ch is '\n' or '\r')
         {
             OnSubmit();
