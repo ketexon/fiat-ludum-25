@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 6176035925593228641}
   - component: {fileID: 859524192482181622}
   - component: {fileID: 1724517768605089602}
+  - component: {fileID: 5880580215948098175}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -577,7 +578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CommandName: help
   CommandAliases: []
-  CommandDescription: shows list of commands, or usage for specific command
+  CommandDescription: lists all commands and usage
   CommandUsage: 'help [command]'
 --- !u!114 &6176035925593228641
 MonoBehaviour:
@@ -607,10 +608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32fa179042d6d4a0f91fe4735a4babf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CommandName: 
+  CommandName: about
   CommandAliases: []
-  CommandDescription: 
-  CommandUsage: 
+  CommandDescription: about
+  CommandUsage: company description and player mission
 --- !u!114 &1724517768605089602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,9 +624,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd6740a074534576bad857ca03ceadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CommandName: cam/camera
+  CommandName: camera
   CommandAliases:
   - cam
-  CommandDescription: 'switch to the camera screen and navigate the rover using [w]
-    to move forward and [a][d] to turn left/right '
+  CommandDescription: view camera, navigate the rover using [w] to move forward and
+    [a][d] to turn left/right
   CommandUsage: camera
+--- !u!114 &5880580215948098175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9397cb4c90a74bee8027fc26e3d81e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CommandName: status
+  CommandAliases:
+  - stat
+  CommandDescription: rover location and info
+  CommandUsage: status
