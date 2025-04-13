@@ -253,7 +253,10 @@ public class Terminal : MonoBehaviour
 
     private void Render()
     {
-        if (!Visible) return;
+        if (!Visible)
+        {
+            text.text = "";
+        }
         text.text = buffer;
         if(InputPromptVisible){
             text.text += program.Prompt;
