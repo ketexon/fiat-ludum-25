@@ -22,8 +22,8 @@ public class Shell : TerminalProgram
 		}
 		else
 		{
-			Terminal.Println($"Command not found: {cmd}");
-			Terminal.Println("Type `help` to see a list of available commands.");
+			Terminal.Println($"Command not found: {cmd}", true);
+			Terminal.Println("Type `help` to see a list of available commands.", true);
 		}
 	}
 

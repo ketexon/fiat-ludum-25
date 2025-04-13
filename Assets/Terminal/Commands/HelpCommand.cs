@@ -32,8 +32,8 @@ public class HelpCommand : ShellCommand
     {
         if (!Shell.Commands.TryGetValue(name, out var cmd))
         {
-            Terminal.Println($"Command not found: {name}");
-            Terminal.Println("Type `help` to see a list of available commands.");
+            Terminal.Println($"Command not found: {name}", true);
+            Terminal.Println("Type `help` to see a list of available commands.", true);
             return;
         }
         Terminal.Println($"{name} - {cmd.CommandDescription}");

@@ -657,6 +657,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 859524192482181622, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: CommandName
+      value: about
+      objectReference: {fileID: 0}
+    - target: {fileID: 859524192482181622, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: CommandUsage
+      value: about
+      objectReference: {fileID: 0}
+    - target: {fileID: 859524192482181622, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: CommandDescription
+      value: 'prints company description and player mission '
+      objectReference: {fileID: 0}
     - target: {fileID: 1719929293192910497, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_Sprite
       value: 
