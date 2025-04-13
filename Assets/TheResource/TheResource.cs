@@ -3,30 +3,44 @@ using System.Collections.Generic;
 
 public class TheResource : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    // making a list of all the places to iterate through
-    [SerializeField] List<Transform> places = new();    
+    [SerializeField] List<Transform> places = new();
     [SerializeField] Transform Rover;
+    [SerializeField] float moveSpeed = 12.0f; // Speed at which the resource moves
 
     int currentPosition = 0;
+    bool isMoving = false;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, Rover.position) < 10.0f)
+        float distanceToRover = Vector3.Distance(transform.position, Rover.position);
+
+        if (!isMoving && distanceToRover < 50.0f)
         {
-            Debug.Log("TheResource is close to the Rover.");
-            if (currentPosition <= places.Count - 1)
+            Debug.Log("TheResource is close to the Rover. Now it's moving.");
+            if (currentPosition < places.Count - 1)
             {
                 currentPosition++;
-                transform.position = places[currentPosition].transform.position;
-                Debug.Log("The Resource has moved to the next place: " + transform.position);
+                isMoving = true;
             }
         }
-        else
+
+        if (isMoving)
         {
-            Debug.Log("TheResource is not close to the Rover.");
+            MoveTowardsNextPlace();
+        }
+    }
+
+    void MoveTowardsNextPlace()
+    {
+        Transform targetPlace = places[currentPosition];
+        transform.position = Vector3.MoveTowards(transform.position, targetPlace.position, moveSpeed * Time.deltaTime);
+
+        // If the resource reaches the target
+        if (Vector3.Distance(transform.position, targetPlace.position) < 0.01f)
+        {
+            transform.position = targetPlace.position; // Snap exactly to position
+            isMoving = false; // Stop moving
+            Debug.Log("The Resource has arrived at: " + transform.position);
         }
     }
 }
