@@ -24,7 +24,7 @@ public class HelpCommand : ShellCommand
     {
         foreach(var (name, cmd) in Shell.Commands)
         {
-            Terminal.Println($"{name} - {cmd.CommandDescription}");
+            Terminal.Println($"{name} - {cmd.CommandDescription}", true);
         }
     }
 
