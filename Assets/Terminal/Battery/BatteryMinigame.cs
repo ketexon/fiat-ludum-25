@@ -30,6 +30,7 @@ struct BatteryGame
     public Vector2Int StartPos;
     public Vector2Int EndPos;
     public List<BatteryObstacle> Obstacles;
+    public int MaxMoves;
 }
 
 public class BatteryMinigame : MinigameBase
@@ -47,9 +48,10 @@ public class BatteryMinigame : MinigameBase
     [SerializeField] private GameObject b2x2vPrefab;
     [SerializeField] private GameObject curPosPrefab;
     [SerializeField] private GameObject hlinePrefab;
-    [SerializeField] private GameObject vlinePrefab;
+    [SerializeField] private float unconnectedBatteryOpacity = 0.1f;
 
     [SerializeField] private BatteryGame game;
+    [SerializeField] TMPro.TMP_Text movesText;
 
     // the first is the list of positions that need to be filled
     // the second is the list of edges
@@ -62,8 +64,13 @@ public class BatteryMinigame : MinigameBase
     HashSet<Vector2Int> visited = new();
     HashSet<(Vector2Int, Vector2Int)> edges = new();
 
+    bool bateriesSolved = false;
+
+    int curMoves = 0;
+
     Vector2Int curPos;
     GameObject curPosSymbol;
+    Image endSymbolImage;
 
     protected override void StartGame()
     {
@@ -75,6 +82,7 @@ public class BatteryMinigame : MinigameBase
 
         var endSymbol = Instantiate(powerSymbolPrefab, grid.transform);
         grid.MoveTo(endSymbol.transform as RectTransform, game.EndPos);
+        endSymbolImage = endSymbol.GetComponentInChildren<Image>();
 
         // spawn circle
         curPos = game.StartPos;
@@ -130,38 +138,71 @@ public class BatteryMinigame : MinigameBase
                     break;
             }
 
-            if(v){
-                if(sizeX == 1){
-                    requiredEdges.Add((obstacle.Position, obstacle.Position + Vector2Int.right));
-                    requiredEdges.Add((obstacle.Position, obstacle.Position + Vector2Int.right + Vector2Int.down * sizeY));
+            if (v)
+            {
+                if (sizeX == 1)
+                {
+                    requiredEdges.Add((
+                        obstacle.Position,
+                        obstacle.Position + Vector2Int.right
+                    ));
+                    requiredEdges.Add((
+                        obstacle.Position + Vector2Int.up * sizeY,
+                        obstacle.Position + Vector2Int.right + Vector2Int.up * sizeY
+                    ));
                 }
-                else {
+                else
+                {
                     requiredPositions.Add(obstacle.Position + Vector2Int.right);
-                    requiredPositions.Add(obstacle.Position + Vector2Int.right + Vector2Int.down * sizeY);
+                    requiredPositions.Add(obstacle.Position + Vector2Int.right + Vector2Int.up * sizeY);
                 }
             }
-            else {
-                if(sizeY == 1){
-                    requiredEdges.Add((obstacle.Position, obstacle.Position + Vector2Int.down));
-                    requiredEdges.Add((obstacle.Position, obstacle.Position + Vector2Int.right * sizeX + Vector2Int.down));
+            else
+            {
+                if (sizeY == 1)
+                {
+                    requiredEdges.Add((obstacle.Position, obstacle.Position + Vector2Int.up));
+                    requiredEdges.Add((obstacle.Position + Vector2Int.right * sizeX, obstacle.Position + Vector2Int.right * sizeX + Vector2Int.up));
                 }
-                else {
-                    requiredPositions.Add(obstacle.Position + Vector2Int.down);
-                    requiredPositions.Add(obstacle.Position + Vector2Int.right * sizeX + Vector2Int.down);
+                else
+                {
+                    requiredPositions.Add(obstacle.Position + Vector2Int.up);
+                    requiredPositions.Add(obstacle.Position + Vector2Int.right * sizeX + Vector2Int.up);
                 }
             }
 
-            if(sizeX == 2 && sizeY == 2) {
-                blockedEdges.Add((obstacle.Position + Vector2Int.right, obstacle.Position + Vector2Int.right + Vector2Int.down));
-                blockedEdges.Add((obstacle.Position + Vector2Int.right + Vector2Int.down, obstacle.Position + Vector2Int.right + Vector2Int.down * 2));
-                blockedEdges.Add((obstacle.Position + Vector2Int.down, obstacle.Position + Vector2Int.right + Vector2Int.down));
-                blockedEdges.Add((obstacle.Position + Vector2Int.down + Vector2Int.right, obstacle.Position + Vector2Int.right * 2 + Vector2Int.down));
+            if (sizeX == 2 && sizeY == 2)
+            {
+                blockedEdges.Add((
+                    obstacle.Position + Vector2Int.right,
+                    obstacle.Position + Vector2Int.right + Vector2Int.up
+                ));
+                blockedEdges.Add((
+                    obstacle.Position + Vector2Int.right + Vector2Int.up,
+                    obstacle.Position + Vector2Int.right + Vector2Int.up * 2
+                ));
+                blockedEdges.Add((
+                    obstacle.Position + Vector2Int.up,
+                    obstacle.Position + Vector2Int.right + Vector2Int.up
+                ));
+                blockedEdges.Add((
+                    obstacle.Position + Vector2Int.up + Vector2Int.right,
+                    obstacle.Position + Vector2Int.right * 2 + Vector2Int.up
+                ));
             }
-            else if(sizeX == 2){
-                blockedEdges.Add((obstacle.Position + Vector2Int.right, obstacle.Position + Vector2Int.right + Vector2Int.down));
+            else if (sizeX == 2)
+            {
+                blockedEdges.Add((
+                    obstacle.Position + Vector2Int.right,
+                    obstacle.Position + Vector2Int.right + Vector2Int.up
+                ));
             }
-            else if (sizeY == 2){
-                blockedEdges.Add((obstacle.Position + Vector2Int.down, obstacle.Position + Vector2Int.right + Vector2Int.down));
+            else if (sizeY == 2)
+            {
+                blockedEdges.Add((
+                    obstacle.Position + Vector2Int.up,
+                    obstacle.Position + Vector2Int.right + Vector2Int.up
+                ));
             }
 
             var obstacleSymbol = Instantiate(prefab, grid.transform);
@@ -171,24 +212,34 @@ public class BatteryMinigame : MinigameBase
 
         visited.Add(curPos);
         UpdateBatteryRequirements();
+        UpdateText();
     }
 
     private bool IsValidMove(Vector2Int pos)
     {
-        if(!grid.IsValidPoint(pos)){
+        if (!grid.IsValidPoint(pos))
+        {
             return false;
         }
-        if(visited.Contains(pos)){
+        if (visited.Contains(pos))
+        {
             // check if it is the previous pos
-            if(posStack.Count > 0){
+            if (posStack.Count > 0)
+            {
                 var lastPos = posStack.Peek();
-                if(lastPos == pos){
+                if (lastPos == pos)
+                {
                     return true;
                 }
             }
             return false;
         }
-        if(blockedEdges.Contains((curPos, pos)) || blockedEdges.Contains((pos, curPos))){
+        if (blockedEdges.Contains((curPos, pos)) || blockedEdges.Contains((pos, curPos)))
+        {
+            return false;
+        }
+        if(curMoves >= game.MaxMoves)
+        {
             return false;
         }
         return true;
@@ -200,10 +251,12 @@ public class BatteryMinigame : MinigameBase
 
         Debug.Log(dir);
 
-        if(dir.x == 0 && dir.y == 0){
+        if (dir.x == 0 && dir.y == 0)
+        {
             return;
         }
-        if(dir.x != 0 && dir.y != 0){
+        if (dir.x != 0 && dir.y != 0)
+        {
             return;
         }
 
@@ -212,26 +265,30 @@ public class BatteryMinigame : MinigameBase
         var newPos = curPos + new Vector2Int((int)dir.x, (int)dir.y);
         var edge = (curPos, newPos);
         var edgeInverse = (newPos, curPos);
-        if(!IsValidMove(newPos)){
+        if (!IsValidMove(newPos))
+        {
             Debug.Log($"Invalid move {newPos}");
             return;
         }
 
-        bool found = false;
-        if(posStack.Count > 0){
+        bool movedBackwards = false;
+        if (posStack.Count > 0)
+        {
             var lastPos = posStack.Peek();
-            Debug.Log($"{lastPos} {newPos}");
-            if(lastPos == newPos){
+            if (lastPos == newPos)
+            {
                 posStack.Pop();
                 Destroy(lineStack.Pop());
                 visited.Remove(lastPos);
                 edges.Remove(edge);
                 edges.Remove(edgeInverse);
-                found = true;
+                curMoves--;
+                movedBackwards = true;
             }
         }
 
-        if(!found){
+        if (!movedBackwards)
+        {
             var line = Instantiate(hlinePrefab, grid.transform);
             grid.MoveTo(line.transform as RectTransform, curPos);
             line.transform.localRotation = Quaternion.AngleAxis(
@@ -244,14 +301,18 @@ public class BatteryMinigame : MinigameBase
             visited.Add(curPos);
             edges.Add(edge);
             edges.Add(edgeInverse);
+            curMoves++;
         }
 
         curPos = newPos;
         grid.MoveTo(curPosSymbol.transform as RectTransform, curPos);
         UpdateBatteryRequirements();
+        UpdateText();
     }
 
-    void UpdateBatteryRequirements(){
+    void UpdateBatteryRequirements()
+    {
+        bool allValid = true;
         foreach (var (positions, edges, image) in batteryRequirements)
         {
             bool valid = true;
@@ -259,6 +320,7 @@ public class BatteryMinigame : MinigameBase
             {
                 if (!visited.Contains(pos) && curPos != pos)
                 {
+                    Debug.Log($"Invalid position {pos}");
                     valid = false;
                     break;
                 }
@@ -266,13 +328,24 @@ public class BatteryMinigame : MinigameBase
 
             foreach (var edge in edges)
             {
-                if(!this.edges.Contains(edge)){
+                if (!this.edges.Contains(edge))
+                {
+                    Debug.Log($"Invalid edge {edge}");
                     valid = false;
                     break;
                 }
             }
 
-            image.color = valid ? Color.white : new Color(1, 1, 1, 0.25f);
+            image.color = valid ? Color.white : new Color(1, 1, 1, unconnectedBatteryOpacity);
+            allValid &= valid;
         }
+
+        bateriesSolved = allValid;
+
+        endSymbolImage.color = bateriesSolved ? Color.white : new Color(1, 1, 1, unconnectedBatteryOpacity);
+    }
+
+    void UpdateText(){
+        movesText.text = $"{curMoves}/{game.MaxMoves}";
     }
 }
