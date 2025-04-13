@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public struct TerminalState
 {
@@ -17,7 +18,7 @@ public class Terminal : MonoBehaviour
 
     [SerializeField] public ScreenLights ScreenLights;
     [SerializeField] private float blinkInterval = 0.5f;
-    [SerializeField] private float outputInterval = 0.03f;
+    [FormerlySerializedAs("outputInterval")] [SerializeField] private float OutputInterval = 0.01f;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] TerminalProgram startProgram;
 
@@ -27,6 +28,9 @@ public class Terminal : MonoBehaviour
 
     [System.NonSerialized]
     public UnityEvent<Vector2> MoveEvent = new();
+    
+    [System.NonSerialized]
+    public UnityEvent BufferPrintedEvent = new();
     
     private bool InputPromptVisible => TakingInput && String.IsNullOrEmpty(bufferQueue);
 
@@ -128,7 +132,12 @@ public class Terminal : MonoBehaviour
                     buffer += ch;
                     bufferQueue = bufferQueue[1..];
                 }
-                yield return new WaitForSeconds(outputInterval);
+                yield return new WaitForSeconds(OutputInterval);
+
+                if (bufferQueue.Length == 0)
+                {
+                    BufferPrintedEvent.Invoke();
+                }
             }
             yield return null;
         }

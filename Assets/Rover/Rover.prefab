@@ -167,8 +167,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 30.27
+  m_Color: {r: 1, g: 0.92156863, b: 0.41960785, a: 1}
+  m_Intensity: 4
   m_Range: 17.87
   m_SpotAngle: 92.72472
   m_InnerSpotAngle: 0
@@ -668,6 +668,15 @@ PrefabInstance:
     - target: {fileID: 1719929293192910497, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_Color.g
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622356905992237297, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: bootText
+      value: 'Meow meow
+
+
+        Meow meow meow
+
+        Raw >:)'
       objectReference: {fileID: 0}
     - target: {fileID: 6462996713365971045, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_Pivot.x
