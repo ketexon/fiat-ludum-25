@@ -169,6 +169,7 @@ public class Terminal : MonoBehaviour
 
 	private void OnChar(char ch)
     {
+        AudioManager.Instance.Play("KeyClick");
         if(!InputPromptVisible) return;
         switch (ch)
         {

@@ -11,6 +11,13 @@ public class CameraMinigame : MinigameBase
 		rover.MoveDir = dir;
 	}
 
+	protected override void StartGame()
+    {
+        base.StartGame();
+        // enable on start
+    }
+
+
 	protected override void EndGame()
 	{
 		rover.MoveDir = Vector2.zero;

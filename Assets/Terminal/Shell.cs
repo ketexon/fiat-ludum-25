@@ -40,6 +40,8 @@ public class Shell : TerminalProgram
 	
 	void OnEnable()
 	{
+		AudioManager.Instance.Play("CompHum");
+
 		Terminal.TakingInput = true;
 		
 		var commandList = GetComponentsInChildren<ShellCommand>();
