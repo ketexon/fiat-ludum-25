@@ -511,7 +511,6 @@ GameObject:
   - component: {fileID: 5235927302352857906}
   - component: {fileID: 6176035925593228641}
   - component: {fileID: 859524192482181622}
-  - component: {fileID: 1724517768605089602}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -533,6 +532,7 @@ RectTransform:
   m_Children:
   - {fileID: 8826719460849974665}
   - {fileID: 7009831285450404902}
+  - {fileID: 5045746174866249968}
   - {fileID: 8427481310688544139}
   - {fileID: 5284419742321062056}
   m_Father: {fileID: 0}
@@ -735,24 +735,6 @@ MonoBehaviour:
   CommandAliases: []
   CommandDescription: 'prints company description and player mission '
   CommandUsage: about
---- !u!114 &1724517768605089602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8862298711366359289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddd6740a074534576bad857ca03ceadb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CommandName: camera
-  CommandAliases:
-  - cam
-  CommandDescription: view camera, navigate the rover using [w] to move forward and
-    [a][d] to turn left/right
-  CommandUsage: camera
 --- !u!1001 &554769113018723139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -854,6 +836,108 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7418840340710694757, guid: 75b9074210957aa8d98fde632f5bfad3, type: 3}
   m_PrefabInstance: {fileID: 554769113018723139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2253779254397714669
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6462996713365971045}
+    m_Modifications:
+    - target: {fileID: 405663916998842559, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_Name
+      value: CameraMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+--- !u!224 &5045746174866249968 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6431455982059329565, guid: 2dd409928d55440ff9f7ad3e92d34adf, type: 3}
+  m_PrefabInstance: {fileID: 2253779254397714669}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4969012577970888114
 PrefabInstance:

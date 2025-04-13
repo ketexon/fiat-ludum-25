@@ -14,26 +14,13 @@ public class Rover : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] public RoverStatus Status;
 
-    Vector2 dir = Vector2.zero;
-
-    void Start()
-    {
-
-    }
-
-    public void OnMove(InputAction.CallbackContext ctx)
-    {
-        dir = ctx.ReadValue<Vector2>();
-
-
-    }
-
+    [System.NonSerialized] public Vector2 MoveDir = Vector2.zero;
 
     void Update()
     {
         // Convert the input direction to movement and rotation
-        Vector3 moveDirection = transform.forward * dir.y; // Forward/backward movement
-        float rotation = dir.x; // Left/right rotation
+        Vector3 moveDirection = transform.forward * MoveDir.y; // Forward/backward movement
+        float rotation = MoveDir.x; // Left/right rotation
 
         // Apply forwards-backwards movement
         if (agent != null)

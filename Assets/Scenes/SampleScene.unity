@@ -1469,6 +1469,10 @@ PrefabInstance:
       propertyPath: ScreenLights
       value: 
       objectReference: {fileID: 294733974}
+    - target: {fileID: 874535129326243968, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: rover
+      value: 
+      objectReference: {fileID: 3597107364064689883}
     - target: {fileID: 1028855382099350848, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Name
       value: Rover
@@ -1484,6 +1488,10 @@ PrefabInstance:
     - target: {fileID: 1816287259360042465, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -120.00043
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381659870774467922, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3498101872753589744, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: shipStats
@@ -1549,8 +1557,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -249.99966
       objectReference: {fileID: 0}
+    - target: {fileID: 9056699264038477217, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: rover
+      value: 
+      objectReference: {fileID: 3597107364064689882}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3381659870774467922, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
