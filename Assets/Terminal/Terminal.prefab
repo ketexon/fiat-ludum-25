@@ -487,7 +487,7 @@ MonoBehaviour:
     modules... [OK]\nMounting virtual file systems... [OK]\nEstablishing secure connection...
     [OK]\nStarting \n - power.service... [OK]\n - communication.service... [OK]\nEntering
     user shell... done.\n\nWelcome to KetexOS Interactive Shell\n"
-  prebootTime: 1.5
+  prebootTime: 0.5
 --- !u!114 &3451075893050435869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,9 +513,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialText:
-  - Hello meowza!
-  - Hows it going
-  - Meow meow
+  - "Welcome back, {0}. ReNova Laboratories is thrilled to have you join us on our
+    mission in securing humanity\u2019s future among the stars."
+  - "Our researchers on Promethos have been able to identify Resource X: a new compound
+    that will ensure humanity\u2019s escape from Earth and a new start among the
+    stars. Samples sent back to our laboratories have shown that one kilogram of
+    Resource X is potent enough to transport the population of Los Angeles to space."
+  - We have planted a tracker on a likely vein of Resource X. Your task is to locate,
+    collect, and return high quantities of Resource X back to Earth.
+  - "From this computer, you\u2019ll be able to access all controls and debugging
+    functions for Rover {1}. Use the terminal to navigate between applications. Keep
+    an eye on the rover\u2019s CAMERA and STATUS."
+  - "Navigate the rover to the resource. Occasionally, the rover may require some
+    manual repairs, which you will be notified of on the STATUS screen. Fix any errors
+    by executing the corresponding terminal commands. For a full list of commands,
+    type \u2018help\u2019."
+  - Additionally, to protect against strong winds or any other external threats,
+    we recommend you temporarily close the vents of the ship if you hear any abnormal
+    noises outside. However, note that the ship requires the vents to be open for
+    oxygen circulation, so keeping the vents closed for too long will result in asphyxiation.
+  - "With Earth\u2019s future growing more uncertain, your work will directly impact
+    the survival of our species. We wish you the best of luck!"
+  outputInterval: 0
   osText: '<size=50%> ____      _   _                   _          _
 
     |  _ \
