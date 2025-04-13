@@ -826,34 +826,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1291763020954110157}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
 --- !u!4 &3688389877746311451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
   m_PrefabInstance: {fileID: 3793564087406446320}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4063403145630808993 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
-  m_PrefabInstance: {fileID: 3793564087406446320}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1291763020954110157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4063403145630808993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4625f83f549124032a3809f0e8c8c610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rover: {fileID: 0}
-  ship: {fileID: 1377472917087116207}
-  roverShipDir: S
-  roverShipDist: 0.01

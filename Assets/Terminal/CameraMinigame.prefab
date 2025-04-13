@@ -370,7 +370,7 @@ MonoBehaviour:
   CommandUsage: camera
   canvasGroup: {fileID: 8764616717768159930}
   controlsText: {fileID: 3597023810650571296}
-  controls: 'ESC: Exit, WASD: Move'
+  controls: 'Q: Exit, WASD: Move'
   rover: {fileID: 0}
 --- !u!114 &3597023810650571296 stripped
 MonoBehaviour:
