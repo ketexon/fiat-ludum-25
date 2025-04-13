@@ -7,8 +7,6 @@ public class StatusMinigame : MinigameBase
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] TMPro.TMP_Text text;
     [SerializeField] Rover rover;
-
-    string roverName = "";
     bool Comms => rover.Status.Comms;
     bool Power => rover.Status.Power;
     int pow_text = 100;
@@ -24,7 +22,7 @@ public class StatusMinigame : MinigameBase
         string com_text = Comms ? "GOOD" : "POOR";
 
         text.text =
-    $@"STATUS:
+    $@"STATUS: {Terminal.State.RoverName}
 
     Distance from resource: {resourceStats.roverResourceDist}m
     Direction of resource: {resourceStats.roverResourceDir}

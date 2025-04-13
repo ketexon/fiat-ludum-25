@@ -1485,6 +1485,10 @@ PrefabInstance:
       propertyPath: resourceStats
       value: 
       objectReference: {fileID: 794370157}
+    - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: Status.Power
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1816287259360042465, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -120.00043
@@ -1493,6 +1497,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3498101872753589744, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: rover
+      value: 
+      objectReference: {fileID: 3597107364064689882}
     - target: {fileID: 3498101872753589744, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: shipStats
       value: 
