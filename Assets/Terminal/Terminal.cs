@@ -172,12 +172,6 @@ public class Terminal : MonoBehaviour
         if(!InputPromptVisible) return;
         switch (ch)
         {
-            case '\n' or '\r':
-                OnSubmit();
-                return;
-            case '\b':
-                DeleteChar();
-                return;
             case var _ when !char.IsControl(ch):
                 InsertChar(ch);
                 return;
@@ -231,9 +225,23 @@ public class Terminal : MonoBehaviour
 
     public void OnInputSubmit(InputAction.CallbackContext ctx)
     {
+        if (!ctx.started)
+        {
+            return;
+        }
+        SubmitEvent.Invoke();
+
+        if(!InputPromptVisible) return;
+        Println(program.Prompt + TransformedInput, true);
+        program.OnSubmit();
+        ClearInput();
+    }
+
+    public void OnInputBackspace(InputAction.CallbackContext ctx)
+    {
         if (ctx.started)
         {
-            SubmitEvent.Invoke();
+            DeleteChar();
         }
     }
 
@@ -274,13 +282,6 @@ public class Terminal : MonoBehaviour
     private void ClearInput(){
         Input = "";
         cursorPos = 0;
-    }
-
-    private void OnSubmit()
-    {
-        Println(program.Prompt + TransformedInput, true);
-        program.OnSubmit();
-        ClearInput();
     }
 
     private void Render()

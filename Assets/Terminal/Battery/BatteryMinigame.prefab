@@ -404,6 +404,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 5050277562892580290}
   controlsText: {fileID: 1035597847059236184}
   controls: 'ESC: Exit - WASD: Move - ENTER: Submit'
+  rover: {fileID: 0}
   grid: {fileID: 4783282553605239685}
   powerSymbolPrefab: {fileID: 1502447287545446000, guid: fcee7625670ab714abb314ac353badb5, type: 3}
   b1x1hPrefab: {fileID: 60258074569753809, guid: 743b7b40b76a1bb4ba4da0324db178bb, type: 3}
@@ -417,8 +418,8 @@ MonoBehaviour:
   curPosPrefab: {fileID: 6290908534565505106, guid: 679acc6e178864a5d9c63fac38f7de18, type: 3}
   hlinePrefab: {fileID: 2332746819284800950, guid: 3b6c3effa74f2d864a8ba293ed10990b, type: 3}
   unconnectedBatteryOpacity: 0.1
-  game:
-    StartPos: {x: 0, y: 0}
+  games:
+  - StartPos: {x: 0, y: 0}
     EndPos: {x: 7, y: 6}
     Obstacles:
     - Position: {x: 4, y: 1}
@@ -428,6 +429,22 @@ MonoBehaviour:
     - Position: {x: 5, y: 4}
       Type: 1
     MaxMoves: 23
+  - StartPos: {x: 0, y: 6}
+    EndPos: {x: 7, y: 0}
+    Obstacles:
+    - Position: {x: 1, y: 5}
+      Type: 3
+    - Position: {x: 2, y: 1}
+      Type: 0
+    - Position: {x: 3, y: 3}
+      Type: 0
+    - Position: {x: 5, y: 2}
+      Type: 6
+    MaxMoves: 23
+  - StartPos: {x: 0, y: 0}
+    EndPos: {x: 0, y: 0}
+    Obstacles: []
+    MaxMoves: 0
   movesText: {fileID: 1031040022090762606}
 --- !u!225 &5050277562892580290 stripped
 CanvasGroup:

@@ -51,7 +51,7 @@ public class BatteryMinigame : MinigameBase
     [SerializeField] private GameObject hlinePrefab;
     [SerializeField] private float unconnectedBatteryOpacity = 0.1f;
 
-    [SerializeField] private BatteryGame game;
+    [SerializeField] private List<BatteryGame> games;
     [SerializeField] TMPro.TMP_Text movesText;
 
     // the first is the list of positions that need to be filled
@@ -60,6 +60,7 @@ public class BatteryMinigame : MinigameBase
     List<(List<Vector2Int>, List<(Vector2Int, Vector2Int)>, Image)> batteryRequirements = new();
     HashSet<(Vector2Int, Vector2Int)> blockedEdges = new();
 
+    private BatteryGame game;
     Stack<Vector2Int> posStack = new();
     Stack<GameObject> lineStack = new();
     HashSet<Vector2Int> visited = new();
@@ -74,6 +75,10 @@ public class BatteryMinigame : MinigameBase
     Image endSymbolImage;
 
     bool init = false;
+
+    int numSolved = 0;
+
+    int iter = 0;
 
     public override void Execute(string[] args)
     {
@@ -91,22 +96,38 @@ public class BatteryMinigame : MinigameBase
         {
             return;
         }
-        CreateGame(game);
+        CreateGame(games[numSolved]);
         init = true;
     }
 
     void CreateGame(BatteryGame game) {
+        this.game = game;
+
+        // clear previous game
+        foreach(Transform t in grid.Container)
+        {
+            Destroy(t.gameObject);
+        }
+
+        posStack.Clear();
+        lineStack.Clear();
+        visited.Clear();
+        edges.Clear();
+        batteryRequirements.Clear();
+        blockedEdges.Clear();
+        curMoves = 0;
+
         // spawn start and end point prefabs
-        var startSymbol = Instantiate(powerSymbolPrefab, grid.transform);
+        var startSymbol = Instantiate(powerSymbolPrefab, grid.Container);
         grid.MoveTo(startSymbol.transform as RectTransform, game.StartPos);
 
-        var endSymbol = Instantiate(powerSymbolPrefab, grid.transform);
+        var endSymbol = Instantiate(powerSymbolPrefab, grid.Container);
         grid.MoveTo(endSymbol.transform as RectTransform, game.EndPos);
         endSymbolImage = endSymbol.GetComponentInChildren<Image>();
 
         // spawn circle
         curPos = game.StartPos;
-        curPosSymbol = Instantiate(curPosPrefab, grid.transform);
+        curPosSymbol = Instantiate(curPosPrefab, grid.Container);
         grid.MoveTo(curPosSymbol.transform as RectTransform, curPos);
 
         // spawn obstacles
@@ -225,7 +246,7 @@ public class BatteryMinigame : MinigameBase
                 ));
             }
 
-            var obstacleSymbol = Instantiate(prefab, grid.transform);
+            var obstacleSymbol = Instantiate(prefab, grid.Container);
             batteryRequirements.Add((requiredPositions, requiredEdges, obstacleSymbol.GetComponent<Image>()));
             grid.MoveTo(obstacleSymbol.transform as RectTransform, obstacle.Position);
         }
@@ -309,7 +330,8 @@ public class BatteryMinigame : MinigameBase
 
         if (!movedBackwards)
         {
-            var line = Instantiate(hlinePrefab, grid.transform);
+            var line = Instantiate(hlinePrefab, grid.Container);
+            line.name = $"Line {iter++}";
             grid.MoveTo(line.transform as RectTransform, curPos);
             line.transform.localRotation = Quaternion.AngleAxis(
                 -Vector2.SignedAngle(Vector2.right, newPos - curPos),
@@ -334,11 +356,11 @@ public class BatteryMinigame : MinigameBase
 	{
 		base.OnSubmit();
 
-        Debug.Log("Submit");
         if (bateriesSolved)
         {
-            Debug.Log("Solved");
             rover.Status.Power = true;
+            init = false;
+            numSolved++;
             EndGame();
             return;
         }
