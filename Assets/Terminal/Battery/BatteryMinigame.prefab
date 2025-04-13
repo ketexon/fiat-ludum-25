@@ -403,7 +403,7 @@ MonoBehaviour:
   CommandUsage: power_ctl
   canvasGroup: {fileID: 5050277562892580290}
   controlsText: {fileID: 1035597847059236184}
-  controls: 'ESC: Exit'
+  controls: 'ESC: Exit - WASD: Move - ENTER: Submit'
   grid: {fileID: 4783282553605239685}
   powerSymbolPrefab: {fileID: 1502447287545446000, guid: fcee7625670ab714abb314ac353badb5, type: 3}
   b1x1hPrefab: {fileID: 60258074569753809, guid: 743b7b40b76a1bb4ba4da0324db178bb, type: 3}

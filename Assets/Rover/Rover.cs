@@ -2,21 +2,29 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
+[System.Serializable]
+public class RoverStatus {
+    public bool Power = true;
+    public bool Comms = true;
+}
+
 public class Rover : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] public RoverStatus Status;
+
     Vector2 dir = Vector2.zero;
 
     void Start()
     {
-        
+
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
         dir = ctx.ReadValue<Vector2>();
-        
+
 
     }
 

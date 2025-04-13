@@ -1481,6 +1481,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -120.00043
       objectReference: {fileID: 0}
+    - target: {fileID: 3238211851651443409, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: controls
+      value: 'ESC: Exit - WASD: Move - ENTER: Submit'
+      objectReference: {fileID: 0}
     - target: {fileID: 3498101872753589744, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: shipStats
       value: 

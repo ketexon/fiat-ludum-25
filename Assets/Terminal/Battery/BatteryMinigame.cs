@@ -35,6 +35,7 @@ struct BatteryGame
 
 public class BatteryMinigame : MinigameBase
 {
+    [SerializeField] private Rover rover;
     [SerializeField] private MinigameGrid grid;
 
     [SerializeField] private GameObject powerSymbolPrefab;
@@ -72,6 +73,14 @@ public class BatteryMinigame : MinigameBase
     GameObject curPosSymbol;
     Image endSymbolImage;
 
+    public override void Execute(string[] args)
+    {
+        if(rover.Status.Power == true){
+            Terminal.Println($"Power is operational.");
+            return;
+        }
+        base.Execute(args);
+    }
     protected override void StartGame()
     {
         base.StartGame();
