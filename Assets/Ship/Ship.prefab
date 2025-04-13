@@ -45,12 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb76ea72ec5e3744e8738e13d849c93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rover: {fileID: 0}
   powerLight: {fileID: 9178718953017850582}
   errorLight: {fileID: 3461485709804540379}
   powerLED: {fileID: 6400855749769076464}
   errorLED: {fileID: 6528223822587525474}
-  powerLightOn: 0
-  errorLightOn: 0
   blinkInterval: 0.1876
 --- !u!1 &675986232143974037
 GameObject:
@@ -373,7 +372,7 @@ Transform:
   m_GameObject: {fileID: 3802508044366543905}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7036488, y: 1.94, z: 0.12569073}
+  m_LocalPosition: {x: 0.64, y: 1.75, z: -0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -389,9 +388,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Color: {r: 0.4672481, g: 0.67050105, b: 0.7924528, a: 1}
+  m_Intensity: 12.15
+  m_Range: 63.25
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -720,6 +719,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 2b4275d5eb29dcd42b8c96455d3368ee, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e40ee0e08ea3940b58dfc51eb2c2f0b3, type: 2}
     - target: {fileID: 919132149155446097, guid: 2b4275d5eb29dcd42b8c96455d3368ee, type: 3}
       propertyPath: m_Name
       value: Screen
@@ -808,6 +811,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e40ee0e08ea3940b58dfc51eb2c2f0b3, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e40ee0e08ea3940b58dfc51eb2c2f0b3, type: 2}
     - target: {fileID: 919132149155446097, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -815,10 +826,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1291763020954110157}
   m_SourcePrefab: {fileID: 100100000, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
 --- !u!4 &3688389877746311451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
   m_PrefabInstance: {fileID: 3793564087406446320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4063403145630808993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26d94370a58aef44e92649b9efb7b510, type: 3}
+  m_PrefabInstance: {fileID: 3793564087406446320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1291763020954110157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4063403145630808993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4625f83f549124032a3809f0e8c8c610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rover: {fileID: 0}
+  ship: {fileID: 1377472917087116207}
+  roverShipDir: S
+  roverShipDist: 0.01
