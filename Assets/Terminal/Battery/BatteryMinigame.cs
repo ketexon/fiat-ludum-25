@@ -362,6 +362,7 @@ public class BatteryMinigame : MinigameBase
             init = false;
             numSolved++;
             EndGame();
+            Terminal.Println("Power is operational.");
             return;
         }
 	}

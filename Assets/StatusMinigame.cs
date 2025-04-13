@@ -50,12 +50,7 @@ public class StatusMinigame : MinigameBase
     }
 
     string DirTo(Transform t) {
-        Vector3 dir = t.position - rover.transform.position;
-        dir.y = 0;
-
-        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-        angle = (angle + 360f) % 360f;
-
+        var angle = Vector3.SignedAngle(Vector3.forward, t.position - rover.transform.position, Vector3.up);
         return GetCompassDirection(angle);
     }
 

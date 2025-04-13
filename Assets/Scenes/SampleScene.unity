@@ -1468,7 +1468,7 @@ PrefabInstance:
     - target: {fileID: 3498101872753589744, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: theResource
       value: 
-      objectReference: {fileID: 1035564659}
+      objectReference: {fileID: 1256544228203427058}
     - target: {fileID: 3498101872753589744, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: resourceStats
       value: 

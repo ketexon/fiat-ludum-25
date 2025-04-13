@@ -42,6 +42,10 @@ public class Rover : MonoBehaviour
 
     void Update()
     {
+        if(!Status.Power){
+            return;
+        }
+
         // Convert the input direction to movement and rotation
         Vector3 moveDirection = transform.forward * MoveDir.y; // Forward/backward movement
         float rotation = MoveDir.x; // Left/right rotation
