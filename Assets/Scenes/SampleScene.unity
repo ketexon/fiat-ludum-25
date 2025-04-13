@@ -1450,6 +1450,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.92096466
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7877358
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: m_Intensity
+      value: 0.95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
