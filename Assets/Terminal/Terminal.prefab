@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 9054912471192805346}
   - component: {fileID: 149041159909690432}
   - component: {fileID: 1719929293192910497}
+  - component: {fileID: 1812699237572454705}
   m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
@@ -147,6 +148,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1812699237572454705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354930317714404059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a52ddcb8e4c6ba077bfb852b0309d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nRows: 6
+  nCols: 7
 --- !u!1 &3424323054546715359
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +216,7 @@ MonoBehaviour:
   CommandDescription: manages power
   CommandUsage: power_ctl
   canvasGroup: {fileID: 2948627844481842936}
+  grid: {fileID: 1812699237572454705}
 --- !u!225 &2948627844481842936
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -370,6 +386,7 @@ GameObject:
   - component: {fileID: 2232122052273127485}
   - component: {fileID: 5235927302352857906}
   - component: {fileID: 6176035925593228641}
+  - component: {fileID: 859524192482181622}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -467,8 +484,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d434276be84b0bbf46a78bc347dc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bootText: 
-  prebootTime: 2
+  bootText: "Booting KetexOS v4.12.25...\nInitializing system... [OK]\nLoading kernel
+    modules... [OK]\nMounting virtual file systems... [OK]\nEstablishing secure connection...
+    [OK]\nStarting \n - power.service... [OK]\n - communication.service... [OK]\nEntering
+    user shell... done.\n\nWelcome to KetexOS Interactive Shell\n"
+  prebootTime: 0.5
 --- !u!114 &3451075893050435869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,9 +514,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialText:
-  - Hello meowza!
-  - Hows it going
-  - Meow meow
+  - "Welcome back, {0}. ReNova Laboratories is thrilled to have you join us on our
+    mission in securing humanity\u2019s future among the stars."
+  - "Our researchers on Promethos have been able to identify Resource X: a new compound
+    that will ensure humanity\u2019s escape from Earth and a new start among the
+    stars. Samples sent back to our laboratories have shown that one kilogram of
+    Resource X is potent enough to transport the population of Los Angeles to space."
+  - We have planted a tracker on a likely vein of Resource X. Your task is to locate,
+    collect, and return high quantities of Resource X back to Earth.
+  - "From this computer, you\u2019ll be able to access all controls and debugging
+    functions for Rover {1}. Use the terminal to navigate between applications. Keep
+    an eye on the rover\u2019s CAMERA and STATUS."
+  - "Navigate the rover to the resource. Occasionally, the rover may require some
+    manual repairs, which you will be notified of on the STATUS screen. Fix any errors
+    by executing the corresponding terminal commands. For a full list of commands,
+    type \u2018help\u2019."
+  - Additionally, to protect against strong winds or any other external threats,
+    we recommend you temporarily close the vents of the ship if you hear any abnormal
+    noises outside. However, note that the ship requires the vents to be open for
+    oxygen circulation, so keeping the vents closed for too long will result in asphyxiation.
+  - "With Earth\u2019s future growing more uncertain, your work will directly impact
+    the survival of our species. We wish you the best of luck!"
+  outputInterval: 0
   osText: '<size=50%> ____      _   _                   _          _
 
     |  _ \
@@ -521,18 +560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f522cd42f948afa679c58cb93420ebff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  osText: '<size=50%>____      _   _                   _          _
-
-    |  _ \ ___|
-    \ | | _____   ____ _  | |    __ _| |__  ___
-
-    | |_) / _ \  \| |/ _ \ \ / /
-    _` | | |   / _` | ''_ \/ __|
-
-    |  _ <  __/ |\  | (_) \ V / (_| | | |__| (_|
-    | |_) \__ \
-
-    |_| \_\___|_| \_|\___/ \_/ \__,_| |_____\__,_|_.__/|___</size>'
   osName: KetexOS
 --- !u!114 &5235927302352857906
 MonoBehaviour:
@@ -564,3 +591,18 @@ MonoBehaviour:
   CommandName: clear
   CommandDescription: clears the terminal buffer
   CommandUsage: clear
+--- !u!114 &859524192482181622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32fa179042d6d4a0f91fe4735a4babf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CommandName: 
+  CommandDescription: 
+  CommandUsage: 

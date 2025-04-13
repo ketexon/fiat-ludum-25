@@ -669,15 +669,6 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5622356905992237297, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: bootText
-      value: 'Meow meow
-
-
-        Meow meow meow
-
-        Raw >:)'
-      objectReference: {fileID: 0}
     - target: {fileID: 6462996713365971045, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -764,6 +755,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8826719460849974665, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826719460849974665, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8862298711366359289, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}

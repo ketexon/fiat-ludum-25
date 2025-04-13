@@ -19,7 +19,7 @@ public class Boot : TerminalProgram
         Terminal.ScreenLights.Power = true;
         
         var oldOutputInterval = Terminal.OutputInterval;
-        Terminal.OutputInterval = 0.03f;
+        Terminal.OutputInterval = 0.01f;
         
         Terminal.Println(bootText);
 
