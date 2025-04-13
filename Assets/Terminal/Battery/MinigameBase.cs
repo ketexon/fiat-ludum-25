@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -53,9 +54,13 @@ public class MinigameBase : ShellCommand
         Terminal.ExitEvent.RemoveListener(OnExit);
         Terminal.SubmitEvent.RemoveListener(OnSubmit);
 
-        Terminal.TakingInput = true;
-        Terminal.Visible = true;
-        canvasGroup.alpha = 0;
-        canvasGroup.interactable = false;
+        IEnumerator WaitOneFrame(){
+            yield return null;
+            Terminal.TakingInput = true;
+            Terminal.Visible = true;
+            canvasGroup.alpha = 0;
+            canvasGroup.interactable = false;
+        }
+        StartCoroutine(WaitOneFrame());
     }
 }
