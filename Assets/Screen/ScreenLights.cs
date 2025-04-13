@@ -11,8 +11,6 @@ public class ScreenLights : MonoBehaviour
     [SerializeField] private Light errorLight;
     [SerializeField] private Renderer powerLED;
     [SerializeField] private Renderer errorLED;
-    [SerializeField] private bool powerLightOn = true;
-    [SerializeField] private bool errorLightOn = true;
     [SerializeField] private float blinkInterval = 0.5f;
 
     private Color powerEmissiveColor;
@@ -53,7 +51,7 @@ public class ScreenLights : MonoBehaviour
             _error = value;
             if (value)
             {
-                StartCoroutine(BlinkCoro());
+                blinkCoro = StartCoroutine(BlinkCoro());
             }
             else
             {
@@ -89,12 +87,6 @@ public class ScreenLights : MonoBehaviour
             Error = true;
         }
 
-    }
-
-    private void Start()
-    {
-        Power = powerLightOn;
-        Error = errorLightOn;
     }
 
     IEnumerator BlinkCoro()

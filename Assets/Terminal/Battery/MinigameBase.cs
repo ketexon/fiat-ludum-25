@@ -32,6 +32,7 @@ public class MinigameBase : ShellCommand
     {
         Terminal.MoveEvent.AddListener(OnMove);
         Terminal.ExitEvent.AddListener(OnExit);
+        Terminal.SubmitEvent.AddListener(OnSubmit);
     }
 
     protected virtual void OnMove(Vector2 dir)
@@ -50,6 +51,7 @@ public class MinigameBase : ShellCommand
     {
         Terminal.MoveEvent.RemoveListener(OnMove);
         Terminal.ExitEvent.RemoveListener(OnExit);
+        Terminal.SubmitEvent.RemoveListener(OnSubmit);
 
         Terminal.TakingInput = true;
         Terminal.Visible = true;
