@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 9054912471192805346}
   - component: {fileID: 149041159909690432}
   - component: {fileID: 1719929293192910497}
+  - component: {fileID: 1812699237572454705}
   m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
@@ -147,6 +148,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1812699237572454705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2354930317714404059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a52ddcb8e4c6ba077bfb852b0309d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nRows: 6
+  nCols: 7
 --- !u!1 &3424323054546715359
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +216,7 @@ MonoBehaviour:
   CommandDescription: manages power
   CommandUsage: power_ctl
   canvasGroup: {fileID: 2948627844481842936}
+  grid: {fileID: 1812699237572454705}
 --- !u!225 &2948627844481842936
 CanvasGroup:
   m_ObjectHideFlags: 0
