@@ -508,9 +508,6 @@ MonoBehaviour:
   - "From this computer, you\u2019ll be able to access all controls and debugging
     functions for Rover {1}. Use the terminal to navigate between applications. Keep
     an eye on the rover\u2019s CAMERA and STATUS."
-  - "From this computer, you\u2019ll be able to access all controls and debugging
-    functions for Rover {1}. Use the terminal to navigate between applications. Keep
-    an eye on the rover\u2019s CAMERA and STATUS."
   - "Navigate the rover to the resource. Occasionally, the rover may require some
     manual repairs, which you will be notified of on the STATUS screen. Fix any errors
     by executing the corresponding terminal commands. For a full list of commands,

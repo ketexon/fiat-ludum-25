@@ -1376,6 +1376,10 @@ PrefabInstance:
       propertyPath: ScreenLights
       value: 
       objectReference: {fileID: 294733974}
+    - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: OutputInterval
+      value: 0.008
+      objectReference: {fileID: 0}
     - target: {fileID: 1028855382099350848, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Name
       value: Rover
