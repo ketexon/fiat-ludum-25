@@ -82,8 +82,10 @@ public class ScreenLights : MonoBehaviour
     void UpdateError(){
         if(rover.Status.AllOk){
             Error = false;
+            AudioManager.Instance.Stop("Alert");
         }
         else {
+            AudioManager.Instance.Play("Alert");
             Error = true;
         }
 

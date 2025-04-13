@@ -71,6 +71,7 @@ public class Rover : MonoBehaviour
         Vector3 moveDirection = transform.forward * MoveDir.y; // Forward/backward movement
         float rotation = MoveDir.x; // Left/right rotation
 
+        
         // Apply forwards-backwards movement
         if (agent != null)
         {
