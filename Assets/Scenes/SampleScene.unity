@@ -1329,17 +1329,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aaa92afec0e09444b2d8b99da573d41, type: 3}
---- !u!114 &1902775578 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3604151988350293029, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-  m_PrefabInstance: {fileID: 3597107364064689881}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f522cd42f948afa679c58cb93420ebff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2020432740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,26 +1416,10 @@ PrefabInstance:
       propertyPath: ScreenLights
       value: 
       objectReference: {fileID: 294733974}
-    - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: startProgram
-      value: 
-      objectReference: {fileID: 1902775578}
-    - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: OutputInterval
-      value: 0.008
-      objectReference: {fileID: 0}
     - target: {fileID: 1028855382099350848, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Name
       value: Rover
       objectReference: {fileID: 0}
-    - target: {fileID: 3381659870774467922, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3879449032980823337, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: Container
-      value: 
-      objectReference: {fileID: 3597107364064689884}
     - target: {fileID: 4446770753646975401, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.67
@@ -1487,21 +1460,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4465648686726422259, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6197981905259433185, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6233083692333410705, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8882063375427396290, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1522,11 +1483,6 @@ MonoBehaviour:
 --- !u!4 &3597107364064689883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4446770753646975401, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-  m_PrefabInstance: {fileID: 3597107364064689881}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &3597107364064689884 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8562707963840193929, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
   m_PrefabInstance: {fileID: 3597107364064689881}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5013888303275106063
