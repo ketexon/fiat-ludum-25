@@ -46,6 +46,8 @@ public class BatteryMinigame : MinigameBase
     [SerializeField] private GameObject b2x2hPrefab;
     [SerializeField] private GameObject b2x2vPrefab;
     [SerializeField] private GameObject curPosPrefab;
+    [SerializeField] private GameObject hlinePrefab;
+    [SerializeField] private GameObject vlinePrefab;
 
     [SerializeField] private BatteryGame game;
 
@@ -54,6 +56,11 @@ public class BatteryMinigame : MinigameBase
     // the third is the image
     List<(List<Vector2Int>, List<(Vector2Int, Vector2Int)>, Image)> batteryRequirements = new();
     HashSet<(Vector2Int, Vector2Int)> blockedEdges = new();
+
+    Stack<Vector2Int> posStack = new();
+    Stack<GameObject> lineStack = new();
+    HashSet<Vector2Int> visited = new();
+    HashSet<(Vector2Int, Vector2Int)> edges = new();
 
     Vector2Int curPos;
     GameObject curPosSymbol;
@@ -161,6 +168,29 @@ public class BatteryMinigame : MinigameBase
             batteryRequirements.Add((requiredPositions, requiredEdges, obstacleSymbol.GetComponent<Image>()));
             grid.MoveTo(obstacleSymbol.transform as RectTransform, obstacle.Position);
         }
+
+        UpdateBatteryRequirements();
+    }
+
+    private bool IsValidMove(Vector2Int pos)
+    {
+        if(!grid.IsValidPoint(pos)){
+            return false;
+        }
+        if(visited.Contains(pos)){
+            // check if it is the previous pos
+            if(posStack.Count > 0){
+                var lastPos = posStack.Peek();
+                if(lastPos == pos){
+                    return true;
+                }
+            }
+            return false;
+        }
+        if(blockedEdges.Contains((curPos, pos)) || blockedEdges.Contains((pos, curPos))){
+            return false;
+        }
+        return true;
     }
 
     protected override void OnMove(Vector2 dir)
@@ -168,5 +198,80 @@ public class BatteryMinigame : MinigameBase
         base.OnMove(dir);
 
         Debug.Log(dir);
+
+        if(dir.x == 0 && dir.y == 0){
+            return;
+        }
+        if(dir.x != 0 && dir.y != 0){
+            return;
+        }
+
+        dir.y *= -1;
+
+        var newPos = curPos + new Vector2Int((int)dir.x, (int)dir.y);
+        var edge = (curPos, newPos);
+        var edgeInverse = (newPos, curPos);
+        if(!IsValidMove(newPos)){
+            Debug.Log($"Invalid move {newPos}");
+            return;
+        }
+
+        bool found = false;
+        if(posStack.Count > 0){
+            var lastPos = posStack.Peek();
+            Debug.Log($"{lastPos} {newPos}");
+            if(lastPos == newPos){
+                posStack.Pop();
+                Destroy(lineStack.Pop());
+                visited.Remove(lastPos);
+                edges.Remove(edge);
+                edges.Remove(edgeInverse);
+                found = true;
+            }
+        }
+
+        if(!found){
+            var line = Instantiate(hlinePrefab, grid.transform);
+            grid.MoveTo(line.transform as RectTransform, curPos);
+            line.transform.localRotation = Quaternion.AngleAxis(
+                -Vector2.SignedAngle(Vector2.right, newPos - curPos),
+                Vector3.forward
+            );
+
+            posStack.Push(curPos);
+            lineStack.Push(line);
+            visited.Add(curPos);
+            edges.Add(edge);
+            edges.Add(edgeInverse);
+        }
+
+        curPos = newPos;
+        grid.MoveTo(curPosSymbol.transform as RectTransform, curPos);
+        UpdateBatteryRequirements();
+    }
+
+    void UpdateBatteryRequirements(){
+        foreach (var (positions, edges, image) in batteryRequirements)
+        {
+            bool valid = true;
+            foreach (var pos in positions)
+            {
+                if (!visited.Contains(pos) && curPos != pos)
+                {
+                    valid = false;
+                    break;
+                }
+            }
+
+            foreach (var edge in edges)
+            {
+                if(!this.edges.Contains(edge)){
+                    valid = false;
+                    break;
+                }
+            }
+
+            image.color = valid ? Color.white : new Color(1, 1, 1, 0.25f);
+        }
     }
 }
