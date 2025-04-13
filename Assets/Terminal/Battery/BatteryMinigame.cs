@@ -289,7 +289,6 @@ public class BatteryMinigame : MinigameBase
     protected override void OnMove(Vector2 dir)
     {
         base.OnMove(dir);
-
         Debug.Log(dir);
 
         if (dir.x == 0 && dir.y == 0)
@@ -345,7 +344,8 @@ public class BatteryMinigame : MinigameBase
             edges.Add(edgeInverse);
             curMoves++;
         }
-
+        
+        AudioManager.Instance.Play("Blip");
         curPos = newPos;
         grid.MoveTo(curPosSymbol.transform as RectTransform, curPos);
         UpdateBatteryRequirements();
@@ -358,6 +358,7 @@ public class BatteryMinigame : MinigameBase
 
         if (bateriesSolved)
         {
+            AudioManager.Instance.Play("Victory");
             rover.Status.Power = true;
             init = false;
             numSolved++;
@@ -365,6 +366,10 @@ public class BatteryMinigame : MinigameBase
             Terminal.Println("Power is operational.");
             rover.repairsNeeded = false;
             return;
+        }
+
+        else {
+            AudioManager.Instance.Play("Error");
         }
 	}
 
