@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 2232122052273127485}
   - component: {fileID: 5235927302352857906}
   - component: {fileID: 6176035925593228641}
+  - component: {fileID: 859524192482181622}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -574,3 +575,18 @@ MonoBehaviour:
   CommandName: clear
   CommandDescription: clears the terminal buffer
   CommandUsage: clear
+--- !u!114 &859524192482181622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32fa179042d6d4a0f91fe4735a4babf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CommandName: 
+  CommandDescription: 
+  CommandUsage: 
