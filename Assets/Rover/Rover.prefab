@@ -758,6 +758,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6484673054315524371, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: 'tutorialText.Array.data[0]'
+      value: Hello {0}
+      objectReference: {fileID: 0}
     - target: {fileID: 8826719460849974665, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_Pivot.y
       value: 0

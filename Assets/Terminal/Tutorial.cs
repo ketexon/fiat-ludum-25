@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Tutorial : TerminalProgram
 {
+	[Tooltip("{0} = username, {1} = rover name")]
 	[SerializeField] private List<string> tutorialText = new();
 	private int curTutorialText = 0;
 
@@ -21,9 +22,11 @@ public class Tutorial : TerminalProgram
 		PrintNextText();
 	}
 	
-	void PrintNextText()
-	{
-		Terminal.Println(tutorialText[curTutorialText]);
+	void PrintNextText(){
+		var curText = tutorialText[curTutorialText];
+		curText = string.Format(curText, Terminal.State.Username,
+			Terminal.State.RoverName);
+		Terminal.Println(curText);
 		curTutorialText++;
 	}
 
