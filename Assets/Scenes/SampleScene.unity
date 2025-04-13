@@ -1457,6 +1457,30 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3238211851651443409, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: CommandAliases.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238211851651443409, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'CommandAliases.Array.data[0]'
+      value: power
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238211851651443409, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'CommandAliases.Array.data[1]'
+      value: pwr
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238211851651443409, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'CommandAliases.Array.data[2]'
+      value: pow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238211851651443409, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'CommandAliases.Array.data[3]'
+      value: power_ctrl
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238211851651443409, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'CommandAliases.Array.data[4]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3498101872753589744, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: ship
       value: 
@@ -1678,7 +1702,7 @@ MonoBehaviour:
   - {fileID: 6567541352948025676}
   - {fileID: 2521264959288665406}
   Rover: {fileID: 3597107364064689883}
-  moveSpeed: 50
+  moveSpeed: 30
 --- !u!1001 &5013888303275106063
 PrefabInstance:
   m_ObjectHideFlags: 0
