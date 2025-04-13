@@ -42,14 +42,27 @@ public class Rover : MonoBehaviour
     [SerializeField] Transform roverTransform;
     [SerializeField] TheResource theResource;
     [System.NonSerialized] public Vector2 MoveDir = Vector2.zero;
+    [SerializeField] Light roverLight;
     int resourcePos => theResource.currentPosition;
     public bool repairsNeeded = false;
     List<bool> puzzles = new List<bool> { false, false, false, false, false, false, false, false};
     int currentPuzzle = 0;
-
-
+    float lightIntensity = 1.0f;
     void Update()
     {
+        // adjusting light with no power
+        if (!Status.Power)
+        {
+            // Gradually reduce intensity toward 0.1
+            lightIntensity = Mathf.MoveTowards(lightIntensity, 0.1f, Time.deltaTime * 2f); 
+        }
+        else
+        {
+            // Gradually restore to full brightness (1.0)
+            lightIntensity = Mathf.MoveTowards(lightIntensity, 1.0f, Time.deltaTime * 2f);
+        }
+        roverLight.intensity = lightIntensity;
+        
         if(!Status.Power){
             return;
         }

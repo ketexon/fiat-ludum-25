@@ -875,6 +875,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 913396830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &345695046 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+  m_PrefabInstance: {fileID: 3597107364064689881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &420949597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6150,6 +6155,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: roverLight
+      value: 
+      objectReference: {fileID: 345695046}
+    - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: theResource
       value: 
       objectReference: {fileID: 4341722487598300895}
@@ -6215,7 +6224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Range
-      value: 256
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Color.b
@@ -6231,7 +6240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Intensity
-      value: 56.49
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_SpotAngle
