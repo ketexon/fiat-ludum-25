@@ -6,7 +6,7 @@ public class MinigameGrid : MonoBehaviour
     RectTransform RectTransform => (RectTransform)transform;
 
     public Transform Container;
-    
+
     [SerializeField] private int nRows = 6;
     [SerializeField] private int nCols = 7;
 
@@ -27,5 +27,10 @@ public class MinigameGrid : MonoBehaviour
     {
         t.anchoredPosition = GetCellRect(cell).position;
         Debug.Log(GetCellRect(cell).position);
+    }
+
+    public bool IsValidPoint(Vector2 point)
+    {
+        return point.x >= 0 && point.x <= nCols && point.y >= 0 && point.y <= nRows;
     }
 }
