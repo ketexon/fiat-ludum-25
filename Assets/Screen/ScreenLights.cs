@@ -5,7 +5,8 @@ using UnityEngine;
 public class ScreenLights : MonoBehaviour
 {
     private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
-    
+
+    [SerializeField] private Rover rover;
     [SerializeField] private Light powerLight;
     [SerializeField] private Light errorLight;
     [SerializeField] private Renderer powerLED;
@@ -18,7 +19,7 @@ public class ScreenLights : MonoBehaviour
     private Color errorEmissiveColor;
 
     private Coroutine blinkCoro = null;
-    
+
     private bool _power;
     public bool Power
     {
@@ -70,6 +71,17 @@ public class ScreenLights : MonoBehaviour
     {
         powerEmissiveColor = powerLED.material.GetColor(EmissionColor);
         errorEmissiveColor = errorLED.material.GetColor(EmissionColor);
+
+        rover.Status.ChangedEvent.AddListener(OnStatusChanged);
+    }
+
+    void OnStatusChanged(){
+        if(rover.Status.AllOk){
+            Error = false;
+        }
+        else {
+            Error = true;
+        }
     }
 
     private void Start()

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -29,14 +28,17 @@ public class Terminal : MonoBehaviour
 
     [System.NonSerialized]
     public UnityEvent<Vector2> MoveEvent = new();
-    
+
     [System.NonSerialized]
     public UnityEvent ExitEvent = new();
-    
+
+    [System.NonSerialized]
+    public UnityEvent SubmitEvent = new();
+
     [System.NonSerialized]
     public UnityEvent BufferPrintedEvent = new();
-    
-    private bool InputPromptVisible => TakingInput && String.IsNullOrEmpty(bufferQueue);
+
+    private bool InputPromptVisible => TakingInput && string.IsNullOrEmpty(bufferQueue);
 
     TerminalProgram program = null;
 
@@ -224,6 +226,14 @@ public class Terminal : MonoBehaviour
         if (ctx.started)
         {
             ExitEvent.Invoke();
+        }
+    }
+
+    public void OnInputSubmit(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            SubmitEvent.Invoke();
         }
     }
 

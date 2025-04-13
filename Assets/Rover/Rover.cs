@@ -1,11 +1,35 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [System.Serializable]
 public class RoverStatus {
-    public bool Power = true;
-    public bool Comms = true;
+    [SerializeField] bool _power = true;
+    [SerializeField] bool _comms = true;
+
+    public UnityEvent ChangedEvent = new();
+
+    public bool Power {
+        get => _power;
+        set {
+            if(Power != value){
+                _power = value;
+                ChangedEvent.Invoke();
+            }
+        }
+    }
+    public bool Comms {
+        get => _comms;
+        set {
+            if(Comms != value){
+                _comms = value;
+                ChangedEvent.Invoke();
+            }
+        }
+    }
+
+    public bool AllOk => Power && Comms;
 }
 
 public class Rover : MonoBehaviour

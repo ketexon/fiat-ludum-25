@@ -38,6 +38,9 @@ public class MinigameBase : ShellCommand
     {
     }
 
+    protected virtual void OnSubmit(){
+    }
+
     void OnExit()
     {
         EndGame();

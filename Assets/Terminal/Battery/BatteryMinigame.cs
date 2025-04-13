@@ -73,6 +73,8 @@ public class BatteryMinigame : MinigameBase
     GameObject curPosSymbol;
     Image endSymbolImage;
 
+    bool init = false;
+
     public override void Execute(string[] args)
     {
         if(rover.Status.Power == true){
@@ -85,6 +87,15 @@ public class BatteryMinigame : MinigameBase
     {
         base.StartGame();
 
+        if (init)
+        {
+            return;
+        }
+        CreateGame(game);
+        init = true;
+    }
+
+    void CreateGame(BatteryGame game) {
         // spawn start and end point prefabs
         var startSymbol = Instantiate(powerSymbolPrefab, grid.transform);
         grid.MoveTo(startSymbol.transform as RectTransform, game.StartPos);
@@ -319,6 +330,20 @@ public class BatteryMinigame : MinigameBase
         UpdateText();
     }
 
+	protected override void OnSubmit()
+	{
+		base.OnSubmit();
+
+        Debug.Log("Submit");
+        if (bateriesSolved)
+        {
+            Debug.Log("Solved");
+            rover.Status.Power = true;
+            EndGame();
+            return;
+        }
+	}
+
     void UpdateBatteryRequirements()
     {
         bool allValid = true;
@@ -355,6 +380,6 @@ public class BatteryMinigame : MinigameBase
     }
 
     void UpdateText(){
-        movesText.text = $"{curMoves}/{game.MaxMoves}";
+        movesText.text = $"{game.MaxMoves - curMoves}m left";
     }
 }
