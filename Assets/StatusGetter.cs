@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class StatusGetter : MinigameBase
 {
     [SerializeField] ShipStats shipStats;
@@ -10,19 +10,17 @@ public class StatusGetter : MinigameBase
     string roverName = "";
     bool comms = true;
     bool power = true;
+    int pow_text = 100;
 
     void Start()
     {
-       
-
+       StartCoroutine(outputPower());
     }
-
 
     // Update is called once per frame
     void Update()
     {
         string com_text = comms ? "GOOD" : "POOR";
-        int pow_text = power ? Random.Range(100, 116) : Random.Range(45, 56);
 
         text.text = 
     $@"STATUS: 
@@ -35,5 +33,14 @@ public class StatusGetter : MinigameBase
 
     Signal Strength: {com_text}
     Power: {pow_text}W ";
+    }
+
+    IEnumerator outputPower()
+    {
+        while(true)
+        {
+            pow_text = power ? Random.Range(100, 116) : Random.Range(45, 56);
+        }
+        yield return new WaitForSeconds(1f);
     }
 }

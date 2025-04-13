@@ -11,7 +11,7 @@ public class TheResource : MonoBehaviour
     bool isMoving = false;
 
     public float roverResourceDist = 0;
-    public string roverResourceDir = "";
+    public string roverResourceDir = "N";
 
     void Update()
     {

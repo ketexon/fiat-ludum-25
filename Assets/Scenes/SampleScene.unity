@@ -1636,6 +1636,10 @@ PrefabInstance:
       propertyPath: Rover
       value: 
       objectReference: {fileID: 3597107364064689883}
+    - target: {fileID: 4341722486989655338, guid: 4aaa92afec0e09444b2d8b99da573d41, type: 3}
+      propertyPath: moveSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5030374449614736838, guid: 4aaa92afec0e09444b2d8b99da573d41, type: 3}
       propertyPath: m_Name
       value: TheResource
