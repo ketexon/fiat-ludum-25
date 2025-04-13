@@ -212,6 +212,7 @@ public class Terminal : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
+        if (ctx.started) return;
         MoveEvent.Invoke(ctx.ReadValue<Vector2>());
     }
 
@@ -266,6 +267,7 @@ public class Terminal : MonoBehaviour
         if (!Visible)
         {
             text.text = "";
+            return;
         }
         text.text = buffer;
         if(InputPromptVisible){

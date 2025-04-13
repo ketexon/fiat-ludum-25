@@ -20,6 +20,8 @@ public class MinigameBase : ShellCommand
         Terminal.Visible = false;
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
+        
+        StartGame();
     }
 
     protected virtual void StartGame()

@@ -16,17 +16,14 @@ public class TheResource : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, Rover.position) < 10.0f)
         {
-            Debug.Log("TheResource is close to the Rover.");
             if (currentPosition <= places.Count - 1)
             {
                 currentPosition++;
                 transform.position = places[currentPosition].transform.position;
-                Debug.Log("The Resource has moved to the next place: " + transform.position);
             }
         }
         else
         {
-            Debug.Log("TheResource is not close to the Rover.");
         }
     }
 }
