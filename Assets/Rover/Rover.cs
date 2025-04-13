@@ -74,7 +74,7 @@ public class Rover : MonoBehaviour
     {   
         if ((resourcePos == 0) & (repairsNeeded == false)) // start
         {
-            if ((roverTransform.position.z > 240) & (puzzles[0] == false))
+            if ((roverTransform.position.z > 230) & (puzzles[0] == false))
             {
                 // activate comms puzzle W
                 repairsNeeded = true;
@@ -82,7 +82,7 @@ public class Rover : MonoBehaviour
                 puzzles[0] = true;
                 currentPuzzle ++;
             }
-            else if (roverTransform.position.z > 175 & (puzzles[1] == false))
+            else if (roverTransform.position.z > 140 & (puzzles[1] == false))
             {
                 // activate power puzzle A
                 repairsNeeded = true;
