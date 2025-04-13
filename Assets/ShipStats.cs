@@ -16,7 +16,8 @@ public class ShipStats : MonoBehaviour
         Vector3 directionToShip = ship.position - rover.position;
         directionToShip.y = 0; // Keep it flat
 
-        float angle = Vector3.SignedAngle(rover.forward, directionToShip, Vector3.up);
+        float angle = Mathf.Atan2(directionToShip.x, directionToShip.z) * Mathf.Rad2Deg;
+        angle = (angle + 360f) % 360f; // Normalize to 0-360 degrees
 
         roverShipDir = GetCompassDirection(angle);
     }
