@@ -14,12 +14,14 @@ public class CameraMinigame : MinigameBase
 	protected override void StartGame()
     {
         base.StartGame();
+		AudioManager.Instance.Play("CRTBuzz");
         // enable on start
     }
 
 
 	protected override void EndGame()
 	{
+		AudioManager.Instance.Stop("CRTBuzz");
 		rover.MoveDir = Vector2.zero;
 		base.EndGame();
 	}
