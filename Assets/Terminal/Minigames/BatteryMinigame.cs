@@ -169,6 +169,7 @@ public class BatteryMinigame : MinigameBase
             grid.MoveTo(obstacleSymbol.transform as RectTransform, obstacle.Position);
         }
 
+        visited.Add(curPos);
         UpdateBatteryRequirements();
     }
 
