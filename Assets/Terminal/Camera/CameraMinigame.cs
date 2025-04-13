@@ -15,6 +15,7 @@ public class CameraMinigame : MinigameBase
     {
         base.StartGame();
 		AudioManager.Instance.Play("CRTBuzz");
+		AudioManager.Instance.Mute("KeyClick", true);
         // enable on start
     }
 
@@ -22,6 +23,7 @@ public class CameraMinigame : MinigameBase
 	protected override void EndGame()
 	{
 		AudioManager.Instance.Stop("CRTBuzz");
+		AudioManager.Instance.Mute("KeyClick", false);
 		rover.MoveDir = Vector2.zero;
 		base.EndGame();
 	}
