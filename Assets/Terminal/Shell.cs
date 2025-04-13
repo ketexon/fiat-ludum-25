@@ -9,6 +9,7 @@ public class Shell : TerminalProgram
 	public override string Prompt => $"{Terminal.State.Username}@{osName}:~$ ";
 	public override bool InputHidden => false;
 	public IDictionary<string, ShellCommand> Commands = new SortedDictionary<string, ShellCommand>();
+	public IDictionary<string, string> Aliases = new Dictionary<string, string>();
 
 	public void TryExecuteCommand(string[] args)
 	{
@@ -16,6 +17,10 @@ public class Shell : TerminalProgram
 		
 		var cmd = args[0];
 		
+		if(Aliases.TryGetValue(cmd, out var resolvedCmd)){
+			cmd = resolvedCmd;
+		}
+
 		if (Commands.TryGetValue(cmd, out var command))
 		{
 			command.Execute(args);
@@ -43,6 +48,9 @@ public class Shell : TerminalProgram
 			command.Terminal = Terminal;
 			command.Shell = this;
 			Commands.Add(command.CommandName, command);
+			foreach(var alias in command.CommandAliases){
+				Aliases.Add(alias, command.CommandName);
+			}
 		}
 	}
 

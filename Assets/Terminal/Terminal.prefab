@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CommandName: power_ctl
+  CommandAliases: []
   CommandDescription: manages power
   CommandUsage: power_ctl
   canvasGroup: {fileID: 2948627844481842936}
@@ -387,6 +388,7 @@ GameObject:
   - component: {fileID: 5235927302352857906}
   - component: {fileID: 6176035925593228641}
   - component: {fileID: 859524192482181622}
+  - component: {fileID: 1724517768605089602}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -574,6 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CommandName: help
+  CommandAliases: []
   CommandDescription: shows list of commands, or usage for specific command
   CommandUsage: 'help [command]'
 --- !u!114 &6176035925593228641
@@ -589,6 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CommandName: clear
+  CommandAliases: []
   CommandDescription: clears the terminal buffer
   CommandUsage: clear
 --- !u!114 &859524192482181622
@@ -604,5 +608,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CommandName: 
+  CommandAliases: []
   CommandDescription: 
   CommandUsage: 
+--- !u!114 &1724517768605089602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd6740a074534576bad857ca03ceadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CommandName: cam/camera
+  CommandAliases:
+  - cam
+  CommandDescription: 'switch to the camera screen and navigate the rover using [w]
+    to move forward and [a][d] to turn left/right '
+  CommandUsage: camera
