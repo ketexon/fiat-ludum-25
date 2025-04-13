@@ -26,7 +26,6 @@ public class MinigameGrid : MonoBehaviour
     public void MoveTo(RectTransform t, Vector2Int cell)
     {
         t.anchoredPosition = GetCellRect(cell).position;
-        Debug.Log(GetCellRect(cell).position);
     }
 
     public bool IsValidPoint(Vector2 point)
