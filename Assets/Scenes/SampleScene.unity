@@ -6150,6 +6150,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: theResource
+      value: 
+      objectReference: {fileID: 4341722487598300895}
+    - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: Status._comms
       value: 1
       objectReference: {fileID: 0}
@@ -6157,6 +6161,10 @@ PrefabInstance:
       propertyPath: Status._power
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: roverTransform
+      value: 
+      objectReference: {fileID: 3597107364064689883}
     - target: {fileID: 2180995685800997851, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Speed
       value: 7
@@ -6243,7 +6251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4446770753646975401, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 4446770753646975401, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6251,7 +6259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4446770753646975401, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 97
+      value: 98
       objectReference: {fileID: 0}
     - target: {fileID: 4446770753646975401, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6407,6 +6415,7 @@ MonoBehaviour:
   - {fileID: 2521264959288665406}
   Rover: {fileID: 3597107364064689883}
   moveSpeed: 5
+  currentPosition: 0
 --- !u!1001 &5013888303275106063
 PrefabInstance:
   m_ObjectHideFlags: 0
