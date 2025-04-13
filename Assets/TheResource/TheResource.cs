@@ -10,8 +10,8 @@ public class TheResource : MonoBehaviour
     int currentPosition = 0;
     bool isMoving = false;
 
-    float roverResourceDist = 0;
-    string roverResourceDir = "";
+    public float roverResourceDist = 0;
+    public string roverResourceDir = "";
 
     void Update()
     {
