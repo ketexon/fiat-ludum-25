@@ -102,7 +102,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6497088476150182289}
   m_Father: {fileID: 7154669640716116563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -160,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a52ddcb8e4c6ba077bfb852b0309d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Container: {fileID: 6497088476150182289}
   nRows: 6
   nCols: 7
 --- !u!1 &3424323054546715359
@@ -218,6 +220,21 @@ MonoBehaviour:
   CommandUsage: power_ctl
   canvasGroup: {fileID: 2948627844481842936}
   grid: {fileID: 1812699237572454705}
+  powerSymbolPrefab: {fileID: 1502447287545446000, guid: fcee7625670ab714abb314ac353badb5, type: 3}
+  b1x1hPrefab: {fileID: 60258074569753809, guid: 743b7b40b76a1bb4ba4da0324db178bb, type: 3}
+  b1x1vPrefab: {fileID: 60258074569753809, guid: 037d51187f59b534dba6326dbb4e9e80, type: 3}
+  b2x1hPrefab: {fileID: 60258074569753809, guid: 603c19fc94973454a9df1c6de891d79c, type: 3}
+  b2x1vPrefab: {fileID: 60258074569753809, guid: 257d3e6ec643bf148a9c433d2ca75f79, type: 3}
+  b2x2hPrefab: {fileID: 60258074569753809, guid: 844f2ac8e553fed4c804cb36e0e85fc7, type: 3}
+  b2x2vPrefab: {fileID: 60258074569753809, guid: 10accba882e906f4d863555c5e507de7, type: 3}
+  game:
+    StartPos: {x: 0, y: 0}
+    EndPos: {x: 7, y: 6}
+    Obstacles:
+    - Position: {x: 1, y: 1}
+      Type: 0
+    - Position: {x: 3, y: 3}
+      Type: 4
 --- !u!225 &2948627844481842936
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -230,6 +247,41 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &6076918995834071559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6497088476150182289}
+  m_Layer: 5
+  m_Name: GridRect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6497088476150182289
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076918995834071559}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9054912471192805346}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -2, y: -2}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7591544104795993835
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +441,7 @@ GameObject:
   - component: {fileID: 6176035925593228641}
   - component: {fileID: 859524192482181622}
   - component: {fileID: 1724517768605089602}
+  - component: {fileID: 5880580215948098175}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -577,7 +630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CommandName: help
   CommandAliases: []
-  CommandDescription: shows list of commands, or usage for specific command
+  CommandDescription: lists all commands and usage
   CommandUsage: 'help [command]'
 --- !u!114 &6176035925593228641
 MonoBehaviour:
@@ -607,10 +660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32fa179042d6d4a0f91fe4735a4babf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CommandName: 
+  CommandName: about
   CommandAliases: []
-  CommandDescription: 
-  CommandUsage: 
+  CommandDescription: about
+  CommandUsage: company description and player mission
 --- !u!114 &1724517768605089602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,9 +676,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd6740a074534576bad857ca03ceadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CommandName: cam/camera
+  CommandName: camera
   CommandAliases:
   - cam
-  CommandDescription: 'switch to the camera screen and navigate the rover using [w]
-    to move forward and [a][d] to turn left/right '
+  CommandDescription: view camera, navigate the rover using [w] to move forward and
+    [a][d] to turn left/right
   CommandUsage: camera
+--- !u!114 &5880580215948098175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9397cb4c90a74bee8027fc26e3d81e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CommandName: status
+  CommandAliases:
+  - stat
+  CommandDescription: rover location and info
+  CommandUsage: status

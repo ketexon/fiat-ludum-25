@@ -16,8 +16,8 @@ public class HelpCommand : ShellCommand
             PrintCommand(args[1]);
             return;
         }
-        Terminal.Println("Invalid arguments.");
-        Terminal.Println("Usage: help [command]");
+        Terminal.Println("Invalid arguments.", true);
+        Terminal.Println("Usage: help [command]", true);
     }
 
     void PrintCommands()
@@ -36,7 +36,7 @@ public class HelpCommand : ShellCommand
             Terminal.Println("Type `help` to see a list of available commands.", true);
             return;
         }
-        Terminal.Println($"{name} - {cmd.CommandDescription}");
-        Terminal.Println($"Usage: {cmd.CommandUsage}");
+        Terminal.Println($"{name} - {cmd.CommandDescription}", true);
+        Terminal.Println($"Usage: {cmd.CommandUsage}", true);
     }
 }
