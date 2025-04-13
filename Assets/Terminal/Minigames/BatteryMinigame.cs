@@ -32,9 +32,12 @@ public class BatteryMinigame : MinigameBase
 {
     [SerializeField] private MinigameGrid grid;
     
+    
     protected override void StartGame()
     {
         base.StartGame();
+        
+        // spawn obstacles
     }
 
     protected override void OnMove(Vector2 dir)
