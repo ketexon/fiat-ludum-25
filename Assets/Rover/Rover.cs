@@ -100,17 +100,55 @@ public class Rover : MonoBehaviour
             }
         }
 
-        // else if (resourcePos == 1) // top right
-        // {
-        //     // X — X > 40 
-        //     // Y — X > 140
-        //     // MOVE : C — 50 distance
-        // }
+        else if ((resourcePos == 1) & (repairsNeeded == false)) // top right
+        {
+            if ((roverTransform.position.x > 140) & (puzzles[3] == false))
+            {
+                // activate comms puzzle Y
+                repairsNeeded = true;
+                Status.Comms = false;
+                puzzles[3] = true;
+                currentPuzzle ++;
+            }
+            else if (roverTransform.position.x > 40 & (puzzles[4] == false))
+            {
+                // activate comms puzzle X
+                repairsNeeded = true;
+                Status.Comms = false;
+                puzzles[4] = true;
+                currentPuzzle ++;
+            }
+            else if (Vector3.Distance(theResource.transform.position, roverTransform.transform.position) <= 50 & (puzzles[5] == false))
+            {
+                // activate power puzzle C
+                repairsNeeded = true;
+                Status.Power = false;
+                puzzles[5] = true;
+                currentPuzzle ++;
+            }
+        }
 
-        // else if (resourcePos == 2) // outside cave
-        // {
-        //     // D — Z < 205
+        else if ((resourcePos == 2) & (repairsNeeded == false)) // top right
+        {
+            // D — Z < 205
         //     // Z — Z <130 ish
-        // }   
+            if ((roverTransform.position.z < 130) & (puzzles[6] == false))
+            {
+                // activate comms puzzle Z
+                repairsNeeded = true;
+                Status.Comms = false;
+                puzzles[6] = true;
+                currentPuzzle ++;
+            }
+            else if (roverTransform.position.z < 205 & (puzzles[7] == false))
+            {
+                // activate power puzzle D
+                repairsNeeded = true;
+                Status.Power = false;
+                puzzles[7] = true;
+                currentPuzzle ++;
+            }
+        }
+
     }
 }
