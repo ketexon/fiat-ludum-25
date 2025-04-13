@@ -31,6 +31,9 @@ public class Terminal : MonoBehaviour
     public UnityEvent<Vector2> MoveEvent = new();
     
     [System.NonSerialized]
+    public UnityEvent ExitEvent = new();
+    
+    [System.NonSerialized]
     public UnityEvent BufferPrintedEvent = new();
     
     private bool InputPromptVisible => TakingInput && String.IsNullOrEmpty(bufferQueue);
@@ -214,6 +217,14 @@ public class Terminal : MonoBehaviour
     {
         if (ctx.started) return;
         MoveEvent.Invoke(ctx.ReadValue<Vector2>());
+    }
+
+    public void OnExit(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            ExitEvent.Invoke();
+        }
     }
 
     void UpdateCursorPos(int delta)
