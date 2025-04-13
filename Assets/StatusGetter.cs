@@ -40,7 +40,7 @@ public class StatusGetter : MinigameBase
         while(true)
         {
             pow_text = power ? Random.Range(100, 116) : Random.Range(45, 56);
+            yield return new WaitForSeconds(1f);
         }
-        yield return new WaitForSeconds(1f);
     }
 }
