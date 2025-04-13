@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 1400921296179525033}
   - component: {fileID: 20937316246804449}
   - component: {fileID: 5335012224619074447}
+  - component: {fileID: 6101186588033227138}
   m_Layer: 0
   m_Name: RoverCamera
   m_TagString: Untagged
@@ -550,6 +551,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &6101186588033227138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619265304282398278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6f40b0d1b8c4d32a8ec03eb6b92405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roverDir: N
 --- !u!1 &8882063375427396290
 GameObject:
   m_ObjectHideFlags: 0

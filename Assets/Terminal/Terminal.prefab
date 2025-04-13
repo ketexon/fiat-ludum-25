@@ -227,6 +227,7 @@ MonoBehaviour:
   b2x1vPrefab: {fileID: 60258074569753809, guid: 257d3e6ec643bf148a9c433d2ca75f79, type: 3}
   b2x2hPrefab: {fileID: 60258074569753809, guid: 844f2ac8e553fed4c804cb36e0e85fc7, type: 3}
   b2x2vPrefab: {fileID: 60258074569753809, guid: 10accba882e906f4d863555c5e507de7, type: 3}
+  curPosPrefab: {fileID: 6290908534565505106, guid: 679acc6e178864a5d9c63fac38f7de18, type: 3}
   game:
     StartPos: {x: 0, y: 0}
     EndPos: {x: 7, y: 6}

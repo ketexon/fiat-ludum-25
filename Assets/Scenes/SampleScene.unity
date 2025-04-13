@@ -910,11 +910,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8619265304282398278, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
   m_PrefabInstance: {fileID: 3597107364064689881}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1070678505 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1400921296179525033, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-  m_PrefabInstance: {fileID: 3597107364064689881}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1070678506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,7 +922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6f40b0d1b8c4d32a8ec03eb6b92405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoverCamera: {fileID: 1070678505}
   roverDir: N
 --- !u!1001 &1145607344
 PrefabInstance:

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 [System.Serializable]
 enum BatteryObstacleType
@@ -10,6 +11,8 @@ enum BatteryObstacleType
     B1x1V,
     B2x1H,
     B2x1V,
+    B1x2H,
+    B1x2V,
     B2x2H,
     B2x2V,
 }
@@ -32,33 +35,138 @@ struct BatteryGame
 public class BatteryMinigame : MinigameBase
 {
     [SerializeField] private MinigameGrid grid;
-    
+
     [SerializeField] private GameObject powerSymbolPrefab;
     [SerializeField] private GameObject b1x1hPrefab;
     [SerializeField] private GameObject b1x1vPrefab;
     [SerializeField] private GameObject b2x1hPrefab;
     [SerializeField] private GameObject b2x1vPrefab;
+    [SerializeField] private GameObject b1x2hPrefab;
+    [SerializeField] private GameObject b1x2vPrefab;
     [SerializeField] private GameObject b2x2hPrefab;
     [SerializeField] private GameObject b2x2vPrefab;
-    
+    [SerializeField] private GameObject curPosPrefab;
+
     [SerializeField] private BatteryGame game;
-    
+
+    // the first is the list of positions that need to be filled
+    // the second is the list of edges
+    // the third is the image
+    List<(List<Vector2Int>, List<(Vector2Int, Vector2Int)>, Image)> batteryRequirements = new();
+    HashSet<(Vector2Int, Vector2Int)> blockedEdges = new();
+
+    Vector2Int curPos;
+    GameObject curPosSymbol;
+
     protected override void StartGame()
     {
         base.StartGame();
-        
+
         // spawn start and end point prefabs
         var startSymbol = Instantiate(powerSymbolPrefab, grid.transform);
         grid.MoveTo(startSymbol.transform as RectTransform, game.StartPos);
-        
+
         var endSymbol = Instantiate(powerSymbolPrefab, grid.transform);
         grid.MoveTo(endSymbol.transform as RectTransform, game.EndPos);
+
+        // spawn circle
+        curPos = game.StartPos;
+        curPosSymbol = Instantiate(curPosPrefab, grid.transform);
+        grid.MoveTo(curPosSymbol.transform as RectTransform, curPos);
+
+        // spawn obstacles
+        foreach (var obstacle in game.Obstacles)
+        {
+            GameObject prefab = null;
+            List<Vector2Int> requiredPositions = new();
+            List<(Vector2Int, Vector2Int)> requiredEdges = new();
+            int sizeX = 1;
+            int sizeY = 1;
+            bool v = false;
+            switch (obstacle.Type)
+            {
+                case BatteryObstacleType.B1x1H:
+                    prefab = b1x1hPrefab;
+                    break;
+                case BatteryObstacleType.B1x1V:
+                    prefab = b1x1vPrefab;
+                    v = true;
+                    break;
+                case BatteryObstacleType.B2x1H:
+                    prefab = b2x1hPrefab;
+                    sizeX = 2;
+                    break;
+                case BatteryObstacleType.B2x1V:
+                    prefab = b2x1vPrefab;
+                    v = true;
+                    sizeX = 2;
+                    break;
+                case BatteryObstacleType.B1x2H:
+                    prefab = b1x2hPrefab;
+                    sizeY = 2;
+                    break;
+                case BatteryObstacleType.B1x2V:
+                    prefab = b1x2vPrefab;
+                    v = true;
+                    sizeY = 2;
+                    break;
+                case BatteryObstacleType.B2x2H:
+                    prefab = b2x2hPrefab;
+                    sizeX = 2;
+                    sizeY = 2;
+                    break;
+                case BatteryObstacleType.B2x2V:
+                    prefab = b2x2vPrefab;
+                    v = true;
+                    sizeX = 2;
+                    sizeY = 2;
+                    break;
+            }
+
+            if(v){
+                if(sizeX == 1){
+                    requiredEdges.Add((obstacle.Position, obstacle.Position + Vector2Int.right));
+                    requiredEdges.Add((obstacle.Position, obstacle.Position + Vector2Int.right + Vector2Int.down * sizeY));
+                }
+                else {
+                    requiredPositions.Add(obstacle.Position + Vector2Int.right);
+                    requiredPositions.Add(obstacle.Position + Vector2Int.right + Vector2Int.down * sizeY);
+                }
+            }
+            else {
+                if(sizeY == 1){
+                    requiredEdges.Add((obstacle.Position, obstacle.Position + Vector2Int.down));
+                    requiredEdges.Add((obstacle.Position, obstacle.Position + Vector2Int.right * sizeX + Vector2Int.down));
+                }
+                else {
+                    requiredPositions.Add(obstacle.Position + Vector2Int.down);
+                    requiredPositions.Add(obstacle.Position + Vector2Int.right * sizeX + Vector2Int.down);
+                }
+            }
+
+            if(sizeX == 2 && sizeY == 2) {
+                blockedEdges.Add((obstacle.Position + Vector2Int.right, obstacle.Position + Vector2Int.right + Vector2Int.down));
+                blockedEdges.Add((obstacle.Position + Vector2Int.right + Vector2Int.down, obstacle.Position + Vector2Int.right + Vector2Int.down * 2));
+                blockedEdges.Add((obstacle.Position + Vector2Int.down, obstacle.Position + Vector2Int.right + Vector2Int.down));
+                blockedEdges.Add((obstacle.Position + Vector2Int.down + Vector2Int.right, obstacle.Position + Vector2Int.right * 2 + Vector2Int.down));
+            }
+            else if(sizeX == 2){
+                blockedEdges.Add((obstacle.Position + Vector2Int.right, obstacle.Position + Vector2Int.right + Vector2Int.down));
+            }
+            else if (sizeY == 2){
+                blockedEdges.Add((obstacle.Position + Vector2Int.down, obstacle.Position + Vector2Int.right + Vector2Int.down));
+            }
+
+            var obstacleSymbol = Instantiate(prefab, grid.transform);
+            batteryRequirements.Add((requiredPositions, requiredEdges, obstacleSymbol.GetComponent<Image>()));
+            grid.MoveTo(obstacleSymbol.transform as RectTransform, obstacle.Position);
+        }
     }
 
     protected override void OnMove(Vector2 dir)
     {
         base.OnMove(dir);
-        
+
         Debug.Log(dir);
     }
 }

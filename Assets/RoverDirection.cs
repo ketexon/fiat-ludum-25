@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class RoverDirection : MonoBehaviour
 {
-    [SerializeField] Transform RoverCamera;
     public string roverDir = "N";
 
     void Update()
@@ -12,7 +11,7 @@ public class RoverDirection : MonoBehaviour
 
     void getFacingDirection()
     {
-        Vector3 forward = RoverCamera.forward;
+        Vector3 forward = transform.forward;
         forward.y = 0; // Ignore vertical tilt (only care about flat ground)
         forward.Normalize();
 
