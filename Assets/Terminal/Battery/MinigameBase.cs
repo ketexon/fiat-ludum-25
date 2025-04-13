@@ -34,6 +34,7 @@ public class MinigameBase : ShellCommand
         Terminal.MoveEvent.AddListener(OnMove);
         Terminal.ExitEvent.AddListener(OnExit);
         Terminal.SubmitEvent.AddListener(OnSubmit);
+        AudioManager.Instance.Mute("KeyClick", true);
     }
 
     protected virtual void OnMove(Vector2 dir)
@@ -53,6 +54,7 @@ public class MinigameBase : ShellCommand
         Terminal.MoveEvent.RemoveListener(OnMove);
         Terminal.ExitEvent.RemoveListener(OnExit);
         Terminal.SubmitEvent.RemoveListener(OnSubmit);
+        AudioManager.Instance.Mute("KeyClick", false);
 
         IEnumerator WaitOneFrame(){
             yield return null;

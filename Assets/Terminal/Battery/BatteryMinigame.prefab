@@ -433,10 +433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c365ab9bed48ee9bd8806a92be017d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CommandName: power_ctl
+  CommandName: power
   CommandAliases: []
   CommandDescription: manages power
-  CommandUsage: power_ctl
+  CommandUsage: power
   canvasGroup: {fileID: 5050277562892580290}
   controlsText: {fileID: 1035597847059236184}
   controls: 'Q: Exit - WASD: Move - ENTER: Submit'
