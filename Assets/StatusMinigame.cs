@@ -9,7 +9,8 @@ public class StatusMinigame : MinigameBase
     [SerializeField] Rover rover;
     bool Comms => rover.Status.Comms;
     bool Power => rover.Status.Power;
-    int pow_text = 100;
+    string pow_text = "100%";
+    bool flash = false;
 
     void Start()
     {
@@ -37,15 +38,30 @@ public class StatusMinigame : MinigameBase
     Direction of ship: {shipDir}
 
     Signal Strength: {com_text}
-    Power: {pow_text}W ";
+    Power: {pow_text}";
     }
 
     IEnumerator outputPower()
     {
         while(true)
         {
-            pow_text = Power ? Random.Range(100, 116) : Random.Range(0, 10);
-            yield return new WaitForSeconds(1f);
+            if(Power)
+            {
+                pow_text = (Random.Range(94, 101)).ToString() + "%";
+            }
+            else 
+            {
+                if (flash)
+                {
+                    pow_text = " ";
+                }
+                else
+                {
+                    pow_text = Random.Range(0, 11).ToString() + "%";
+                }
+                flash = !flash;        
+            }
+            yield return new WaitForSeconds(0.7f);
         }
     }
 
