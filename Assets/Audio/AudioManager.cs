@@ -9,6 +9,17 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] sounds;
     private Dictionary<string, Sound> soundMap;
+    private HashSet<string> clipNames = new HashSet<string>
+    {
+        "Error",
+    };
+
+     private HashSet<string> pitchedClipNames = new HashSet<string>
+    {
+        "KeyClick",
+        "Blip",
+    };
+
 
 
     public static AudioManager Instance { get; private set; }
@@ -33,10 +44,13 @@ public class AudioManager : MonoBehaviour
     public void Play (string name ) {
         if (soundMap.TryGetValue(name, out Sound s))
         {
-           if (name == "KeyClick")
+            if (pitchedClipNames.Contains(name))
             {
                 s.source.pitch = Random.Range(0.8f, 1.05f); // add pitch variation
                 s.source.PlayOneShot(s.clip);                // overlap-friendly
+            }
+            else if (clipNames.Contains(name)) {
+                s.source.PlayOneShot(s.clip);   
             }
             else
             {
