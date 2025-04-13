@@ -18,11 +18,15 @@ public class Boot : TerminalProgram
         yield return new WaitForSeconds(prebootTime);
         Terminal.ScreenLights.Power = true;
         
+        var oldOutputInterval = Terminal.OutputInterval;
+        Terminal.OutputInterval = 0.03f;
+        
         Terminal.Println(bootText);
 
         Terminal.BufferPrintedEvent.AddListener(OnFinishPrinting);
         void OnFinishPrinting()
         {
+            Terminal.OutputInterval = oldOutputInterval;
             Terminal.BufferPrintedEvent.RemoveListener(OnFinishPrinting);
             Terminal.SwitchProgram<Login>();
         }

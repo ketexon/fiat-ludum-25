@@ -58,6 +58,6 @@ public class Login : TerminalProgram {
 		}
 
 		Terminal.Clear();
-		Terminal.SwitchProgram<Shell>();
+		Terminal.SwitchProgram<Tutorial>();
 	}
 }

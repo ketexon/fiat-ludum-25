@@ -18,7 +18,8 @@ public class Terminal : MonoBehaviour
 
     [SerializeField] public ScreenLights ScreenLights;
     [SerializeField] private float blinkInterval = 0.5f;
-    [FormerlySerializedAs("outputInterval")] [SerializeField] private float OutputInterval = 0.01f;
+    [FormerlySerializedAs("outputInterval"),SerializeField]
+    public float OutputInterval = 0.01f;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] TerminalProgram startProgram;
 

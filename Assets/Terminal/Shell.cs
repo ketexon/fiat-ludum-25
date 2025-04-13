@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Shell : TerminalProgram
 {
-	[SerializeField] private string osText = @"<size=50%>____      _   _                   _          _
-|  _ \ ___| \ | | _____   ____ _  | |    __ _| |__  ___
-| |_) / _ \  \| |/ _ \ \ / / _` | | |   / _` | '_ \/ __|
-|  _ <  __/ |\  | (_) \ V / (_| | | |__| (_| | |_) \__ \
-|_| \_\___|_| \_|\___/ \_/ \__,_| |_____\__,_|_.__/|___</size>";
 	[SerializeField] private string osName = "KetexOS";
 	
 	public override string Prompt => $"{Terminal.State.Username}@{osName}:~$ ";
@@ -41,7 +36,6 @@ public class Shell : TerminalProgram
 	void OnEnable()
 	{
 		Terminal.TakingInput = true;
-		Terminal.Println(osText);
 		
 		var commandList = GetComponentsInChildren<ShellCommand>();
 		foreach (var command in commandList)

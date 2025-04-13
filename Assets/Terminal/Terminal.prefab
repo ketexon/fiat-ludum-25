@@ -414,7 +414,7 @@ MonoBehaviour:
   text: {fileID: 9094391426596536235}
   ScreenLights: {fileID: 0}
   blinkInterval: 0.5
-  outputInterval: 0.01
+  OutputInterval: 0.01
   playerInput: {fileID: 0}
   startProgram: {fileID: 5622356905992237297}
 --- !u!222 &7586311099693353349
@@ -467,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d434276be84b0bbf46a78bc347dc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bootText: 
   prebootTime: 2
 --- !u!114 &3451075893050435869
 MonoBehaviour:
@@ -492,6 +493,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfb13b0d16bb19a8890a552c5f0158c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialText:
+  - Hello meowza!
+  - Hows it going
+  - Meow meow
   osText: '<size=50%> ____      _   _                   _          _
 
     |  _ \

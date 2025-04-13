@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Tutorial : TerminalProgram
 {
-	enum State {
-	}
+	[SerializeField] private List<string> tutorialText = new();
+	private int curTutorialText = 0;
+
+	public override string Prompt => "Press enter to continue. ";
 
 	[SerializeField] private string osText = @"<size=50%>____      _   _                   _          _
 |  _ \ ___| \ | | _____   ____ _  | |    __ _| |__  ___
@@ -15,20 +18,26 @@ public class Tutorial : TerminalProgram
 	{
 		Terminal.TakingInput = true;
 		Terminal.Println(osText);
+		PrintNextText();
 	}
-
-	void OnDisable()
+	
+	void PrintNextText()
 	{
-
+		Terminal.Println(tutorialText[curTutorialText]);
+		curTutorialText++;
 	}
 
 	public override void OnSubmit()
 	{
 		base.OnSubmit();
 
-		if (string.IsNullOrEmpty(Terminal.Input))
+		if (curTutorialText < tutorialText.Count)
 		{
-			return;
+			PrintNextText();
+		}
+		else
+		{
+			Terminal.SwitchProgram<Shell>();
 		}
 	}
 }
