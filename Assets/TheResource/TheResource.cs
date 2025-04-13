@@ -7,7 +7,7 @@ public class TheResource : MonoBehaviour
     [SerializeField] Transform Rover;
     [SerializeField] float moveSpeed = 12.0f; // Speed at which the resource moves
 
-    int currentPosition = 0;
+    public int currentPosition = 0;
     bool isMoving = false;
 
     void Update()

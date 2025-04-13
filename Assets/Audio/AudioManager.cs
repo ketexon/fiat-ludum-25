@@ -45,4 +45,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void Stop(string name)
+    {
+        if (soundMap.TryGetValue(name, out Sound s))
+            {
+                s.source.Stop();
+            }
+    }
+
+    public void Mute(string name, bool mute)
+    {
+        if (soundMap.TryGetValue(name, out Sound s))
+        {
+            s.source.mute = mute;
+        }
+    }
+
+
 }
