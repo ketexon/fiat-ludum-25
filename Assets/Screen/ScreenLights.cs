@@ -73,15 +73,22 @@ public class ScreenLights : MonoBehaviour
         errorEmissiveColor = errorLED.material.GetColor(EmissionColor);
 
         rover.Status.ChangedEvent.AddListener(OnStatusChanged);
+
+        UpdateError();
     }
 
     void OnStatusChanged(){
+        UpdateError();
+    }
+
+    void UpdateError(){
         if(rover.Status.AllOk){
             Error = false;
         }
         else {
             Error = true;
         }
+
     }
 
     private void Start()
