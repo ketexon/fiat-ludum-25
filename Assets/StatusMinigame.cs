@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-public class StatusGetter : MinigameBase
+public class StatusMinigame : MinigameBase
 {
     [SerializeField] ShipStats shipStats;
     [SerializeField] TheResource resourceStats;
@@ -22,12 +22,12 @@ public class StatusGetter : MinigameBase
     {
         string com_text = comms ? "GOOD" : "POOR";
 
-        text.text = 
-    $@"STATUS: 
-    
+        text.text =
+    $@"STATUS:
+
     Distance from resource: {resourceStats.roverResourceDist}m
     Direction of resource: {resourceStats.roverResourceDir}
-    
+
     Distance from ship: {shipStats.roverShipDist}m
     Direction of ship: {shipStats.roverShipDir}
 

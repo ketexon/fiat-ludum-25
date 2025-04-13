@@ -102,6 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2180995685800997851}
   rotationSpeed: 90
+  Status:
+    Power: 1
+    Comms: 1
 --- !u!195 &2180995685800997851
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -660,6 +663,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2953307021795601069}
     m_Modifications:
+    - target: {fileID: 4189727008341705, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: rover
+      value: 
+      objectReference: {fileID: 1562556805437829358}
     - target: {fileID: 1626178676042229055, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: rover
       value: 
