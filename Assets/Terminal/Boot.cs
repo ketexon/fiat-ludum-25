@@ -20,6 +20,7 @@ public class Boot : TerminalProgram
         
         var oldOutputInterval = Terminal.OutputInterval;
         Terminal.OutputInterval = 0.01f;
+
         
         Terminal.Println(bootText);
 
