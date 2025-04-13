@@ -6,10 +6,11 @@ public class StatusMinigame : MinigameBase
     [SerializeField] TheResource resourceStats;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] TMPro.TMP_Text text;
+    [SerializeField] Rover rover;
 
     string roverName = "";
-    bool comms = true;
-    bool power = true;
+    bool Comms => rover.Status.Comms;
+    bool Power => rover.Status.Power;
     int pow_text = 100;
 
     void Start()
@@ -20,7 +21,7 @@ public class StatusMinigame : MinigameBase
     // Update is called once per frame
     void Update()
     {
-        string com_text = comms ? "GOOD" : "POOR";
+        string com_text = Comms ? "GOOD" : "POOR";
 
         text.text =
     $@"STATUS:
@@ -39,7 +40,7 @@ public class StatusMinigame : MinigameBase
     {
         while(true)
         {
-            pow_text = power ? Random.Range(100, 116) : Random.Range(45, 56);
+            pow_text = Power ? Random.Range(100, 116) : Random.Range(0, 10);
             yield return new WaitForSeconds(1f);
         }
     }
