@@ -286,7 +286,7 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_PointAction: {fileID: 685750475}
   m_MoveAction: {fileID: 1198231601}
-  m_SubmitAction: {fileID: 2020432740}
+  m_SubmitAction: {fileID: -8695540031749640600, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_CancelAction: {fileID: 1718432355}
   m_LeftClickAction: {fileID: 1334053884}
   m_MiddleClickAction: {fileID: 1024480549}
@@ -5669,20 +5669,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1705623933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2020432740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: UI/Submit
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_ActionId: 7607c7b6-cd76-4816-beef-bd0341cfe950
 --- !u!1 &2057125721
 GameObject:
   m_ObjectHideFlags: 0
@@ -6157,6 +6143,10 @@ PrefabInstance:
       propertyPath: Status._power
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1679297746360731288, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2180995685800997851, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Speed
       value: 7
@@ -6326,7 +6316,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5116131397885064174, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}

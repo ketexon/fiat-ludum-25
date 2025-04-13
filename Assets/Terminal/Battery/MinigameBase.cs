@@ -8,7 +8,7 @@ public class MinigameBase : ShellCommand
 {
     [SerializeField] CanvasGroup canvasGroup;
     [SerializeField] TMPro.TMP_Text controlsText;
-    [SerializeField] string controls = "ESC: Exit";
+    [SerializeField] string controls = "Q: Exit";
 
     private void Awake()
     {
