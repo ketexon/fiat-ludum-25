@@ -5,9 +5,12 @@ public class Tutorial : TerminalProgram
 {
 	[Tooltip("{0} = username, {1} = rover name")]
 	[SerializeField] private List<string> tutorialText = new();
+	[SerializeField] float outputInterval;
 	private int curTutorialText = 0;
 
 	public override string Prompt => "Press enter to continue. ";
+
+	float oldOutputInterval;
 
 	[SerializeField] private string osText = @"<size=50%>____      _   _                   _          _
 |  _ \ ___| \ | | _____   ____ _  | |    __ _| |__  ___
@@ -20,6 +23,14 @@ public class Tutorial : TerminalProgram
 		Terminal.TakingInput = true;
 		Terminal.Println(osText);
 		PrintNextText();
+
+		oldOutputInterval = Terminal.OutputInterval;
+		Terminal.OutputInterval = outputInterval;
+
+	}
+
+	void OnDisable(){
+		Terminal.OutputInterval = oldOutputInterval;
 	}
 	
 	void PrintNextText(){

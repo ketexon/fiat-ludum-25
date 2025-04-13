@@ -13,7 +13,7 @@ public class Login : TerminalProgram {
 	public override string Prompt => state switch {
 		State.Username => "Username: ",
 		State.Password => "Password: ",
-		State.Security => "Security question: ",
+		State.Security => "Please answer the following security question. What is the rover's name? ",
 		_ => "",
 	};
 
