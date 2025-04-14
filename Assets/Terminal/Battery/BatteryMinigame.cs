@@ -358,7 +358,7 @@ public class BatteryMinigame : MinigameBase
 	{
 		base.OnSubmit();
 
-        if (bateriesSolved)
+        if (bateriesSolved && curPos == game.EndPos)
         {
             AudioManager.Instance.Play("Victory");
             rover.Status.Power = true;

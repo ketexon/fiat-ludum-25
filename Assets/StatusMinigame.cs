@@ -12,14 +12,31 @@ public class StatusMinigame : MinigameBase
     string pow_text = "100%";
     bool flash = false;
 
-    void Start()
+    private Coroutine powerCoroutine;
+    private bool init = false;
+
+    protected override void StartGame()
     {
-       StartCoroutine(outputPower());
+        base.StartGame();
+        StartCoroutine(outputPower());
+        init = true;
+    }
+
+    protected override void EndGame()
+    {
+        base.EndGame();
+        if (powerCoroutine != null)
+        {
+            StopCoroutine(powerCoroutine);
+        }
+
+        init = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!init) return;
         string com_text = Comms ? "GOOD" : "POOR";
 
         var resourceDistance = Vector3.Distance(theResource.position, rover.transform.position);

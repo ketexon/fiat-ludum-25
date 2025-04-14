@@ -72,6 +72,7 @@ public class ScreenLights : MonoBehaviour
 
         rover.Status.ChangedEvent.AddListener(OnStatusChanged);
 
+        Power = false;
         UpdateError();
     }
 
