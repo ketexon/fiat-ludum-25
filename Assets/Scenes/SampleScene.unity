@@ -1581,6 +1581,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1462884122}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &772832194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3802508044366543905, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+  m_PrefabInstance: {fileID: 456751773632202570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &772832197 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+  m_PrefabInstance: {fileID: 456751773632202570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &772832198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772832194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b8c0e9b89234a009c0ca5e186aad54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipLight: {fileID: 772832197}
 --- !u!1001 &776510869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5456,7 +5479,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.50271446, g: 0.709924, b: 0.745283, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -6002,10 +6025,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7877358
       objectReference: {fileID: 0}
+    - target: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: m_Intensity
+      value: 7.11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3802508044366543905, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 772832198}
   m_SourcePrefab: {fileID: 100100000, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
 --- !u!114 &456751773632202571 stripped
 MonoBehaviour:
@@ -6305,11 +6335,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Color.b
-      value: 0.4764151
+      value: 0.24056602
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Color.g
-      value: 0.92924535
+      value: 0.2851382
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Color.r
