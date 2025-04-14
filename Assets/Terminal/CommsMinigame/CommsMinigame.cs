@@ -42,7 +42,8 @@ public class CommsMinigame : MinigameBase
             // Start the minigame
             curLevel.StartLevel();
         }
-        
+
+        AudioManager.Instance.Dim("Alert", true);
         StartCoroutine(WaitCoro());
     }
 
@@ -67,6 +68,7 @@ public class CommsMinigame : MinigameBase
             statusCoroutine = null;
         }
         curLevel.StopLevel();
+        AudioManager.Instance.Dim("Alert", false);
         base.EndGame();
     }
     

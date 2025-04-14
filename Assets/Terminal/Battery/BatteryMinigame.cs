@@ -97,6 +97,7 @@ public class BatteryMinigame : MinigameBase
             return;
         }
         CreateGame(games[numSolved]);
+        AudioManager.Instance.Dim("Alert", true);
         init = true;
     }
 
@@ -358,6 +359,7 @@ public class BatteryMinigame : MinigameBase
 
         if (bateriesSolved && curPos == game.EndPos)
         {
+            AudioManager.Instance.Dim("Alert", false);
             AudioManager.Instance.Play("Victory");
             rover.Status.Power = true;
             init = false;

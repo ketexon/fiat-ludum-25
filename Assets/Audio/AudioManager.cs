@@ -38,6 +38,8 @@ public class AudioManager : MonoBehaviour
         {
             soundMap[s.name] = s;
             s.source.clip = s.clip;
+            s.source.volume = s.volume;
+            s.originalVolume = s.volume;
         }
 
         Play("Ambient");
@@ -76,6 +78,26 @@ public class AudioManager : MonoBehaviour
             s.source.mute = mute;
         }
     }
+
+    public void Dim(string name, bool dim)
+    {
+        if (soundMap.TryGetValue(name, out Sound s))
+        {
+            if (dim)
+            {
+                if (Mathf.Approximately(s.source.volume, s.originalVolume))
+                {
+                    s.originalVolume = s.source.volume;
+                    s.source.volume *= 0.15f;
+                }
+            }
+            else
+            {
+                s.source.volume = s.originalVolume;
+            }
+        }
+    }
+
 
     public void CloseOutside(bool close)
     {
