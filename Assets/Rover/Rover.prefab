@@ -108,9 +108,9 @@ MonoBehaviour:
     ChangedEvent:
       m_PersistentCalls:
         m_Calls: []
-  roverTransform: {fileID: 0}
+  roverTransform: {fileID: 4446770753646975401}
   theResource: {fileID: 0}
-  roverLight: {fileID: 0}
+  roverLight: {fileID: 4157022401154185173}
   repairsNeeded: 0
 --- !u!195 &2180995685800997851
 NavMeshAgent:
@@ -122,7 +122,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -160,13 +160,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2408128900896114204}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: 0.10282487, y: -0.12603568, z: 0.013135686, w: 0.9865949}
+  m_LocalPosition: {x: -0.53, y: 2.01, z: 1.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4446770753646975401}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.9, y: -14.56, z: 0}
 --- !u!108 &4157022401154185173
 Light:
   m_ObjectHideFlags: 0
@@ -176,12 +176,12 @@ Light:
   m_GameObject: {fileID: 2408128900896114204}
   m_Enabled: 1
   serializedVersion: 11
-  m_Type: 2
-  m_Color: {r: 1, g: 0.92156863, b: 0.41960785, a: 1}
-  m_Intensity: 14.9
-  m_Range: 93.5
-  m_SpotAngle: 92.72472
-  m_InnerSpotAngle: 0
+  m_Type: 0
+  m_Color: {r: 1, g: 0.92924535, b: 0.4764151, a: 1}
+  m_Intensity: 50
+  m_Range: 250
+  m_SpotAngle: 179
+  m_InnerSpotAngle: 86
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -221,8 +221,8 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_ColorTemperature: 11198
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -462,7 +462,7 @@ Transform:
   m_GameObject: {fileID: 8619265304282398278}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -477,7 +477,7 @@ Camera:
   m_GameObject: {fileID: 8619265304282398278}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

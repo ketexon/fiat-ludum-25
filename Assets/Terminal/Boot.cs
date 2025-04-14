@@ -22,6 +22,7 @@ public class Boot : TerminalProgram
         Terminal.OutputInterval = 0.01f;
 
         
+		AudioManager.Instance.Play("CompHum");
         Terminal.Println(bootText);
 
         Terminal.BufferPrintedEvent.AddListener(OnFinishPrinting);

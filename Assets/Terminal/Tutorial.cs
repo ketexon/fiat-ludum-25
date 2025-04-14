@@ -35,6 +35,7 @@ public class Tutorial : TerminalProgram
 	
 	void PrintNextText(){
 		var curText = tutorialText[curTutorialText];
+		Terminal.Clear();
 		curText = string.Format(curText, Terminal.State.Username,
 			Terminal.State.RoverName);
 		Terminal.Println(curText);

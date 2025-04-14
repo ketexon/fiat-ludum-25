@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -120.000435, y: -70.000046}
+  m_AnchoredPosition: {x: -120.00043, y: -70.000046}
   m_SizeDelta: {x: 120, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6189159748748947744
@@ -434,7 +434,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CommandName: power
-  CommandAliases: []
+  CommandAliases:
+  - power
+  - pwr
+  - pow
+  - power_ctrl
   CommandDescription: manages power
   CommandUsage: power
   canvasGroup: {fileID: 5050277562892580290}
