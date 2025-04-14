@@ -6349,9 +6349,57 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -49.300003
       objectReference: {fileID: 0}
+    - target: {fileID: 7131465249106748649, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: bootText
+      value: "Booting KetexOS v4.12.25...\nInitializing system... [OK]\nLoading kernel
+        modules... [OK]\nMounting virtual file systems... [OK]\nEstablishing secure
+        connection... [OK]\nStarting \n - power.service... [OK]\n - communication.service...
+        [OK]\nEntering user shell... done.\n\nWelcome to KetexOS Interactive Shell\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 7230892602740959882, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50.300003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'tutorialText.Array.data[0]'
+      value: "Welcome back, {0}. ReNova Laboratories is thrilled to have you join
+        us on our mission in securing humanity\u2019s future among the stars. \\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'tutorialText.Array.data[1]'
+      value: "Our researchers on Promethos have identified Resource X: a new compound
+        that will ensure humanity\u2019s escape from Earth and a new start among
+        the stars. One kilogram of Resource X is potent enough to transport the population
+        of Los Angeles to space. \\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'tutorialText.Array.data[2]'
+      value: We have planted a tracker on a likely vein of Resource X. Your task
+        is to locate, collect, and return high quantities of Resource X back to Earth.
+        \n
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'tutorialText.Array.data[3]'
+      value: "From this computer, you\u2019ll be able to access all controls and
+        debugging functions for Rover {1}. Use the terminal to navigate between applications.
+        Keep an eye on the rover\u2019s CAMERA and STATUS. \\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'tutorialText.Array.data[4]'
+      value: "Navigate the rover to the resource using the CAMERA. If you face any
+        issues, check the STATUS screen. Fix any errors by executing the corresponding
+        terminal commands. For a full list of commands, type \u2018help\u2019. For
+        help with a specific command, type \u2018help\u2019 [command]. \\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'tutorialText.Array.data[5]'
+      value: To prevent dust from entering the ship, you must temporarily close the
+        vents. Open the vents back up when oxygen runs low. \n
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'tutorialText.Array.data[6]'
+      value: "With Earth\u2019s future growing more uncertain, your work will directly
+        impact the survival of our species. Good luck. \\n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
