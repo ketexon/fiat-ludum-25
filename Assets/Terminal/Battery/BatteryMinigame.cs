@@ -374,7 +374,6 @@ public class BatteryMinigame : MinigameBase
             numSolved++;
             EndGame();
             Terminal.Println("Power is operational.");
-            rover.repairsNeeded = false;
             return;
         }
         else {

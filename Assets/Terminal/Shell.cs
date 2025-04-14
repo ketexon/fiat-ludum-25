@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Shell : TerminalProgram
 {
 	[SerializeField] private string osName = "KetexOS";
+	[SerializeField] private Ship ship;
+	[SerializeField] private Rover rover;
 	[SerializeField] DustStorm dustStorm;
 	
 	public override string Prompt => $"{Terminal.State.Username}@{osName}:~$ ";
@@ -17,6 +20,16 @@ public class Shell : TerminalProgram
 		if (args.Length == 0) return;
 		
 		var cmd = args[0];
+
+		if (cmd == "meow_debug")
+		{
+			Terminal.Println("Meow :3");
+			rover.Status.Comms = true;
+			rover.Status.Power = true;
+			rover.GetComponent<NavMeshAgent>().speed = 100;
+			ship.GetComponent<DustStorm>().enabled = false;
+			return;
+		}
 		
 		if(Aliases.TryGetValue(cmd, out var resolvedCmd)){
 			cmd = resolvedCmd;

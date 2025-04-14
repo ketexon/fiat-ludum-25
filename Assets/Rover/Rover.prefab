@@ -767,6 +767,10 @@ PrefabInstance:
       propertyPath: rover
       value: 
       objectReference: {fileID: 1562556805437829358}
+    - target: {fileID: 2232122052273127485, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: rover
+      value: 
+      objectReference: {fileID: 1562556805437829358}
     - target: {fileID: 2367885273909036184, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: rover
       value: 

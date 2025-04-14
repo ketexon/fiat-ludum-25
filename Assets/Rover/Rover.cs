@@ -64,7 +64,7 @@ public class Rover : MonoBehaviour
     float lightIntensity = 1.0f;
 
     int resourcePos => theResource.currentPosition;
-    public bool repairsNeeded = false;
+    public bool repairsNeeded => !Status.AllOk;
     List<bool> puzzles = new List<bool> { false, false, false, false, false, false, false, false };
     int currentPuzzle = 0;
 
@@ -88,6 +88,7 @@ public class Rover : MonoBehaviour
         );
 
         jumpscareSprite.SetActive(puzzles[4] && repairsNeeded);
+        AudioManager.Instance.Mute("JumpscareSound", !(puzzles[4] && repairsNeeded && InCamera));
 
         if (!Status.Power)
         {
@@ -131,7 +132,6 @@ public class Rover : MonoBehaviour
             if ((roverTransform.position.z > 230) & (puzzles[0] == false))
             {
                 // activate comms puzzle W
-                repairsNeeded = true;
                 Status.Comms = false;
                 puzzles[0] = true;
                 currentPuzzle++;
@@ -139,7 +139,6 @@ public class Rover : MonoBehaviour
             else if (roverTransform.position.z > 140 & (puzzles[1] == false))
             {
                 // activate power puzzle A
-                repairsNeeded = true;
                 Status.Power = false;
                 puzzles[1] = true;
                 currentPuzzle++;
@@ -148,7 +147,6 @@ public class Rover : MonoBehaviour
                      (puzzles[2] == false))
             {
                 // activate power puzzle B
-                repairsNeeded = true;
                 Status.Power = false;
                 puzzles[2] = true;
                 currentPuzzle++;
@@ -161,7 +159,6 @@ public class Rover : MonoBehaviour
             {
                 // activate comms puzzle Y
                 // then show jumpscare
-                repairsNeeded = true;
                 Status.Comms = false;
                 puzzles[3] = true;
                 currentPuzzle++;
@@ -169,7 +166,6 @@ public class Rover : MonoBehaviour
             else if (InCamera && roverTransform.position.x > 140 & (puzzles[4] == false))
             {
                 // activate power puzzle X
-                repairsNeeded = true;
                 Status.Power = false;
                 puzzles[4] = true;
                 currentPuzzle++;
@@ -178,7 +174,6 @@ public class Rover : MonoBehaviour
                      (puzzles[5] == false))
             {
                 // activate power puzzle C
-                repairsNeeded = true;
                 Status.Comms = false;
                 puzzles[5] = true;
                 currentPuzzle++;
@@ -192,7 +187,6 @@ public class Rover : MonoBehaviour
             if ((Vector3.Distance(theResource.transform.position, roverTransform.transform.position) <= 50) & (puzzles[6] == false))
             {
                 // activate comms puzzle Z
-                repairsNeeded = true;
                 Status.Comms = false;
                 puzzles[6] = true;
                 currentPuzzle++;
@@ -203,7 +197,6 @@ public class Rover : MonoBehaviour
             if ((Vector3.Distance(theResource.transform.position, roverTransform.transform.position) <= 50) & (puzzles[7] == false))
             {
                 // activate power puzzle D
-                repairsNeeded = true;
                 Status.Power = false;
                 puzzles[7] = true;
                 currentPuzzle++;
