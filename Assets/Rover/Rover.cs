@@ -5,28 +5,37 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 
 [System.Serializable]
-public class RoverStatus {
+public class RoverStatus
+{
     [SerializeField] bool _power = true;
     [SerializeField] bool _comms = true;
 
     public UnityEvent ChangedEvent = new();
 
-    public bool Power {
+    public bool Power
+    {
         get => _power;
-        set {
-            if(Power != value){
+        set
+        {
+            if (Power != value)
+            {
                 _power = value;
                 ChangedEvent.Invoke();
             }
         }
     }
-    public bool Comms {
+
+    public bool Comms
+    {
         get => _comms;
-        set {
-            if(Comms != value){
+        set
+        {
+            if (Comms != value)
+            {
                 _comms = value;
                 ChangedEvent.Invoke();
             }
@@ -47,17 +56,22 @@ public class Rover : MonoBehaviour
     [SerializeField] Light roverLight;
     [SerializeField] float brokenLightIntensity = 10;
     [SerializeField] private float lightInterpolateMult = 100f;
+    [SerializeField] private new Transform camera;
+    [SerializeField] private float cameraShakeAmount = 0.1f;
     private float normalLightIntensity;
     float lightIntensity = 1.0f;
-    
+
     int resourcePos => theResource.currentPosition;
     public bool repairsNeeded = false;
-    List<bool> puzzles = new List<bool> { false, false, false, false, false, false, false, false};
+    List<bool> puzzles = new List<bool> { false, false, false, false, false, false, false, false };
     int currentPuzzle = 0;
+
+    private Vector3 cameraLocalPos;
 
     private void Awake()
     {
         normalLightIntensity = roverLight.intensity;
+        cameraLocalPos = camera.localPosition;
     }
 
     void Update()
@@ -71,29 +85,43 @@ public class Rover : MonoBehaviour
             Time.deltaTime * lightInterpolateMult
         );
 
-        if(!Status.Power){
+        if (!Status.Power)
+        {
             return;
         }
 
         // Convert the input direction to movement and rotation
-        Vector3 moveDirection = transform.forward * MoveDir.y; // Forward/backward movement
-        float rotation = MoveDir.x; // Left/right rotation
+        var moveDirection = transform.forward * MoveDir.y; // Forward/backward movement
+        var rotation = MoveDir.x; // Left/right rotation
 
-        
+
         // Apply forwards-backwards movement
-        if (agent != null)
+        if (agent)
         {
-            agent.Move(moveDirection * Time.deltaTime * agent.speed);
+            if(moveDirection != Vector3.zero)
+            {
+                agent.Move(moveDirection * (Time.deltaTime * agent.speed));
+                ApplyScreenshake();
+            }
         }
 
         // Apply rotation
         transform.Rotate(transform.up, rotation * Time.deltaTime * rotationSpeed); // Adjust rotation speed as needed
 
-        breakRover();
+        BreakRover();
     }
 
-    void breakRover()
-    {   
+    void ApplyScreenshake()
+    {
+        camera.localPosition = cameraLocalPos + new Vector3(
+            Random.Range(-1, 1),
+            Random.Range(-1, 1),
+            Random.Range(-1, 1)
+        ) * cameraShakeAmount;
+    }
+
+    private void BreakRover()
+    {
         if ((resourcePos == 0) & (repairsNeeded == false)) // start
         {
             if ((roverTransform.position.z > 230) & (puzzles[0] == false))
@@ -102,7 +130,7 @@ public class Rover : MonoBehaviour
                 repairsNeeded = true;
                 Status.Comms = false;
                 puzzles[0] = true;
-                currentPuzzle ++;
+                currentPuzzle++;
             }
             else if (roverTransform.position.z > 140 & (puzzles[1] == false))
             {
@@ -110,15 +138,16 @@ public class Rover : MonoBehaviour
                 repairsNeeded = true;
                 Status.Power = false;
                 puzzles[1] = true;
-                currentPuzzle ++;
+                currentPuzzle++;
             }
-            else if (Vector3.Distance(theResource.transform.position, roverTransform.transform.position) <= 50 & (puzzles[2] == false))
+            else if (Vector3.Distance(theResource.transform.position, roverTransform.transform.position) <= 50 &
+                     (puzzles[2] == false))
             {
                 // activate power puzzle B
                 repairsNeeded = true;
                 Status.Power = false;
                 puzzles[2] = true;
-                currentPuzzle ++;
+                currentPuzzle++;
             }
         }
 
@@ -130,7 +159,7 @@ public class Rover : MonoBehaviour
                 repairsNeeded = true;
                 Status.Comms = false;
                 puzzles[3] = true;
-                currentPuzzle ++;
+                currentPuzzle++;
             }
             else if (roverTransform.position.x > 40 & (puzzles[4] == false))
             {
@@ -138,29 +167,30 @@ public class Rover : MonoBehaviour
                 repairsNeeded = true;
                 Status.Comms = false;
                 puzzles[4] = true;
-                currentPuzzle ++;
+                currentPuzzle++;
             }
-            else if (Vector3.Distance(theResource.transform.position, roverTransform.transform.position) <= 50 & (puzzles[5] == false))
+            else if (Vector3.Distance(theResource.transform.position, roverTransform.transform.position) <= 50 &
+                     (puzzles[5] == false))
             {
                 // activate power puzzle C
                 repairsNeeded = true;
                 Status.Power = false;
                 puzzles[5] = true;
-                currentPuzzle ++;
+                currentPuzzle++;
             }
         }
 
         else if ((resourcePos == 2) & (repairsNeeded == false)) // top right
         {
             // D — Z < 205
-        //     // Z — Z <130 ish
+            //     // Z — Z <130 ish
             if ((roverTransform.position.z < 130) & (puzzles[6] == false))
             {
                 // activate comms puzzle Z
                 repairsNeeded = true;
                 Status.Comms = false;
                 puzzles[6] = true;
-                currentPuzzle ++;
+                currentPuzzle++;
             }
             else if (roverTransform.position.z < 205 & (puzzles[7] == false))
             {
@@ -168,9 +198,8 @@ public class Rover : MonoBehaviour
                 repairsNeeded = true;
                 Status.Power = false;
                 puzzles[7] = true;
-                currentPuzzle ++;
+                currentPuzzle++;
             }
         }
-
     }
 }

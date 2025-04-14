@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 
 public class AudioManager : MonoBehaviour
 {
     // public Sound[] sounds;
 
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private float outsideClosedVolume = -20;
     public Sound[] sounds;
     private Dictionary<string, Sound> soundMap;
     private HashSet<string> clipNames = new HashSet<string>
@@ -74,5 +77,8 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
+    public void CloseOutside(bool close)
+    {
+        audioMixer.SetFloat("MyExposedParam 1", close ? outsideClosedVolume : 0);
+    }
 }

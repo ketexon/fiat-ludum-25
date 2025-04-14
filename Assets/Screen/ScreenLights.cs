@@ -49,6 +49,7 @@ public class ScreenLights : MonoBehaviour
         get => _error;
         set
         {
+            if (Error == value) return;
             _error = value;
             if (value)
             {
@@ -70,6 +71,9 @@ public class ScreenLights : MonoBehaviour
     {
         powerEmissiveColor = powerLED.material.GetColor(EmissionColor);
         errorEmissiveColor = errorLED.material.GetColor(EmissionColor);
+        
+        _error = true;
+        Error = false;
 
         rover.Status.ChangedEvent.AddListener(OnStatusChanged);
         ship.Status.ChangedEvent.AddListener(OnStatusChanged);
@@ -92,7 +96,6 @@ public class ScreenLights : MonoBehaviour
             AudioManager.Instance.Play("Alert");
             Error = true;
         }
-
     }
 
     IEnumerator BlinkCoro()

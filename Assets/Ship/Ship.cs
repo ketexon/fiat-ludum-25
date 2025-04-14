@@ -74,10 +74,12 @@ public class Ship : MonoBehaviour
             if (VentsOpen)
             {
                 AudioManager.Instance.Play("VentOpen");
+                AudioManager.Instance.CloseOutside(false);
             }
             else
             {
                 AudioManager.Instance.Play("VentClose");
+                AudioManager.Instance.CloseOutside(true);
             }
 
             

@@ -188,6 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c08dc6353bc4d8e82b266c0eb3f953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: b6f256f55fd90ea18ac00daeefe1014b, type: 2}
+  outsideClosedVolume: -15
   sounds:
   - name: Ambient
     source: {fileID: 8750284847090907880}
@@ -212,7 +214,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2d0a55ee840d7427a989b330757a34b8, type: 3}
   - name: Alert
     source: {fileID: 7690095351154961230}
-    clip: {fileID: 8300000, guid: 24f4a96c773d5431fb4314948bba7765, type: 3}
+    clip: {fileID: 8300000, guid: a61334368f6bb42738f0fe9b94d65b6d, type: 3}
   - name: RoverSound
     source: {fileID: 2080282606082202077}
     clip: {fileID: 8300000, guid: 7383fc44aa97a4ffe924a8f15d572f1a, type: 3}
@@ -533,7 +535,7 @@ AudioSource:
   m_GameObject: {fileID: 1038674255816685763}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6282852161228430313, guid: b6f256f55fd90ea18ac00daeefe1014b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 152aac392c8a54c5f9b95f3692615034, type: 3}
   m_Resource: {fileID: 8300000, guid: 152aac392c8a54c5f9b95f3692615034, type: 3}
   m_PlayOnAwake: 0
@@ -1437,10 +1439,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 24f4a96c773d5431fb4314948bba7765, type: 3}
-  m_Resource: {fileID: 8300000, guid: 24f4a96c773d5431fb4314948bba7765, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a61334368f6bb42738f0fe9b94d65b6d, type: 3}
+  m_Resource: {fileID: 8300000, guid: a61334368f6bb42738f0fe9b94d65b6d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.45
+  m_Volume: 0.14
   m_Pitch: 1.85
   Loop: 1
   Mute: 0
@@ -1958,7 +1960,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.401
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
