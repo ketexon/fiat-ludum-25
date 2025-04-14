@@ -13,6 +13,8 @@ public class DustStorm : MonoBehaviour
     [System.NonSerialized] public UnityEvent StartedEvent = new();
     [System.NonSerialized] public UnityEvent EndedEvent = new();
 
+    public bool Active { get; private set; } = false;
+    
     private Coroutine coro;
     
     private void OnEnable()
@@ -38,8 +40,10 @@ public class DustStorm : MonoBehaviour
             AudioManager.Instance.Play("WindWarning");
             WarningEvent.Invoke();
             yield return new WaitForSeconds(warningTime);
+            Active = true;
             StartedEvent.Invoke();
             yield return new WaitForSeconds(duration);
+            Active = false;
             EndedEvent.Invoke();
         }
     }

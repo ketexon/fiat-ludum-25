@@ -36,6 +36,9 @@ public class Terminal : MonoBehaviour
     public UnityEvent SubmitEvent = new();
 
     [System.NonSerialized]
+    public UnityEvent ResetEvent = new();
+    
+    [System.NonSerialized]
     public UnityEvent BufferPrintedEvent = new();
 
     private bool InputPromptVisible => TakingInput && string.IsNullOrEmpty(bufferQueue);
@@ -236,6 +239,14 @@ public class Terminal : MonoBehaviour
         Println(program.Prompt + TransformedInput, true);
         program.OnSubmit();
         ClearInput();
+    }
+    
+    public void OnInputReset(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            ResetEvent.Invoke();
+        }
     }
 
     public void OnInputBackspace(InputAction.CallbackContext ctx)

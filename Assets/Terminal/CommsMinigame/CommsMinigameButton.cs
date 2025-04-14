@@ -61,4 +61,10 @@ public class CommsMinigameButton : MonoBehaviour
         animator.SetBool(ActiveProperty, State != ButtonState.Inactive);
         animator.SetBool(RightProperty, State == ButtonState.Right);
     }
+
+    public void ResetState()
+    {
+        State = ButtonState.Inactive;
+        UpdateAnimator();
+    }
 }

@@ -26,6 +26,13 @@ public class CommsMinigame : MinigameBase
         base.Execute(args);
     }
 
+    protected override void OnReset()
+    {
+        base.OnReset();
+        
+        curLevel.ResetLevel();
+    }
+
     protected override void StartGame()
     {
         base.StartGame();
