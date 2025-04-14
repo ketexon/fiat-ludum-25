@@ -361,8 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c2958db0b47cba688a768d470ca652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oxygenDepletionRate: 0.01
-  oxygenIncreaseRate: 0.01
+  oxygenDepletionRate: 0.03333334
+  oxygenIncreaseRate: 0.03333334
   dustStorm: {fileID: 5719877285166843440}
   lowOxygenMat: {fileID: 2100000, guid: 14e77e0f58c48984daecf1dd407088fc, type: 2}
   lowOxygenEffectStart: 0.5
@@ -566,7 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4735710835408924088}
   - component: {fileID: 7008838308565235452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HumanVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}

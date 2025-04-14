@@ -3363,6 +3363,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0e5053e633dae4b06b1fc83d98ca6b76, type: 3}
   m_PrefabInstance: {fileID: 1246936607}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1289167766 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9159324492531600490, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
+  m_PrefabInstance: {fileID: 717912896613760591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1292396449
 GameObject:
   m_ObjectHideFlags: 0
@@ -5974,14 +5979,6 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 9a582f1aefeeb4b32a41b7de1e793180, type: 2}
-    - target: {fileID: 1769937299120786310, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
-      propertyPath: oxygenIncreaseRate
-      value: 0.03333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769937299120786310, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
-      propertyPath: oxygenDepletionRate
-      value: 0.03333334
-      objectReference: {fileID: 0}
     - target: {fileID: 2812955289586787719, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
       propertyPath: rover
       value: 
@@ -6001,6 +5998,14 @@ PrefabInstance:
     - target: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
       propertyPath: m_Color.r
       value: 0.7877358
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008838308565235452, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: m_IsGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915706199642531046, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: m_VolumeLayerMask.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6083,32 +6088,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849204620040864566, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
       propertyPath: sounds.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1849204620040864566, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
-      propertyPath: sounds.Array.data[0].clip
+      propertyPath: sounds.Array.data[10].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 45120288583dc498dbf64e231fc1dbfe, type: 3}
+      objectReference: {fileID: 8300000, guid: 43d1646e8ac854c25be601ce6d460833, type: 3}
     - target: {fileID: 1849204620040864566, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
-      propertyPath: sounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: db50eeda0cc474e118f848a41ec8aab6, type: 3}
+      propertyPath: sounds.Array.data[10].name
+      value: TheResource
+      objectReference: {fileID: 0}
     - target: {fileID: 1849204620040864566, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
-      propertyPath: sounds.Array.data[2].clip
+      propertyPath: sounds.Array.data[10].source
       value: 
-      objectReference: {fileID: 8300000, guid: b3c52a7741e764d4ab41bbf63afd4540, type: 3}
-    - target: {fileID: 1849204620040864566, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
-      propertyPath: sounds.Array.data[3].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 41a96b06a642742a4833cd4a5b121b61, type: 3}
-    - target: {fileID: 1849204620040864566, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
-      propertyPath: sounds.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e23523ab2e4f543a8b9c598e3eacf363, type: 3}
-    - target: {fileID: 1849204620040864566, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
-      propertyPath: sounds.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7794ae842c5da47679efdcfa8db9e0b9, type: 3}
+      objectReference: {fileID: 1289167766}
     - target: {fileID: 9159324492531600490, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
       propertyPath: Loop
       value: 0
