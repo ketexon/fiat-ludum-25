@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f826a682ba4672a5a46fd2fb759101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CommandName: comms_ctl
+  CommandName: comms
   CommandAliases: []
   CommandDescription: 
   CommandUsage: 
