@@ -71,6 +71,16 @@ public class Ship : MonoBehaviour
             if(_ventsOpen == value) return;
             _ventsOpen = value;
             OnVentsOpenChange();
+            if (VentsOpen)
+            {
+                AudioManager.Instance.Play("VentOpen");
+            }
+            else
+            {
+                AudioManager.Instance.Play("VentClose");
+            }
+
+            
         }
     }
 
