@@ -16,6 +16,7 @@ public class TheResource : MonoBehaviour
 
         if (!isMoving && distanceToRover < 50.0f)
         {
+            AudioManager.Instance.Play("TheResource");
             Debug.Log("TheResource is close to the Rover. Now it's moving.");
             if (currentPosition < places.Count - 1)
             {
