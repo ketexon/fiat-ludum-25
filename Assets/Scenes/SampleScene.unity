@@ -6616,6 +6616,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 456751773632202571}
     - target: {fileID: 5584815732359505429, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: CommandUsage
+      value: vents [open|close]e
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584815732359505429, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: CommandAliases.Array.size
       value: 1
       objectReference: {fileID: 0}
