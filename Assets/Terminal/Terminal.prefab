@@ -479,7 +479,8 @@ MonoBehaviour:
   CommandName: vents
   CommandAliases: []
   CommandDescription: control vents
-  CommandUsage: 'vents [open|close]'
+  CommandUsage: vents [open|close]\nMust CLOSE vents if wind is heard. Keep vents
+    OPEN when oxygen gets low.
   ship: {fileID: 0}
 --- !u!114 &1892500463990878164
 MonoBehaviour:
