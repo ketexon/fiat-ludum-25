@@ -249,7 +249,7 @@ MonoBehaviour:
   - name: TheResource
     source: {fileID: 9159324492531600490}
     clip: {fileID: 8300000, guid: 43d1646e8ac854c25be601ce6d460833, type: 3}
-    volume: 1
+    volume: 0.7
     originalVolume: 0
   - name: VentOpen
     source: {fileID: 8032299969462495336}
@@ -1988,7 +1988,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 43d1646e8ac854c25be601ce6d460833, type: 3}
   m_Resource: {fileID: 8300000, guid: 43d1646e8ac854c25be601ce6d460833, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.401
+  m_Volume: 0.288
   m_Pitch: 1
   Loop: 0
   Mute: 0
