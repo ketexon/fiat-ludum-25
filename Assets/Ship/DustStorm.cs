@@ -36,6 +36,7 @@ public class DustStorm : MonoBehaviour
         {
             yield return new WaitForSeconds(delay);
             WarningEvent.Invoke();
+            AudioManager.Instance.Play("WindWarning");
             yield return new WaitForSeconds(warningTime);
             StartedEvent.Invoke();
             yield return new WaitForSeconds(duration);
