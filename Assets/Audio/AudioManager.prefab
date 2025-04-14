@@ -211,7 +211,7 @@ MonoBehaviour:
   - name: CRTBuzz
     source: {fileID: 260900919409512730}
     clip: {fileID: 8300000, guid: 41a96b06a642742a4833cd4a5b121b61, type: 3}
-    volume: 0.135
+    volume: 0.1
     originalVolume: 0
   - name: Victory
     source: {fileID: 8838577433111266131}
