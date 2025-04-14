@@ -5216,9 +5216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b705fa5cc304c88b98960f77f48e97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 2
-  warningTime: 5
-  duration: 5
+  delay: 30
+  warningTime: 10
+  duration: 10
 --- !u!1 &3802508044366543905
 GameObject:
   m_ObjectHideFlags: 0
