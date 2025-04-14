@@ -108,6 +108,10 @@ MonoBehaviour:
     ChangedEvent:
       m_PersistentCalls:
         m_Calls: []
+  roverTransform: {fileID: 0}
+  theResource: {fileID: 0}
+  roverLight: {fileID: 0}
+  repairsNeeded: 0
 --- !u!195 &2180995685800997851
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -682,6 +686,10 @@ PrefabInstance:
       propertyPath: rover
       value: 
       objectReference: {fileID: 4446770753646975401}
+    - target: {fileID: 3447110002224733989, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: Rover
+      value: 
+      objectReference: {fileID: 1562556805437829358}
     - target: {fileID: 6462996713365971045, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

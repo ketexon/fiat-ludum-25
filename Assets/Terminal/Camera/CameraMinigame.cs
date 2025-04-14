@@ -11,13 +11,35 @@ public class CameraMinigame : MinigameBase
 		rover.MoveDir = dir;
 	}
 
+	public override void Execute(string[] args)
+	{
+		if (!rover.Status.Comms)
+		{
+			Terminal.Println("Could not connect to rover.");
+			return;
+		}
+		
+		base.Execute(args);
+	}
+
 	protected override void StartGame()
     {
         base.StartGame();
 		AudioManager.Instance.Play("CRTBuzz");
 		AudioManager.Instance.Mute("KeyClick", true);
-        // enable on start
+
+		rover.Status.ChangedEvent.AddListener(OnStatusChanged);
+		// enable on start
     }
+
+	void OnStatusChanged()
+	{
+		if (!rover.Status.Comms)
+		{
+			Terminal.Println("Lost connection to rover.");
+			EndGame();
+		}
+	}
 
 
 	protected override void EndGame()
@@ -25,6 +47,7 @@ public class CameraMinigame : MinigameBase
 		AudioManager.Instance.Stop("CRTBuzz");
 		AudioManager.Instance.Mute("KeyClick", false);
 		rover.MoveDir = Vector2.zero;
+		rover.Status.ChangedEvent.RemoveListener(OnStatusChanged);
 		base.EndGame();
 	}
 }

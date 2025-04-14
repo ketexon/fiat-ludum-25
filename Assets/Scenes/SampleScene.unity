@@ -6138,6 +6138,10 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 194778450238816173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: playerInput
       value: 
@@ -6338,9 +6342,21 @@ PrefabInstance:
       propertyPath: m_CameraType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5962466376683146486, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -47.699997
+      objectReference: {fileID: 0}
     - target: {fileID: 6233083692333410705, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368966147958997409, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -49.300003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230892602740959882, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50.300003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
