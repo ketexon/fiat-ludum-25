@@ -184,7 +184,7 @@ public class Rover : MonoBehaviour
         {
             // D — Z < 205
             //     // Z — Z <130 ish
-            if ((roverTransform.position.z < 130) & (puzzles[6] == false))
+            if ((Vector3.Distance(theResource.transform.position, roverTransform.transform.position) <= 50) & (puzzles[6] == false))
             {
                 // activate comms puzzle Z
                 repairsNeeded = true;
@@ -192,7 +192,10 @@ public class Rover : MonoBehaviour
                 puzzles[6] = true;
                 currentPuzzle++;
             }
-            else if (roverTransform.position.z < 205 & (puzzles[7] == false))
+        }
+        else if ((resourcePos == 3) & repairsNeeded == false) // middle right
+        {
+            if ((Vector3.Distance(theResource.transform.position, roverTransform.transform.position) <= 50) & (puzzles[7] == false))
             {
                 // activate power puzzle D
                 repairsNeeded = true;
