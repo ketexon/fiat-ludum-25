@@ -365,8 +365,7 @@ MonoBehaviour:
   CommandName: camera
   CommandAliases:
   - cam
-  CommandDescription: view camera, navigate the rover using [w] to move forward and
-    [a][d] to turn left/right
+  CommandDescription: 'navigate using [w], turn using [a][d]'
   CommandUsage: camera
   canvasGroup: {fileID: 8764616717768159930}
   controlsText: {fileID: 3597023810650571296}

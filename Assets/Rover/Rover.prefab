@@ -674,34 +674,10 @@ PrefabInstance:
       propertyPath: rover
       value: 
       objectReference: {fileID: 1562556805437829358}
-    - target: {fileID: 4189727008341705, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: CommandAliases.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4189727008341705, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: 'CommandAliases.Array.data[0]'
-      value: power
-      objectReference: {fileID: 0}
-    - target: {fileID: 4189727008341705, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: 'CommandAliases.Array.data[1]'
-      value: pwr
-      objectReference: {fileID: 0}
-    - target: {fileID: 4189727008341705, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: 'CommandAliases.Array.data[2]'
-      value: pow
-      objectReference: {fileID: 0}
-    - target: {fileID: 4189727008341705, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: 'CommandAliases.Array.data[3]'
-      value: power_ctrl
-      objectReference: {fileID: 0}
     - target: {fileID: 969972103691440586, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: rover
       value: 
       objectReference: {fileID: 1562556805437829358}
-    - target: {fileID: 969972103691440586, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: CommandDescription
-      value: 'navigate using [w], turn using [a][d]'
-      objectReference: {fileID: 0}
     - target: {fileID: 2050636550612871656, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: rover
       value: 
@@ -710,14 +686,6 @@ PrefabInstance:
       propertyPath: rover
       value: 
       objectReference: {fileID: 4446770753646975401}
-    - target: {fileID: 2878252850256559264, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: startProgram
-      value: 
-      objectReference: {fileID: 7131465249106748649}
-    - target: {fileID: 5622356905992237297, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: prebootTime
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6462996713365971045, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -798,30 +766,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6484673054315524371, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: 'tutorialText.Array.data[1]'
-      value: "Our researchers on Promethos have identified Resource X: a new compound
-        that will ensure humanity\u2019s escape from Earth and a new start among
-        the stars. One kilogram of Resource X is potent enough to transport the population
-        of Los Angeles to space."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484673054315524371, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: 'tutorialText.Array.data[4]'
-      value: "Navigate the rover to the resource using the CAMERA. If you face any
-        issues, check the STATUS screen. Fix any errors by executing the corresponding
-        terminal commands. For a full list of commands, type \u2018help\u2019. For
-        help with a specific command, type \u2018help\u2019 [command]."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484673054315524371, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: 'tutorialText.Array.data[5]'
-      value: To prevent dust from entering the ship, you must temporarily close the
-        vents. Open the vents back up when oxygen runs low.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6484673054315524371, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: 'tutorialText.Array.data[6]'
-      value: "With Earth\u2019s future growing more uncertain, your work will directly
-        impact the survival of our species. Good luck."
-      objectReference: {fileID: 0}
     - target: {fileID: 8826719460849974665, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -835,17 +779,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
---- !u!114 &7131465249106748649 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5622356905992237297, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-  m_PrefabInstance: {fileID: 3242189367949480984}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d434276be84b0bbf46a78bc347dc0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8453185349468779645 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6462996713365971045, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
