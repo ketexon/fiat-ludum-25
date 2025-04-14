@@ -7,6 +7,7 @@ public class ScreenLights : MonoBehaviour
     private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
 
     [SerializeField] private Rover rover;
+    [SerializeField] private Ship ship;
     [SerializeField] private Light powerLight;
     [SerializeField] private Light errorLight;
     [SerializeField] private Renderer powerLED;
@@ -65,12 +66,13 @@ public class ScreenLights : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         powerEmissiveColor = powerLED.material.GetColor(EmissionColor);
         errorEmissiveColor = errorLED.material.GetColor(EmissionColor);
 
         rover.Status.ChangedEvent.AddListener(OnStatusChanged);
+        ship.Status.ChangedEvent.AddListener(OnStatusChanged);
 
         Power = false;
         UpdateError();
@@ -81,7 +83,8 @@ public class ScreenLights : MonoBehaviour
     }
 
     void UpdateError(){
-        if(rover.Status.AllOk){
+        bool allOk = rover.Status.AllOk && ship.Status.AllOk;
+        if(allOk){
             Error = false;
             AudioManager.Instance.Stop("Alert");
         }
