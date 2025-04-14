@@ -48,8 +48,8 @@ public class StatusMinigame : MinigameBase
         text.text =
     $@"STATUS: {Terminal.State.RoverName}
 
-    Distance from resource: {resourceDistance}m
-    Direction of resource: {resourceDir}
+    Distance from Resource X: {resourceDistance}m
+    Direction of Resource X: {resourceDir}
 
     Distance from ship: {shipDistance}m
     Direction of ship: {shipDir}
