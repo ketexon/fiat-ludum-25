@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 6176035925593228641}
   - component: {fileID: 859524192482181622}
   - component: {fileID: 7025565239594742285}
+  - component: {fileID: 1892500463990878164}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -480,6 +481,27 @@ MonoBehaviour:
   CommandDescription: controls the vents
   CommandUsage: 'vents [open|close]'
   ship: {fileID: 0}
+--- !u!114 &1892500463990878164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 882032e596877c0ae9f835f3931bca2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CommandName: scan
+  CommandAliases: []
+  CommandDescription: scans environment
+  CommandUsage: 'scan [objectname]'
+  rover: {fileID: 0}
+  scanRadius: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1001 &554769113018723139
 PrefabInstance:
   m_ObjectHideFlags: 0
