@@ -83,7 +83,7 @@ public class ScreenLights : MonoBehaviour
     }
 
     void UpdateError(){
-        bool allOk = rover.Status.AllOk && ship.Status.AllOk;
+        bool allOk = rover.Status.AllOk;
         if(allOk){
             Error = false;
             AudioManager.Instance.Stop("Alert");

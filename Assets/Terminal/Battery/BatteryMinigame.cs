@@ -92,8 +92,6 @@ public class BatteryMinigame : MinigameBase
     {
         base.StartGame();
 
-        AudioManager.Instance.Mute("Alert", true);
-
         if (init)
         {
             return;
@@ -364,7 +362,6 @@ public class BatteryMinigame : MinigameBase
             rover.Status.Power = true;
             init = false;
             numSolved++;
-            AudioManager.Instance.Mute("Alert", false);
             EndGame();
             Terminal.Println("Power is operational.");
             rover.repairsNeeded = false;
