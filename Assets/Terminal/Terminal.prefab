@@ -430,7 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CommandName: help
   CommandAliases: []
-  CommandDescription: lists all commands and usage
+  CommandDescription: lists commands and usage
   CommandUsage: 'help [command]'
 --- !u!114 &6176035925593228641
 MonoBehaviour:
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CommandName: clear
   CommandAliases: []
-  CommandDescription: clears the terminal buffer
+  CommandDescription: clears terminal buffer
   CommandUsage: clear
 --- !u!114 &859524192482181622
 MonoBehaviour:
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CommandName: about
   CommandAliases: []
-  CommandDescription: 'prints company description and player mission '
+  CommandDescription: company description and player mission
   CommandUsage: about
 --- !u!114 &7025565239594742285
 MonoBehaviour:
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CommandName: vents
   CommandAliases: []
-  CommandDescription: controls the vents
+  CommandDescription: control vents
   CommandUsage: 'vents [open|close]'
   ship: {fileID: 0}
 --- !u!114 &1892500463990878164

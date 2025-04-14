@@ -440,7 +440,8 @@ MonoBehaviour:
   - pow
   - power_ctrl
   CommandDescription: manages power
-  CommandUsage: power
+  CommandUsage: power\nConnect the power endpoints. Your wired path must link all
+    nodes of the batteries. Batteries light up when successfully linked.
   canvasGroup: {fileID: 5050277562892580290}
   controlsText: {fileID: 1035597847059236184}
   controls: 'Q: Exit - WASD: Move - ENTER: Submit'
