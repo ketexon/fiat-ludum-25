@@ -354,7 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063d9a7c506129ed0a437790ecc54a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMessage: 
+  startMessage: KetexOS Interactive Terminal \nCopyright (C) ReNova Laboratories.
+    \nAll rights reserved.\n
 --- !u!114 &6484673054315524371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,8 +373,8 @@ MonoBehaviour:
     mission in securing humanity\u2019s future among the stars. \\n"
   - "Our researchers on Promethos have identified Resource X: a new compound that
     will ensure humanity\u2019s escape from Earth and a new start among the stars.
-    One kilogram of Resource X is potent enough to transport the population of Los
-    Angeles to space.  \\n"
+    \\n\\nOne kilogram of Resource X is potent enough to transport the population
+    of Los Angeles to space.  \\n"
   - We have planted a tracker on a likely vein of Resource X. Your task is to locate,
     collect, and return high quantities of Resource X back to Earth.\n
   - "From this computer, you\u2019ll be able to access all controls and debugging
@@ -381,12 +382,12 @@ MonoBehaviour:
     an eye on the rover\u2019s CAMERA and STATUS. \\n"
   - "Navigate the rover to the resource using the CAMERA. If you face any issues,
     check the STATUS screen. Fix any errors by executing the corresponding terminal
-    commands. For a full list of commands, type \u2018help\u2019. For help with a
-    specific command, type \u2018help\u2019 [command].\\n"
+    commands. \\n\\nFor a full list of commands, type \u2018help\u2019. For help
+    with a specific command, type \u2018help\u2019 [command].\\n"
   - To prevent dust from entering the ship, you must temporarily close the vents.
     Open the vents back up when oxygen runs low. \n
   - "With Earth\u2019s future growing more uncertain, your work will directly impact
-    the survival of our species. Good luck. \\n"
+    the survival of our species. \\n\\nGood luck. \\n"
   outputInterval: 0
   osText: '<size=50%> ____      _   _                   _          _
 
