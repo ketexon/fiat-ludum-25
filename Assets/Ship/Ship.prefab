@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rover: {fileID: 0}
+  ship: {fileID: 1769937299120786310}
   powerLight: {fileID: 9178718953017850582}
   errorLight: {fileID: 3461485709804540379}
   powerLED: {fileID: 6400855749769076464}
@@ -374,7 +375,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2978600646138269991}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b705fa5cc304c88b98960f77f48e97a, type: 3}
   m_Name: 

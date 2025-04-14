@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   osName: KetexOS
+  dustStorm: {fileID: 0}
 --- !u!114 &5235927302352857906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +477,7 @@ MonoBehaviour:
   CommandName: vents
   CommandAliases: []
   CommandDescription: controls the vents
-  CommandUsage: 'vents [on|off]'
+  CommandUsage: 'vents [open|close]'
   ship: {fileID: 0}
 --- !u!1001 &554769113018723139
 PrefabInstance:

@@ -28,7 +28,7 @@ public class ShipStatus
         {
             if (value == _oxygenWarning) return;
             _oxygenWarning = value;
-            ChangeEvent.Invoke();
+            ChangedEvent.Invoke();
         }
     }
 
@@ -40,11 +40,11 @@ public class ShipStatus
         {
             if (value == _dustStorm) return;
             _dustStorm = value;
-            ChangeEvent.Invoke();
+            ChangedEvent.Invoke();
         }
     }
     
-    public UnityEvent ChangeEvent = new();
+    public UnityEvent ChangedEvent = new();
     
     public bool AllOk => Oxygen >= 0.3f && !DustStorm;
 }
@@ -76,6 +76,7 @@ public class Ship : MonoBehaviour
 
     private void Start()
     {
+        dustStorm.WarningEvent.AddListener(OnDustStormWarning);
         dustStorm.StartedEvent.AddListener(OnDustStormStarted);
         volume.profile.TryGet(out vignette);
     }

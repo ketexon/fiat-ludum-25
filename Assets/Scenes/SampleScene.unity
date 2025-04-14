@@ -5967,6 +5967,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1769937299120786310, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: oxygenIncreaseRate
+      value: 0.03333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769937299120786310, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: oxygenDepletionRate
+      value: 0.03333334
+      objectReference: {fileID: 0}
     - target: {fileID: 2812955289586787719, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
       propertyPath: rover
       value: 
@@ -5974,10 +5982,6 @@ PrefabInstance:
     - target: {fileID: 2978600646138269991, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
       propertyPath: m_Name
       value: Ship
-      objectReference: {fileID: 0}
-    - target: {fileID: 5719877285166843440, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
       propertyPath: m_Color.b
@@ -6176,6 +6180,10 @@ PrefabInstance:
       propertyPath: ScreenLights
       value: 
       objectReference: {fileID: 294733974}
+    - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: startProgram
+      value: 
+      objectReference: {fileID: 3597107364064689891}
     - target: {fileID: 1028855382099350848, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Name
       value: Rover
@@ -6422,6 +6430,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 306cdcf6bff6daa4cb046493e2242713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3597107364064689891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3604151988350293029, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+  m_PrefabInstance: {fileID: 3597107364064689881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f522cd42f948afa679c58cb93420ebff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &3974917282003981284
