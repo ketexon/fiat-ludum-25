@@ -14,7 +14,7 @@ public class Shell : TerminalProgram
 	public override bool InputHidden => false;
 	public IDictionary<string, ShellCommand> Commands = new SortedDictionary<string, ShellCommand>();
 	public IDictionary<string, string> Aliases = new Dictionary<string, string>();
-
+	
 	public void TryExecuteCommand(string[] args)
 	{
 		if (args.Length == 0) return;
@@ -45,6 +45,8 @@ public class Shell : TerminalProgram
 			Terminal.Println("Type `help` to see a list of available commands.", true);
 		}
 	}
+
+	
 
 	public void TryExecuteCommand(string argsString)
 	{

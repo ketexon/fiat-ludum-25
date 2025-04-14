@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Rover: {fileID: 0}
-  moveSpeed: 5
+  moveSpeed: 30
   deathCanvas: {fileID: 0}
   currentPosition: 0
 --- !u!1001 &5401477264353748507

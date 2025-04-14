@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -53,6 +55,9 @@ public class Terminal : MonoBehaviour
     private bool cursorVisible = true;
 
     private Coroutine blinkCoroutine = null;
+    
+	List<string> inputHistory = new();
+	int historyIndex = -1;
 
     private string InputWithCursor {
         get {
@@ -181,6 +186,8 @@ public class Terminal : MonoBehaviour
                 InsertChar(ch);
                 return;
         }
+
+        program.OnChar(ch);
     }
 
     private void InsertChar(char ch)
@@ -188,6 +195,7 @@ public class Terminal : MonoBehaviour
         Input = Input[..cursorPos] + ch + Input[cursorPos..];
         cursorPos++;
         Blink();
+        historyIndex = -1;
     }
 
     private void DeleteChar()
@@ -196,6 +204,7 @@ public class Terminal : MonoBehaviour
         Input = Input[..(cursorPos - 1)] + Input[cursorPos..];
         cursorPos--;
         Blink();
+        historyIndex = -1;
     }
 
     public void OnUINavigate(InputAction.CallbackContext ctx)
@@ -231,6 +240,21 @@ public class Terminal : MonoBehaviour
         }
     }
 
+    public void OnInputCtrlC(InputAction.CallbackContext ctx)
+    {
+        if(!ctx.performed) return;
+        if (Pause.Paused) return;
+        if(!InputPromptVisible) return;
+        
+        Println(program.Prompt + TransformedInput + "^C", true);
+        ClearInput();
+    }
+
+    public void OnInputCtrlL(InputAction.CallbackContext ctx)
+    {
+        Clear();
+    }
+
     public void OnInputSubmit(InputAction.CallbackContext ctx)
     {
         if (Pause.Paused) return;
@@ -242,8 +266,13 @@ public class Terminal : MonoBehaviour
 
         if(!InputPromptVisible) return;
         Println(program.Prompt + TransformedInput, true);
+        if (!program.InputHidden && !string.IsNullOrEmpty(Input))
+        {
+            inputHistory.Add(Input);
+        }
         program.OnSubmit();
         ClearInput();
+        historyIndex = -1;
     }
     
     public void OnInputReset(InputAction.CallbackContext ctx)
@@ -295,12 +324,49 @@ public class Terminal : MonoBehaviour
 
     void ChangeHistory(int delta)
     {
+        Debug.Log(delta);
+        
+        delta *= -1;
+        if (inputHistory.Count == 0) return;
 
+        if (historyIndex == -1)
+        {
+            if (delta == -1)
+            {
+                historyIndex = inputHistory.Count - 1;
+                Input = inputHistory[historyIndex];
+                GoToEnd();
+            }
+        }
+        else
+        {
+            historyIndex += delta;
+            if (historyIndex >= inputHistory.Count)
+            {
+                historyIndex = -1;
+                Input = "";
+                GoToEnd();
+            }
+            else if(historyIndex < 0)
+            {
+                historyIndex = 0;
+            }
+            else
+            {
+                Input = inputHistory[historyIndex];
+                GoToEnd();
+            }
+        }
     }
 
     private void ClearInput(){
         Input = "";
         cursorPos = 0;
+    }
+
+    private void GoToEnd()
+    {
+        cursorPos = Input.Length;
     }
 
     private void Render()
@@ -337,6 +403,7 @@ public class Terminal : MonoBehaviour
         {
             StopCoroutine(blinkCoroutine);
         }
+
         blinkCoroutine = StartCoroutine(Coro());
     }
 }
