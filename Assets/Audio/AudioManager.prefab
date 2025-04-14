@@ -244,12 +244,12 @@ MonoBehaviour:
   - name: WindWarning
     source: {fileID: 219746417627488113}
     clip: {fileID: 8300000, guid: 152aac392c8a54c5f9b95f3692615034, type: 3}
-    volume: 1
+    volume: 0.5
     originalVolume: 0
   - name: TheResource
     source: {fileID: 9159324492531600490}
     clip: {fileID: 8300000, guid: 43d1646e8ac854c25be601ce6d460833, type: 3}
-    volume: 1
+    volume: 0.4
     originalVolume: 0
   - name: VentOpen
     source: {fileID: 8032299969462495336}
