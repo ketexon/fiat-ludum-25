@@ -212,7 +212,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2d0a55ee840d7427a989b330757a34b8, type: 3}
   - name: Alert
     source: {fileID: 7690095351154961230}
-    clip: {fileID: 8300000, guid: 7794ae842c5da47679efdcfa8db9e0b9, type: 3}
+    clip: {fileID: 8300000, guid: 24f4a96c773d5431fb4314948bba7765, type: 3}
   - name: RoverSound
     source: {fileID: 2080282606082202077}
     clip: {fileID: 8300000, guid: 7383fc44aa97a4ffe924a8f15d572f1a, type: 3}
@@ -221,7 +221,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ad7d101f49fca4cffbac0d7bb5c8dab1, type: 3}
   - name: WindWarning
     source: {fileID: 219746417627488113}
-    clip: {fileID: 8300000, guid: 961af1035a44547e9bc7f71988b8b11d, type: 3}
+    clip: {fileID: 8300000, guid: 152aac392c8a54c5f9b95f3692615034, type: 3}
   - name: WindWarning
     source: {fileID: 219746417627488113}
     clip: {fileID: 8300000, guid: 961af1035a44547e9bc7f71988b8b11d, type: 3}
@@ -534,8 +534,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 961af1035a44547e9bc7f71988b8b11d, type: 3}
-  m_Resource: {fileID: 8300000, guid: 961af1035a44547e9bc7f71988b8b11d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 152aac392c8a54c5f9b95f3692615034, type: 3}
+  m_Resource: {fileID: 8300000, guid: 152aac392c8a54c5f9b95f3692615034, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.249
   m_Pitch: 1
@@ -1437,8 +1437,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7794ae842c5da47679efdcfa8db9e0b9, type: 3}
-  m_Resource: {fileID: 8300000, guid: 7794ae842c5da47679efdcfa8db9e0b9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 24f4a96c773d5431fb4314948bba7765, type: 3}
+  m_Resource: {fileID: 8300000, guid: 24f4a96c773d5431fb4314948bba7765, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.45
   m_Pitch: 1.85
