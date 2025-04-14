@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class CameraCommand : ShellCommand
 {
-    public override void Execute(string[] args)
+    protected override void OnExecute(string[] args)
     {
-        base.Execute(args);
-        
         Terminal.Println("Camera.", true);
     }
 }

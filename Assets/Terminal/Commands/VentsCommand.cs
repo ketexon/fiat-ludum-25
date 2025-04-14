@@ -3,10 +3,8 @@ using UnityEngine;
 public class VentsCommand : ShellCommand
 {
     [SerializeField] private Ship ship;
-    public override void Execute(string[] args)
+    protected override void OnExecute(string[] args)
     {
-        base.Execute(args);
-        
         if (args.Length == 1)
         {
             Terminal.Println($"Vents: {(ship.VentsOpen ? "OPEN" : "CLOSED")}");

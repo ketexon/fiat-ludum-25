@@ -11,7 +11,7 @@ public class CameraMinigame : MinigameBase
 		rover.MoveDir = dir;
 	}
 
-	public override void Execute(string[] args)
+	protected override void OnExecute(string[] args)
 	{
 		if (!rover.Status.Comms)
 		{
@@ -19,7 +19,7 @@ public class CameraMinigame : MinigameBase
 			return;
 		}
 		
-		base.Execute(args);
+		base.OnExecute(args);
 	}
 
 	protected override void StartGame()

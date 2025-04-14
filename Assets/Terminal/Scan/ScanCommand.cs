@@ -5,7 +5,7 @@ public class ScanCommand : ShellCommand
     [SerializeField] private Rover rover;
     [SerializeField] private float scanRadius;
     [SerializeField] private LayerMask layerMask;
-    public override void Execute(string[] args)
+    protected override void OnExecute(string[] args)
     {
         if (args.Length > 2)
         {
