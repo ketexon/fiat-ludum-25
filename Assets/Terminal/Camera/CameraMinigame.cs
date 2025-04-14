@@ -28,6 +28,7 @@ public class CameraMinigame : MinigameBase
 		AudioManager.Instance.Play("CRTBuzz");
 		AudioManager.Instance.Mute("KeyClick", true);
 
+		rover.InCamera = true;
 		rover.Status.ChangedEvent.AddListener(OnStatusChanged);
 		// enable on start
     }
@@ -47,6 +48,7 @@ public class CameraMinigame : MinigameBase
 		AudioManager.Instance.Stop("CRTBuzz");
 		AudioManager.Instance.Mute("KeyClick", false);
 		rover.MoveDir = Vector2.zero;
+		rover.InCamera = false;
 		rover.Status.ChangedEvent.RemoveListener(OnStatusChanged);
 		base.EndGame();
 	}

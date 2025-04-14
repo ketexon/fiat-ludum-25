@@ -58,6 +58,8 @@ public class Rover : MonoBehaviour
     [SerializeField] private float lightInterpolateMult = 100f;
     [SerializeField] private new Transform camera;
     [SerializeField] private float cameraShakeAmount = 0.1f;
+    [SerializeField] private GameObject jumpscareSprite;
+    [System.NonSerialized] public bool InCamera = false;
     private float normalLightIntensity;
     float lightIntensity = 1.0f;
 
@@ -84,6 +86,8 @@ public class Rover : MonoBehaviour
             !Status.Power ? brokenLightIntensity : normalLightIntensity,
             Time.deltaTime * lightInterpolateMult
         );
+
+        jumpscareSprite.SetActive(puzzles[4] && repairsNeeded);
 
         if (!Status.Power)
         {
@@ -156,16 +160,17 @@ public class Rover : MonoBehaviour
             if ((roverTransform.position.x > 140) & (puzzles[3] == false))
             {
                 // activate comms puzzle Y
+                // then show jumpscare
                 repairsNeeded = true;
                 Status.Comms = false;
                 puzzles[3] = true;
                 currentPuzzle++;
             }
-            else if (roverTransform.position.x > 40 & (puzzles[4] == false))
+            else if (InCamera && roverTransform.position.x > 140 & (puzzles[4] == false))
             {
-                // activate comms puzzle X
+                // activate power puzzle X
                 repairsNeeded = true;
-                Status.Comms = false;
+                Status.Power = false;
                 puzzles[4] = true;
                 currentPuzzle++;
             }
@@ -174,7 +179,7 @@ public class Rover : MonoBehaviour
             {
                 // activate power puzzle C
                 repairsNeeded = true;
-                Status.Power = false;
+                Status.Comms = false;
                 puzzles[5] = true;
                 currentPuzzle++;
             }

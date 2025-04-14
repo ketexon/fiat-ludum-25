@@ -86,6 +86,7 @@ Transform:
   - {fileID: 4664383990529149308}
   - {fileID: 2984265524529551217}
   - {fileID: 9107860966330026719}
+  - {fileID: 1234184153636806211}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1562556805437829358
@@ -115,6 +116,7 @@ MonoBehaviour:
   lightInterpolateMult: 200
   camera: {fileID: 1400921296179525033}
   cameraShakeAmount: 0.1
+  jumpscareSprite: {fileID: 8952664685444155111}
   repairsNeeded: 0
 --- !u!195 &2180995685800997851
 NavMeshAgent:
@@ -666,6 +668,77 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1001 &482675985444551597
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4446770753646975401}
+    m_Modifications:
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838387881062956717, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 20937316246804449}
+    - target: {fileID: 8830589484402605386, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+      propertyPath: m_Name
+      value: ResourceXSpriteJumpscare
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+--- !u!4 &1234184153636806211 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1698557116622087662, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+  m_PrefabInstance: {fileID: 482675985444551597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8952664685444155111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8830589484402605386, guid: 99b4b0f78c4862092a5861d4c9db8d1a, type: 3}
+  m_PrefabInstance: {fileID: 482675985444551597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3242189367949480984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -686,6 +759,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1892500463990878164, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: rover
+      value: 
+      objectReference: {fileID: 1562556805437829358}
     - target: {fileID: 2050636550612871656, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: rover
       value: 
