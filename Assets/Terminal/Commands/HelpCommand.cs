@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class HelpCommand : ShellCommand
 {
-    public override void Execute(string[] args)
+    protected override void OnExecute(string[] args)
     {
-        base.Execute(args);
-        
         if (args.Length == 1)
         {
             PrintCommands();
@@ -30,6 +28,12 @@ public class HelpCommand : ShellCommand
 
     void PrintCommand(string name)
     {
+        // check if its an alias
+        if (Shell.Aliases.TryGetValue(name, out var alias))
+        {
+            Terminal.Println($"Alias: {name} -> {alias}", true);
+            name = alias;
+        }
         if (!Shell.Commands.TryGetValue(name, out var cmd))
         {
             Terminal.Println($"Command not found: {name}", true);

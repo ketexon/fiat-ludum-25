@@ -16,14 +16,18 @@ public class CommsMinigame : MinigameBase
 
     private Coroutine statusCoroutine = null;
 
-    public override void Execute(string[] args)
+    protected override void OnExecute(string[] args)
     {
+        if (args.Length != 1)
+        {
+            base.OnExecute(args);
+            return;
+        }
         if (Rover.Status.Comms)
         {
             Terminal.Println("Comms are operational.");
             return;
         }
-        base.Execute(args);
     }
 
     protected override void OnReset()

@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class StatusCommand : ShellCommand
 {
-    public override void Execute(string[] args)
+    protected override void OnExecute(string[] args)
     {
-        base.Execute(args);
-        
         Terminal.Println("Status.", true);
     }
 }

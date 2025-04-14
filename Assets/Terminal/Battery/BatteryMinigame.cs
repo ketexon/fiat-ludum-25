@@ -80,13 +80,19 @@ public class BatteryMinigame : MinigameBase
 
     int iter = 0;
 
-    public override void Execute(string[] args)
+    protected override void OnExecute(string[] args)
     {
+        if (args.Length != 1)
+        {
+            base.OnExecute(args);
+            return;
+        }
+
         if(rover.Status.Power == true){
             Terminal.Println($"Power is operational.");
             return;
         }
-        base.Execute(args);
+        base.OnExecute(args);
     }
     protected override void StartGame()
     {
@@ -359,27 +365,24 @@ public class BatteryMinigame : MinigameBase
         grid.MoveTo(curPosSymbol.transform as RectTransform, curPos);
         UpdateBatteryRequirements();
         UpdateText();
+        
+        if(bateriesSolved && curPos == game.EndPos)
+        {
+            Win();
+        }
     }
 
-	protected override void OnSubmit()
-	{
-		base.OnSubmit();
-
-        if (bateriesSolved && curPos == game.EndPos)
-        {
-            AudioManager.Instance.Dim("Alert", false);
-            AudioManager.Instance.Play("Victory");
-            rover.Status.Power = true;
-            init = false;
-            numSolved++;
-            EndGame();
-            Terminal.Println("Power is operational.");
-            return;
-        }
-        else {
-            AudioManager.Instance.Play("Error");
-        }
-	}
+    void Win()
+    {
+        AudioManager.Instance.Dim("Alert", false);
+        AudioManager.Instance.Play("Victory");
+        rover.Status.Power = true;
+        init = false;
+        numSolved++;
+        EndGame();
+        Terminal.Println("Power is operational.");
+        return;
+    }
 
     void UpdateBatteryRequirements()
     {
@@ -417,6 +420,6 @@ public class BatteryMinigame : MinigameBase
     }
 
     void UpdateText(){
-        movesText.text = $"{game.MaxMoves - curMoves}m left";
+        movesText.text = $"{game.MaxMoves - curMoves} MOVES";
     }
 }
