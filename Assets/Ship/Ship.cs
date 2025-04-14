@@ -68,6 +68,7 @@ public class Ship : MonoBehaviour
         {
             if(_ventsOpen == value) return;
             _ventsOpen = value;
+            OnVentsOpenChange();
         }
     }
 
@@ -113,6 +114,18 @@ public class Ship : MonoBehaviour
         float t = 1 - Status.Oxygen / (1 - lowOxygenEffectStart);
         lowOxygenMat.SetFloat(Strength, Mathf.Lerp(0, 1, t));
         vignette.intensity.value = Mathf.Lerp(0, maxVignette, t);
+    }
+    
+    private void OnVentsOpenChange()
+    {
+        if (!VentsOpen)
+        {
+            AudioManager.Instance.Play("LowOxygen");
+        }
+        else
+        {
+            AudioManager.Instance.Stop("LowOxygen");
+        }
     }
 
     private void OnDestroy()
