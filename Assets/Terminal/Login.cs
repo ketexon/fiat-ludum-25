@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 
 public class Login : TerminalProgram {
+
+	[SerializeField, Multiline] string startMessage;
 	enum State {
 		Username,
 		Password,
@@ -13,7 +15,7 @@ public class Login : TerminalProgram {
 	public override string Prompt => state switch {
 		State.Username => "Username: ",
 		State.Password => "Password: ",
-		State.Security => "Please answer the following security question. What is the rover's name? ",
+		State.Security => "",
 		_ => "",
 	};
 
@@ -38,10 +40,12 @@ public class Login : TerminalProgram {
 
 			case State.Password:
 				state = State.Security;
+				Terminal.Println("\nPlease answer the following security question. What is the rover's name?");
 				break;
 
 			case State.Security:
 				Terminal.State.RoverName = Terminal.Input;
+				Terminal.Println("");
 				state = State.Starting;
 				StartCoroutine(StartShellCoro());
 				break;
@@ -59,5 +63,11 @@ public class Login : TerminalProgram {
 
 		Terminal.Clear();
 		Terminal.SwitchProgram<Tutorial>();
+	}
+
+	void OnEnable()
+	{
+		Terminal.Clear();
+		Terminal.Println(startMessage);
 	}
 }

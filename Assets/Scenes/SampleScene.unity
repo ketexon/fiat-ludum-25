@@ -6137,6 +6137,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223558408295562501, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: startMessage
+      value: Welcome to KetexOS Interactive Shell \n
+      objectReference: {fileID: 0}
     - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: playerInput
       value: 
@@ -6354,7 +6358,7 @@ PrefabInstance:
       value: "Booting KetexOS v4.12.25...\nInitializing system... [OK]\nLoading kernel
         modules... [OK]\nMounting virtual file systems... [OK]\nEstablishing secure
         connection... [OK]\nStarting \n - power.service... [OK]\n - communication.service...
-        [OK]\nEntering user shell... done.\n\nWelcome to KetexOS Interactive Shell\n"
+        [OK]\nEntering user shell... done.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7230892602740959882, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_AnchoredPosition.y
