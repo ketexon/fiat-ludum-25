@@ -5,6 +5,8 @@ using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
+using UnityEngine.SceneManagement;
+
 
 public class ShipStatus
 {
@@ -111,6 +113,7 @@ public class Ship : MonoBehaviour
         {
             yield return new WaitForSeconds(2.0f);
             deathCanvas.gameObject.SetActive(true);
+            SceneManager.LoadScene("Death");
         }
         StartCoroutine(WaitAndShowDeath());
     }

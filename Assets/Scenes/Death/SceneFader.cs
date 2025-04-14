@@ -7,7 +7,7 @@ public class SceneFader : MonoBehaviour
 {
     public Image fadeImage;
     public float fadeDuration = 1f;
-    public string sceneToLoad = "NextScene";
+    public string sceneToLoad = "SampleScene";
 
     private bool isFading = false;
 
