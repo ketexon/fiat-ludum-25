@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shell : TerminalProgram
 {
 	[SerializeField] private string osName = "KetexOS";
+	[SerializeField] DustStorm dustStorm;
 	
 	public override string Prompt => $"{Terminal.State.Username}@{osName}:~$ ";
 	public override bool InputHidden => false;
@@ -40,7 +41,7 @@ public class Shell : TerminalProgram
 	
 	void OnEnable()
 	{
-
+		dustStorm.enabled = true;
 		Terminal.TakingInput = true;
 		
 		var commandList = GetComponentsInChildren<ShellCommand>();

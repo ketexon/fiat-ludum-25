@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 5235927302352857906}
   - component: {fileID: 6176035925593228641}
   - component: {fileID: 859524192482181622}
+  - component: {fileID: 7025565239594742285}
   m_Layer: 5
   m_Name: Terminal
   m_TagString: Untagged
@@ -353,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063d9a7c506129ed0a437790ecc54a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startMessage: 
 --- !u!114 &6484673054315524371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +461,23 @@ MonoBehaviour:
   CommandAliases: []
   CommandDescription: 'prints company description and player mission '
   CommandUsage: about
+--- !u!114 &7025565239594742285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862298711366359289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ca1c5495e544f99ac6ee7b222d44c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CommandName: vents
+  CommandAliases: []
+  CommandDescription: controls the vents
+  CommandUsage: 'vents [on|off]'
+  ship: {fileID: 0}
 --- !u!1001 &554769113018723139
 PrefabInstance:
   m_ObjectHideFlags: 0

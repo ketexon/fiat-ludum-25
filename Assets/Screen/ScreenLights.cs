@@ -65,7 +65,7 @@ public class ScreenLights : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         powerEmissiveColor = powerLED.material.GetColor(EmissionColor);
         errorEmissiveColor = errorLED.material.GetColor(EmissionColor);

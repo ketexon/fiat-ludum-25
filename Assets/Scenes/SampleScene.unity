@@ -875,6 +875,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 913396830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &345695046 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+  m_PrefabInstance: {fileID: 3597107364064689881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &420949597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5962,10 +5967,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1672556847571343053, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 3e76350a5bb1e07feaee134741f9a6bc, type: 2}
     - target: {fileID: 2812955289586787719, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
       propertyPath: rover
       value: 
@@ -5973,6 +5974,10 @@ PrefabInstance:
     - target: {fileID: 2978600646138269991, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
       propertyPath: m_Name
       value: Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719877285166843440, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
       propertyPath: m_Color.b
@@ -5991,6 +5996,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+--- !u!114 &456751773632202571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1769937299120786310, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+  m_PrefabInstance: {fileID: 456751773632202570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c2958db0b47cba688a768d470ca652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &456751773632202572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5719877285166843440, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
+  m_PrefabInstance: {fileID: 456751773632202570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b705fa5cc304c88b98960f77f48e97a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &717912896613760591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6141,10 +6168,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223558408295562501, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: startMessage
-      value: Welcome to KetexOS Interactive Shell \n
-      objectReference: {fileID: 0}
     - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: playerInput
       value: 
@@ -6164,7 +6187,7 @@ PrefabInstance:
     - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: roverLight
       value: 
-      objectReference: {fileID: 1923185145}
+      objectReference: {fileID: 345695046}
     - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: theResource
       value: 
@@ -6225,6 +6248,10 @@ PrefabInstance:
       propertyPath: resourceStats
       value: 
       objectReference: {fileID: 4341722487598300895}
+    - target: {fileID: 3604151988350293029, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: dustStorm
+      value: 
+      objectReference: {fileID: 456751773632202572}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Type
       value: 0
@@ -6345,6 +6372,10 @@ PrefabInstance:
       propertyPath: m_CameraType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5584815732359505429, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: ship
+      value: 
+      objectReference: {fileID: 456751773632202571}
     - target: {fileID: 5962466376683146486, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -47.699997
@@ -6357,57 +6388,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -49.300003
       objectReference: {fileID: 0}
-    - target: {fileID: 7131465249106748649, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: bootText
-      value: "Booting KetexOS v4.12.25...\nInitializing system... [OK]\nLoading kernel
-        modules... [OK]\nMounting virtual file systems... [OK]\nEstablishing secure
-        connection... [OK]\nStarting \n - power.service... [OK]\n - communication.service...
-        [OK]\nEntering user shell... done.\n"
-      objectReference: {fileID: 0}
     - target: {fileID: 7230892602740959882, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50.300003
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[0]'
-      value: "Welcome back, {0}. ReNova Laboratories is thrilled to have you join
-        us on our mission in securing humanity\u2019s future among the stars. \\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[1]'
-      value: "Our researchers on Promethos have identified Resource X: a new compound
-        that will ensure humanity\u2019s escape from Earth and a new start among
-        the stars. One kilogram of Resource X is potent enough to transport the population
-        of Los Angeles to space. \\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[2]'
-      value: We have planted a tracker on a likely vein of Resource X. Your task
-        is to locate, collect, and return high quantities of Resource X back to Earth.
-        \n
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[3]'
-      value: "From this computer, you\u2019ll be able to access all controls and
-        debugging functions for Rover {1}. Use the terminal to navigate between applications.
-        Keep an eye on the rover\u2019s CAMERA and STATUS. \\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[4]'
-      value: "Navigate the rover to the resource using the CAMERA. If you face any
-        issues, check the STATUS screen. Fix any errors by executing the corresponding
-        terminal commands. For a full list of commands, type \u2018help\u2019. For
-        help with a specific command, type \u2018help\u2019 [command]. \\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[5]'
-      value: To prevent dust from entering the ship, you must temporarily close the
-        vents. Open the vents back up when oxygen runs low. \n
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[6]'
-      value: "With Earth\u2019s future growing more uncertain, your work will directly
-        impact the survival of our species. Good luck. \\n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
