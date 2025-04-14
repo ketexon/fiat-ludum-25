@@ -420,6 +420,6 @@ public class BatteryMinigame : MinigameBase
     }
 
     void UpdateText(){
-        movesText.text = $"{game.MaxMoves - curMoves}m left";
+        movesText.text = $"{game.MaxMoves - curMoves} MOVES";
     }
 }
