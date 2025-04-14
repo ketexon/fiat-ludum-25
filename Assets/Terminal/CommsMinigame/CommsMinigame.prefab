@@ -1019,7 +1019,7 @@ MonoBehaviour:
     before completion.
   canvasGroup: {fileID: 207047863190434875}
   controlsText: {fileID: 5374635494477808801}
-  controls: 'Q: Exit, WASD: Navigate, ENTER: Toggle'
+  controls: 'Q: Exit, WASD: Navigate\nENTER: Toggle, R: Reset'
   levels:
   - {fileID: 3827123507058804308}
   - {fileID: 6864096197108100667}

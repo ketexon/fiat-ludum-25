@@ -114,7 +114,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 'A B C
+
+    DEF asadf asdf'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 598095018fb1d574bbfa91e25117023a, type: 2}
   m_sharedMaterial: {fileID: 8651865422201726021, guid: 598095018fb1d574bbfa91e25117023a, type: 2}
@@ -141,8 +143,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
