@@ -11,8 +11,21 @@ public class ShellCommand : MonoBehaviour
     [System.NonSerialized] public Terminal Terminal;
     [System.NonSerialized] public Shell Shell;
     
-    public virtual void Execute(string[] args)
+    public void Execute(string[] args)
     {
+        if(args.Length == 2 && args[1] == "help")
+        {
+            PrintHelp();
+        }
+        else
+        {
+            OnExecute(args);
+        }
+    }
+
+    protected virtual void OnExecute(string[] args)
+    {
+        
     }
 
     protected void PrintHelp()

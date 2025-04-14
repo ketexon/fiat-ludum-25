@@ -16,11 +16,18 @@ public class MinigameBase : ShellCommand
         canvasGroup.interactable = false;
         controlsText.text = controls;
     }
-
-    public override void Execute(string[] args)
+    
+    protected override void OnExecute(string[] args)
     {
-        base.Execute(args);
+        base.OnExecute(args);
 
+        if (args.Length != 1)
+        {
+            Terminal.Println("Too many arguments");
+            PrintHelp();
+            return;
+        }
+        
         Terminal.TakingInput = false;
         Terminal.Visible = false;
         canvasGroup.alpha = 1;
