@@ -367,7 +367,6 @@ public class BatteryMinigame : MinigameBase
             rover.repairsNeeded = false;
             return;
         }
-
         else {
             AudioManager.Instance.Play("Error");
         }

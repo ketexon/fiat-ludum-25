@@ -50,6 +50,8 @@ public class CommsMinigameButton : MonoBehaviour
                 State = ButtonState.Inactive;
                 break;
         }
+        
+        AudioManager.Instance.Play("Blip");
 
         UpdateAnimator();
     }

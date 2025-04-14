@@ -223,6 +223,7 @@ public class CommsMinigameLevel : MonoBehaviour
     {
         ResetGame();
         Comms.ShowStatus("LOST SIGNAL");
+        AudioManager.Instance.Play("Error");
     }
 
     void OnSignalReachedRover()
@@ -233,5 +234,6 @@ public class CommsMinigameLevel : MonoBehaviour
         {
             Comms.CompleteLevel();
         });
+        AudioManager.Instance.Play("Victory");
     }
 }
