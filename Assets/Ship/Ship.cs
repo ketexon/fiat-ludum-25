@@ -59,6 +59,8 @@ public class Ship : MonoBehaviour
     [SerializeField] private float lowOxygenEffectStart = 0.5f;
     [SerializeField] private Volume volume;
     [SerializeField] private float maxVignette = 0.5f;
+    [SerializeField] private ParticleSystem dustStormParticles;
+    [SerializeField] private Canvas deathCanvas;
 
     private bool _ventsOpen = true;
     public bool VentsOpen
@@ -86,8 +88,19 @@ public class Ship : MonoBehaviour
     {
         if (VentsOpen)
         {
-            // die
+            Die();
         }
+    }
+
+    void Die()
+    {
+        dustStormParticles.Play();
+        IEnumerator WaitAndShowDeath()
+        {
+            yield return new WaitForSeconds(2.0f);
+            deathCanvas.gameObject.SetActive(true);
+        }
+        StartCoroutine(WaitAndShowDeath());
     }
     
     private void OnDustStormWarning()
