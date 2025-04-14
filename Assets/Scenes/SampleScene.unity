@@ -6474,7 +6474,7 @@ PrefabInstance:
     - target: {fileID: 796866357200251064, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: startProgram
       value: 
-      objectReference: {fileID: 3597107364064689899}
+      objectReference: {fileID: 3597107364064689891}
     - target: {fileID: 1028855382099350848, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_Name
       value: Rover
@@ -6667,6 +6667,14 @@ PrefabInstance:
       propertyPath: ship
       value: 
       objectReference: {fileID: 456751773632202571}
+    - target: {fileID: 5584815732359505429, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: CommandAliases.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584815732359505429, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'CommandAliases.Array.data[0]'
+      value: vent
+      objectReference: {fileID: 0}
     - target: {fileID: 5962466376683146486, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -47.699997
@@ -6679,28 +6687,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -49.300003
       objectReference: {fileID: 0}
+    - target: {fileID: 7230338086665699114, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: CommandAliases.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7230338086665699114, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: 'CommandAliases.Array.data[0]'
+      value: h
+      objectReference: {fileID: 0}
     - target: {fileID: 7230892602740959882, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50.300003
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[1]'
-      value: "Our researchers on Promethos have identified Resource X: a new compound
-        that will ensure humanity\u2019s escape from Earth and a new start among
-        the stars. \\n\\nOne kilogram of Resource X is potent enough to transport
-        the population of Los Angeles to space.  \\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[4]'
-      value: "Navigate the rover to the resource using the CAMERA. If you face any
-        issues, check the STATUS screen. Fix any errors by executing the corresponding
-        terminal commands. \\n\\nFor a full list of commands, type \u2018help\u2019.
-        For help with a specific command, type \u2018help\u2019 [command].\\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8430947154032026891, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: 'tutorialText.Array.data[6]'
-      value: "With Earth\u2019s future growing more uncertain, your work will directly
-        impact the survival of our species. \\n\\nGood luck. \\n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6734,15 +6731,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306cdcf6bff6daa4cb046493e2242713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3597107364064689899 stripped
+--- !u!114 &3597107364064689891 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7131465249106748649, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3604151988350293029, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
   m_PrefabInstance: {fileID: 3597107364064689881}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d434276be84b0bbf46a78bc347dc0e, type: 3}
+  m_Script: {fileID: 11500000, guid: f522cd42f948afa679c58cb93420ebff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &3974917282003981284
