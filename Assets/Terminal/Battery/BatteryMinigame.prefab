@@ -481,10 +481,30 @@ MonoBehaviour:
     - Position: {x: 5, y: 2}
       Type: 6
     MaxMoves: 23
+  - StartPos: {x: 0, y: 6}
+    EndPos: {x: 7, y: 6}
+    Obstacles:
+    - Position: {x: 0, y: 1}
+      Type: 7
+    - Position: {x: 4, y: 1}
+      Type: 2
+    - Position: {x: 3, y: 3}
+      Type: 0
+    - Position: {x: 5, y: 3}
+      Type: 5
+    MaxMoves: 29
   - StartPos: {x: 0, y: 0}
-    EndPos: {x: 0, y: 0}
-    Obstacles: []
-    MaxMoves: 0
+    EndPos: {x: 7, y: 0}
+    Obstacles:
+    - Position: {x: 0, y: 2}
+      Type: 5
+    - Position: {x: 4, y: 1}
+      Type: 1
+    - Position: {x: 6, y: 3}
+      Type: 0
+    - Position: {x: 2, y: 4}
+      Type: 2
+    MaxMoves: 29
   movesText: {fileID: 1031040022090762606}
 --- !u!225 &5050277562892580290 stripped
 CanvasGroup:
