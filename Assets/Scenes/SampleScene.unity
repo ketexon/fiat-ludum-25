@@ -6782,6 +6782,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 219746417627488113, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 152aac392c8a54c5f9b95f3692615034, type: 3}
+    - target: {fileID: 219746417627488113, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 152aac392c8a54c5f9b95f3692615034, type: 3}
     - target: {fileID: 219956168062868285, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -6826,6 +6834,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1849204620040864566, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
+      propertyPath: sounds.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a61334368f6bb42738f0fe9b94d65b6d, type: 3}
+    - target: {fileID: 7690095351154961230, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a61334368f6bb42738f0fe9b94d65b6d, type: 3}
+    - target: {fileID: 7690095351154961230, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a61334368f6bb42738f0fe9b94d65b6d, type: 3}
     - target: {fileID: 9159324492531600490, guid: 8a02bc503907945edaa04ba0cbc1369e, type: 3}
       propertyPath: Loop
       value: 0
