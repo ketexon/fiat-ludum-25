@@ -169,17 +169,24 @@ public class CommsMinigameLevel : MonoBehaviour
                 if (curPosIndex != lastPosIndex)
                 {
                     lastPosIndex = curPosIndex;
+                    bool blink = false;
                     if (ButtonCoords.TryGetValue(curPos, out var button))
                     {
                         if (button.State != CommsMinigameButton.ButtonState.Inactive)
                         {
-                            lastBlinkTime = Time.time;
+                            blink = true;
                         }
                     }
                     if (PacketCoords.TryGetValue(curPos, out var packet))
                     {
                         packet.color = Color.white;
+                        blink = true;
+                    }
+
+                    if (blink)
+                    {
                         lastBlinkTime = Time.time;
+                        AudioManager.Instance.Play("Beep");
                     }
                 }
                 
