@@ -67,6 +67,8 @@ public class Rover : MonoBehaviour
     public bool repairsNeeded => !Status.AllOk;
     List<bool> puzzles = new List<bool> { false, false, false, false, false, false, false, false };
     int currentPuzzle = 0;
+    bool powerTut = false;
+    bool commsTut = false;
 
     private Vector3 cameraLocalPos;
 
@@ -127,6 +129,19 @@ public class Rover : MonoBehaviour
 
     private void BreakRover()
     {
+        // tutorials
+        if ((powerTut == false) && (repairsNeeded == false))
+        {
+            powerTut = true;
+            Status.Power = false;
+        }
+        if ((commsTut == false) && (repairsNeeded == false))
+        {
+            commsTut = true;
+            Status.Comms = false;
+        }
+
+        // actual breakdowns
         if ((resourcePos == 0) & (repairsNeeded == false)) // start
         {
             if ((roverTransform.position.z > 230) & (puzzles[0] == false))
