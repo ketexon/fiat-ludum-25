@@ -25,6 +25,16 @@ public class TheResource : MonoBehaviour
             }
         }
 
+        if (!isMoving && distanceToRover < 40.0f)
+        {
+            // AudioManager.Instance.Play("TheResource");
+            if (currentPosition < places.Count - 1)
+            {
+                currentPosition++;
+                isMoving = true;
+            }
+        }
+
         if (isMoving)
         {
             MoveTowardsNextPlace();
