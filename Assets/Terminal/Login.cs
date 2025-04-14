@@ -15,7 +15,7 @@ public class Login : TerminalProgram {
 	public override string Prompt => state switch {
 		State.Username => "Username: ",
 		State.Password => "Password: ",
-		State.Security => "",
+		State.Security => "\nPlease answer the following security question. What is the rover's name?\n> ",
 		_ => "",
 	};
 
@@ -40,7 +40,6 @@ public class Login : TerminalProgram {
 
 			case State.Password:
 				state = State.Security;
-				Terminal.Println("\nPlease answer the following security question. What is the rover's name?");
 				break;
 
 			case State.Security:

@@ -26,11 +26,17 @@ public class Boot : TerminalProgram
         Terminal.Println(bootText);
 
         Terminal.BufferPrintedEvent.AddListener(OnFinishPrinting);
-        void OnFinishPrinting()
-        {
+
+        IEnumerator PostBoot(){
+            yield return new WaitForSeconds(1.5f);
             Terminal.OutputInterval = oldOutputInterval;
             Terminal.BufferPrintedEvent.RemoveListener(OnFinishPrinting);
             Terminal.SwitchProgram<Login>();
+        }
+
+        void OnFinishPrinting()
+        {
+            StartCoroutine(PostBoot());
         }
     }
 }
