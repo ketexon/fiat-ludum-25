@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+
 
 public class TheResource : MonoBehaviour
 {
@@ -28,10 +30,9 @@ public class TheResource : MonoBehaviour
         if (!isMoving && distanceToRover < 40.0f)
         {
             // AudioManager.Instance.Play("TheResource");
-            if (currentPosition < places.Count - 1)
+            if (currentPosition == places.Count - 1)
             {
-                currentPosition++;
-                isMoving = true;
+                
             }
         }
 
