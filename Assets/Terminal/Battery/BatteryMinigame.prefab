@@ -460,6 +460,14 @@ MonoBehaviour:
   hlinePrefab: {fileID: 2332746819284800950, guid: 3b6c3effa74f2d864a8ba293ed10990b, type: 3}
   unconnectedBatteryOpacity: 0.1
   games:
+  - StartPos: {x: 0, y: 3}
+    EndPos: {x: 7, y: 3}
+    Obstacles:
+    - Position: {x: 3, y: 1}
+      Type: 0
+    - Position: {x: 3, y: 4}
+      Type: 1
+    MaxMoves: 17
   - StartPos: {x: 0, y: 0}
     EndPos: {x: 7, y: 6}
     Obstacles:
