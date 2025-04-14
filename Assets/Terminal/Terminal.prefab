@@ -374,19 +374,19 @@ MonoBehaviour:
     mission in securing humanity\u2019s future among the stars. \\n"
   - "Our researchers on Promethos have identified Resource X: a new compound that
     will ensure humanity\u2019s escape from Earth and a new start among the stars.
-    \\n\\nOne kilogram of Resource X is potent enough to transport the population
-    of Los Angeles to space.  \\n"
+    \\n\\nOne kilogram of Resource X has been found to be potent enough to transport
+    the population of Los Angeles to space.  \\n"
   - We have planted a tracker on a likely vein of Resource X. Your task is to locate,
     collect, and return high quantities of Resource X back to Earth.\n
   - "From this computer, you\u2019ll be able to access all controls and debugging
     functions for Rover {1}. Use the terminal to navigate between applications. Keep
     an eye on the rover\u2019s CAMERA and STATUS. \\n"
   - "Navigate the rover to the resource using the CAMERA. If you face any issues,
-    check the STATUS screen. Fix any errors by executing the corresponding terminal
-    commands. \\n\\nFor a full list of commands, type \u2018help\u2019. For help
-    with a specific command, type \u2018help\u2019 [command].\\n"
-  - To prevent dust from entering the ship, you must temporarily close the vents.
-    Open the vents back up when oxygen runs low. \n
+    check the STATUS screen. Fix errors by executing the proper terminal commands.
+    \\n\\nFor a full list of commands, type \u2018help\u2019. For help with a specific
+    command, type \u2018help [command]\u2019.\\n"
+  - Dust storms are a threat. If you hear wind, CLOSE the vents. Otherwise, keep
+    the vents OPEN. \n
   - "With Earth\u2019s future growing more uncertain, your work will directly impact
     the survival of our species. \\n\\nGood luck. \\n"
   outputInterval: 0
