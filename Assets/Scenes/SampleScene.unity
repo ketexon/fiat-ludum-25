@@ -875,11 +875,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 913396830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &345695046 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-  m_PrefabInstance: {fileID: 3597107364064689881}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &420949597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6161,7 +6156,7 @@ PrefabInstance:
     - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: roverLight
       value: 
-      objectReference: {fileID: 345695046}
+      objectReference: {fileID: 1923185145}
     - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: theResource
       value: 

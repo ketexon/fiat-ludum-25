@@ -50,6 +50,7 @@ public class CommsMinigame : MinigameBase
     {
         numSolved++;
         Rover.Status.Comms = true;
+        Rover.repairsNeeded = false;
     }
     
     public void CompleteLevel()
