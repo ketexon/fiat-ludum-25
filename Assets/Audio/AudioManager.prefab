@@ -229,7 +229,7 @@ MonoBehaviour:
   - name: Alert
     source: {fileID: 7690095351154961230}
     clip: {fileID: 8300000, guid: a61334368f6bb42738f0fe9b94d65b6d, type: 3}
-    volume: 0.9
+    volume: 0.4
     originalVolume: 0
   - name: RoverSound
     source: {fileID: 2080282606082202077}
