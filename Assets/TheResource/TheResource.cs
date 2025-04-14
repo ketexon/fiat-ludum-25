@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 
 public class TheResource : MonoBehaviour
@@ -8,6 +9,8 @@ public class TheResource : MonoBehaviour
     [SerializeField] List<Transform> places = new();
     [SerializeField] Transform Rover;
     [SerializeField] float moveSpeed = 12.0f; // Speed at which the resource moves
+    [SerializeField] private Canvas deathCanvas;
+
 
     public int currentPosition = 0;
     bool isMoving = false;
@@ -27,12 +30,19 @@ public class TheResource : MonoBehaviour
             }
         }
 
-        if (!isMoving && distanceToRover < 40.0f)
+        if (currentPosition == places.Count - 1)
         {
-            // AudioManager.Instance.Play("TheResource");
-            if (currentPosition == places.Count - 1)
+            if (!isMoving && distanceToRover < 50.0f)
             {
-                
+            // AudioManager.Instance.Play("TheResource");
+                IEnumerator WaitAndShowEnd()
+                {
+                    AudioManager.Instance.Play("Crash");
+                    yield return new WaitForSeconds(2.0f);
+                    deathCanvas.gameObject.SetActive(true);
+                    SceneManager.LoadScene("Ending");
+                }
+                StartCoroutine(WaitAndShowEnd());
             }
         }
 
