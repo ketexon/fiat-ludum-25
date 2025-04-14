@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 
 [System.Serializable]
@@ -43,26 +45,32 @@ public class Rover : MonoBehaviour
     [SerializeField] TheResource theResource;
     [System.NonSerialized] public Vector2 MoveDir = Vector2.zero;
     [SerializeField] Light roverLight;
+    [SerializeField] float brokenLightIntensity = 10;
+    [SerializeField] private float lightInterpolateMult = 100f;
+    private float normalLightIntensity;
+    float lightIntensity = 1.0f;
+    
     int resourcePos => theResource.currentPosition;
     public bool repairsNeeded = false;
     List<bool> puzzles = new List<bool> { false, false, false, false, false, false, false, false};
     int currentPuzzle = 0;
-    float lightIntensity = 1.0f;
+
+    private void Awake()
+    {
+        normalLightIntensity = roverLight.intensity;
+    }
+
     void Update()
     {
         // adjusting light with no power
-        if (!Status.Power)
-        {
-            // Gradually reduce intensity toward 0.1
-            lightIntensity = Mathf.MoveTowards(lightIntensity, 0.1f, Time.deltaTime * 2f); 
-        }
-        else
-        {
-            // Gradually restore to full brightness (1.0)
-            lightIntensity = Mathf.MoveTowards(lightIntensity, 1.0f, Time.deltaTime * 2f);
-        }
-        roverLight.intensity = lightIntensity;
-        
+        // Gradually restore to full brightness (1.0)
+        // Gradually reduce intensity toward 0.1
+        roverLight.intensity = Mathf.MoveTowards(
+            roverLight.intensity,
+            !Status.Power ? brokenLightIntensity : normalLightIntensity,
+            Time.deltaTime * lightInterpolateMult
+        );
+
         if(!Status.Power){
             return;
         }

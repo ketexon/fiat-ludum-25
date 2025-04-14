@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.023
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.051886797, g: 0.015174434, b: 0.015174434, a: 1}
+  m_AmbientSkyColor: {r: 0.125, g: 0.125, b: 0.125, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.96
@@ -5502,7 +5502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1923185144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6472,20 +6472,12 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: roverLight
-      value: 
-      objectReference: {fileID: 1923185145}
-    - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: theResource
       value: 
       objectReference: {fileID: 4341722487598300895}
     - target: {fileID: 1562556805437829358, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: roverTransform
-      value: 
-      objectReference: {fileID: 3597107364064689883}
-    - target: {fileID: 2180995685800997851, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_Speed
-      value: 7
+      propertyPath: lightInterpolateMult
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3238211851651443409, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: CommandAliases.Array.size
@@ -6557,11 +6549,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_SpotAngle
-      value: 179
+      value: 48.399155
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 86
+      value: 27.65665
       objectReference: {fileID: 0}
     - target: {fileID: 4157022401154185173, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_ColorTemperature
@@ -6610,42 +6606,6 @@ PrefabInstance:
     - target: {fileID: 4446770753646975401, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664383990529149308, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664383990529149308, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664383990529149308, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664383990529149308, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9865949
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664383990529149308, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.10282487
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664383990529149308, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.12603568
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664383990529149308, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.013135686
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664383990529149308, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 11.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664383990529149308, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -14.56
       objectReference: {fileID: 0}
     - target: {fileID: 5335012224619074447, guid: cfcc1222d88c97243890b5216d2597e5, type: 3}
       propertyPath: m_CameraType

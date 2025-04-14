@@ -110,7 +110,9 @@ MonoBehaviour:
         m_Calls: []
   roverTransform: {fileID: 4446770753646975401}
   theResource: {fileID: 0}
-  roverLight: {fileID: 4157022401154185173}
+  roverLight: {fileID: 1324997564673710692}
+  brokenLightIntensity: 10
+  lightInterpolateMult: 200
   repairsNeeded: 0
 --- !u!195 &2180995685800997851
 NavMeshAgent:
@@ -143,8 +145,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4664383990529149308}
-  - component: {fileID: 4157022401154185173}
-  - component: {fileID: 4739065948321674162}
+  - component: {fileID: 1324997564673710692}
+  - component: {fileID: 7073844795811446399}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -160,14 +162,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2408128900896114204}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10282487, y: -0.12603568, z: 0.013135686, w: 0.9865949}
-  m_LocalPosition: {x: -0.53, y: 2.01, z: 1.33}
+  m_LocalRotation: {x: 0.1237055, y: -0, z: -0, w: 0.992319}
+  m_LocalPosition: {x: 0, y: 5.94, z: 0.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4446770753646975401}
-  m_LocalEulerAnglesHint: {x: 11.9, y: -14.56, z: 0}
---- !u!108 &4157022401154185173
+  m_LocalEulerAnglesHint: {x: 14.212, y: 0, z: 0}
+--- !u!108 &1324997564673710692
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,11 +179,11 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
-  m_Color: {r: 1, g: 0.92924535, b: 0.4764151, a: 1}
-  m_Intensity: 50
-  m_Range: 250
-  m_SpotAngle: 179
-  m_InnerSpotAngle: 86
+  m_Color: {r: 1, g: 0.9445969, b: 0.5518868, a: 1}
+  m_Intensity: 100
+  m_Range: 106.6
+  m_SpotAngle: 113.69958
+  m_InnerSpotAngle: 0
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -217,12 +219,12 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 11198
-  m_UseColorTemperature: 1
+  m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -232,7 +234,7 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &4739065948321674162
+--- !u!114 &7073844795811446399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
