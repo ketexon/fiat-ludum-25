@@ -6168,18 +6168,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 5719877285166843440, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
-      propertyPath: delay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5719877285166843440, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
-      propertyPath: duration
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5719877285166843440, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
-      propertyPath: warningTime
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5757136298376163420, guid: 1d2c616cc9435034391ac56c28dfdac5, type: 3}
       propertyPath: m_Color.b
       value: 1
