@@ -381,12 +381,12 @@ MonoBehaviour:
   - "From this computer, you\u2019ll be able to access all controls and debugging
     functions for Rover {1}. Use the terminal to navigate between applications. Keep
     an eye on the rover\u2019s CAMERA and STATUS. \\n"
-  - "Navigate the rover to the resource using the CAMERA. If you face any issues,
-    check the STATUS screen. Fix errors by executing the proper terminal commands.
-    \\n\\nFor a full list of commands, type \u2018help\u2019. For help with a specific
-    command, type \u2018help [command]\u2019.\\n"
-  - Dust storms are a threat. If you hear wind, CLOSE the vents. Otherwise, keep
-    the vents OPEN. \n
+  - "Use the CAMERA to navigate the rover towards Resource X. If you face issues,
+    check the STATUS screen.\\n\\nUse the POWER and COMMUNICATION commands to fix
+    errors.  \\n\\nFor a full list of commands, type \u2018help\u2019. For help with
+    a specific command, type \u2018help [command]\u2019.\\n"
+  - Dust storms are a fatal threat. If you hear wind, CLOSE THE VENTS. Otherwise,
+    keep the vents OPEN to allow for oxygen flow. \n
   - "With Earth\u2019s future growing more uncertain, your work will directly impact
     the survival of our species. \\n\\nGood luck. \\n"
   outputInterval: 0
