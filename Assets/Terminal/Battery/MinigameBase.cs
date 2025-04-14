@@ -34,6 +34,7 @@ public class MinigameBase : ShellCommand
         Terminal.MoveEvent.AddListener(OnMove);
         Terminal.ExitEvent.AddListener(OnExit);
         Terminal.SubmitEvent.AddListener(OnSubmit);
+        Terminal.ResetEvent.AddListener(OnReset);
         AudioManager.Instance.Mute("KeyClick", true);
     }
 
@@ -54,6 +55,7 @@ public class MinigameBase : ShellCommand
         Terminal.MoveEvent.RemoveListener(OnMove);
         Terminal.ExitEvent.RemoveListener(OnExit);
         Terminal.SubmitEvent.RemoveListener(OnSubmit);
+        Terminal.ResetEvent.RemoveListener(OnReset);
         AudioManager.Instance.Mute("KeyClick", false);
 
         IEnumerator WaitOneFrame(){
@@ -64,5 +66,9 @@ public class MinigameBase : ShellCommand
             canvasGroup.interactable = false;
         }
         StartCoroutine(WaitOneFrame());
+    }
+    
+    protected virtual void OnReset()
+    {
     }
 }

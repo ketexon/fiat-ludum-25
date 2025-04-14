@@ -77,6 +77,10 @@ public class Ship : MonoBehaviour
             {
                 AudioManager.Instance.Play("VentOpen");
                 AudioManager.Instance.CloseOutside(false);
+                if (dustStorm.Active)
+                {
+                    Die();
+                }
             }
             else
             {

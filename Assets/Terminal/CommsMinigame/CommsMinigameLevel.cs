@@ -46,7 +46,7 @@ public class CommsMinigameLevel : MonoBehaviour
         canvas.enabled = true;
         canvasGroup.interactable = true;
         
-        ResetGame();
+        StopRunninGame();
 
         if (init) return;
         init = true;
@@ -70,8 +70,14 @@ public class CommsMinigameLevel : MonoBehaviour
         
         startButton.onClick.AddListener(SendSignal);
     }
+
+    public void ResetLevel()
+    {
+        StopRunninGame();
+        ResetButtons();
+    }
     
-    void ResetGame()
+    void StopRunninGame()
     {
         startButton.Select();
         EventSystem.current.SetSelectedGameObject(startButton.gameObject);
@@ -85,6 +91,14 @@ public class CommsMinigameLevel : MonoBehaviour
         }
         
         rover.color = new Color(1,1,1,uncollectedOpacity);
+    }
+
+    void ResetButtons()
+    {
+        foreach(var button in buttons)
+        {
+            button.ResetState();
+        }
     }
 
     public void StopLevel()
@@ -228,7 +242,7 @@ public class CommsMinigameLevel : MonoBehaviour
 
     void OnSignalLost()
     {
-        ResetGame();
+        StopRunninGame();
         Comms.ShowStatus("LOST SIGNAL");
         AudioManager.Instance.Play("Error");
     }

@@ -101,6 +101,14 @@ public class BatteryMinigame : MinigameBase
         init = true;
     }
 
+    protected override void OnReset()
+    {
+        base.OnReset();
+
+        init = false;
+        CreateGame(games[numSolved]);
+    }
+
     void CreateGame(BatteryGame game) {
         this.game = game;
 
