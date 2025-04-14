@@ -172,6 +172,7 @@ public class Terminal : MonoBehaviour
 
 	private void OnChar(char ch)
     {
+        if (Pause.Paused) return;
         AudioManager.Instance.Play("KeyClick");
         if(!InputPromptVisible) return;
         switch (ch)
@@ -199,6 +200,7 @@ public class Terminal : MonoBehaviour
 
     public void OnUINavigate(InputAction.CallbackContext ctx)
     {
+        if (Pause.Paused) return;
         var dir = Vector2Int.RoundToInt(ctx.ReadValue<Vector2>());
         if(dir.x != 0)
         {
@@ -215,12 +217,14 @@ public class Terminal : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
+        if (Pause.Paused) return;
         if (ctx.started) return;
         MoveEvent.Invoke(ctx.ReadValue<Vector2>());
     }
 
     public void OnExit(InputAction.CallbackContext ctx)
     {
+        if (Pause.Paused) return;
         if (ctx.started)
         {
             ExitEvent.Invoke();
@@ -229,6 +233,7 @@ public class Terminal : MonoBehaviour
 
     public void OnInputSubmit(InputAction.CallbackContext ctx)
     {
+        if (Pause.Paused) return;
         if (!ctx.started)
         {
             return;
@@ -243,6 +248,7 @@ public class Terminal : MonoBehaviour
     
     public void OnInputReset(InputAction.CallbackContext ctx)
     {
+        if (Pause.Paused) return;
         if (ctx.started)
         {
             ResetEvent.Invoke();
@@ -251,6 +257,7 @@ public class Terminal : MonoBehaviour
 
     public void OnInputBackspace(InputAction.CallbackContext ctx)
     {
+        if (Pause.Paused) return;
         if (ctx.started)
         {
             DeleteChar();
