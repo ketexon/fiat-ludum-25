@@ -208,7 +208,7 @@ public class CommsMinigameLevel : MonoBehaviour
                 Vector2 fractionalPos = curPos + (Vector2) dir * t;
                 float angle = Vector2.SignedAngle(Vector2.right, dir);
                 grid.MoveTo(signalGO.transform as RectTransform, fractionalPos, negateY: true);
-                signalGO.transform.rotation = Quaternion.Euler(0, 0, angle);
+                signalGO.transform.localRotation = Quaternion.Euler(0, 0, angle);
                 signalImage.color = new Color(
                     1,
                     1,
