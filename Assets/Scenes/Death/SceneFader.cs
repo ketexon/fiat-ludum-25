@@ -13,7 +13,7 @@ public class SceneFader : MonoBehaviour
 
     void Update()
     {
-        if (!isFading && Input.GetKeyDown(KeyCode.Q))
+        if (!isFading && Input.anyKeyDown)
         {
             StartCoroutine(FadeAndLoadScene());
         }
