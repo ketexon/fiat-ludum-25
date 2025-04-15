@@ -1138,7 +1138,7 @@ MonoBehaviour:
   CommandDescription: manages communication
   CommandUsage: comms\nSend signal from ship to rover. Activate reflection points
     along the path to redirect the signal. Ensure the signal reaches all packets
-    before completion.
+    before completion.\nPress enter on the satellite to send the signal.
   canvasGroup: {fileID: 207047863190434875}
   controlsText: {fileID: 5374635494477808801}
   controls: 'Q: Exit, WASD: Navigate\nENTER: Toggle, R: Reset'
