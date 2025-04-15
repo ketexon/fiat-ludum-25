@@ -60,7 +60,6 @@ public class DustStorm : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"Time until change: {timeUntilChange}");
         timeUntilChange -= Time.deltaTime;
         if (timeUntilChange <= 0)
         {
