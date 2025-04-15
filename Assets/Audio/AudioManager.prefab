@@ -241,7 +241,7 @@ MonoBehaviour:
   - name: LowOxygen
     source: {fileID: 1002019792670690953}
     clip: {fileID: 8300000, guid: ad7d101f49fca4cffbac0d7bb5c8dab1, type: 3}
-    volume: 0.4
+    volume: 0.2
     originalVolume: 0
   - name: WindWarning
     source: {fileID: 219746417627488113}
