@@ -276,7 +276,7 @@ MonoBehaviour:
   - name: JumpscareSound
     source: {fileID: 6880621605993424833}
     clip: {fileID: 8300000, guid: 4b8c6aa1e624d98c5a42d725be933fd8, type: 3}
-    volume: 0.73
+    volume: 1
     originalVolume: 0
 --- !u!1 &469443946183680598
 GameObject:
