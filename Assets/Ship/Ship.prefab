@@ -5219,7 +5219,6 @@ MonoBehaviour:
   delay: 90
   warningTime: 10
   duration: 10
-  isWindy: 0
 --- !u!1 &3802508044366543905
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,8 +26,14 @@ public class DustStorm : MonoBehaviour
 
     private float timeUntilChange = -1f;
 
-    private State state = State.Active;
-    
+    private State state = State.Idle;
+
+    private void Awake()
+    {
+        timeUntilChange = duration;
+        state = State.Idle;
+    }
+
     private void OnEnable()
     {
         if (timeUntilChange < 0)
