@@ -196,12 +196,12 @@ MonoBehaviour:
   - name: Ambient
     source: {fileID: 8750284847090907880}
     clip: {fileID: 8300000, guid: 45120288583dc498dbf64e231fc1dbfe, type: 3}
-    volume: 0.13
+    volume: 0.4
     originalVolume: 0
   - name: CompHum
     source: {fileID: 688690031393668943}
     clip: {fileID: 8300000, guid: db50eeda0cc474e118f848a41ec8aab6, type: 3}
-    volume: 0.389
+    volume: 0.5
     originalVolume: 0
   - name: KeyClick
     source: {fileID: 2135060644459489046}
@@ -211,7 +211,7 @@ MonoBehaviour:
   - name: CRTBuzz
     source: {fileID: 260900919409512730}
     clip: {fileID: 8300000, guid: 41a96b06a642742a4833cd4a5b121b61, type: 3}
-    volume: 0.1
+    volume: 0.2
     originalVolume: 0
   - name: Victory
     source: {fileID: 8838577433111266131}
@@ -241,12 +241,12 @@ MonoBehaviour:
   - name: LowOxygen
     source: {fileID: 1002019792670690953}
     clip: {fileID: 8300000, guid: ad7d101f49fca4cffbac0d7bb5c8dab1, type: 3}
-    volume: 0.2
+    volume: 0.08
     originalVolume: 0
   - name: WindWarning
     source: {fileID: 219746417627488113}
     clip: {fileID: 8300000, guid: 152aac392c8a54c5f9b95f3692615034, type: 3}
-    volume: 0.5
+    volume: 0.6
     originalVolume: 0
   - name: TheResource
     source: {fileID: 9159324492531600490}
@@ -256,12 +256,12 @@ MonoBehaviour:
   - name: VentOpen
     source: {fileID: 8032299969462495336}
     clip: {fileID: 8300000, guid: 5a5d56321e4414c3d8e68e29000f9261, type: 3}
-    volume: 0.249
+    volume: 0.2
     originalVolume: 0
   - name: VentClose
     source: {fileID: 1709744357238498521}
     clip: {fileID: 8300000, guid: e44dffe241b2f4480add7cdb583d59b5, type: 3}
-    volume: 0.249
+    volume: 0.2
     originalVolume: 0
   - name: Beep
     source: {fileID: 7664097959316688369}
