@@ -89,8 +89,8 @@ public class Rover : MonoBehaviour
             Time.deltaTime * lightInterpolateMult
         );
 
-        jumpscareSprite.SetActive(puzzles[4] && repairsNeeded);
-        AudioManager.Instance.Mute("JumpscareSound", !(puzzles[4] && repairsNeeded && InCamera));
+        jumpscareSprite.SetActive(puzzles[4] && !puzzles[5] && repairsNeeded);
+        AudioManager.Instance.Mute("JumpscareSound", !(puzzles[4] && !puzzles[5] && repairsNeeded && InCamera));
 
         if (!Status.Power)
         {
