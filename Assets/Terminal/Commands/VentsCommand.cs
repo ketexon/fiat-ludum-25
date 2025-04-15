@@ -7,7 +7,7 @@ public class VentsCommand : ShellCommand
     {
         if (args.Length == 1)
         {
-            Terminal.Println($"Vents: {(ship.VentsOpen ? "OPEN" : "CLOSED")}");
+            PrintHelp();
             return;
         }
         if (args.Length == 2)
