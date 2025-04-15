@@ -56,7 +56,7 @@ public class Ship : MonoBehaviour
     private static readonly int Strength = Shader.PropertyToID("_Strength");
     [SerializeField] private float oxygenDepletionRate = 0.01f;
     [SerializeField] private float oxygenIncreaseRate = 0.01f;
-    [SerializeField] DustStorm dustStorm;
+    [SerializeField] public DustStorm dustStorm;
     [SerializeField] private Material lowOxygenMat;
     [SerializeField] private float lowOxygenEffectStart = 0.5f;
     [SerializeField] private Volume volume;
