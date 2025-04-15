@@ -117,7 +117,6 @@ MonoBehaviour:
   camera: {fileID: 1400921296179525033}
   cameraShakeAmount: 0.1
   jumpscareSprite: {fileID: 8952664685444155111}
-  repairsNeeded: 0
 --- !u!195 &2180995685800997851
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -776,9 +775,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4446770753646975401}
     - target: {fileID: 2878252850256559264, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-      propertyPath: startProgram
+      propertyPath: playerInput
       value: 
-      objectReference: {fileID: 3604151988350293029}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878252850256559264, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: ScreenLights
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3336446020955401141, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -932,17 +935,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
---- !u!114 &3604151988350293029 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2232122052273127485, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
-  m_PrefabInstance: {fileID: 3242189367949480984}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f522cd42f948afa679c58cb93420ebff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8453185349468779645 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6462996713365971045, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
