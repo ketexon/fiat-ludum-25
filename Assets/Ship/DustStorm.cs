@@ -21,7 +21,7 @@ public class DustStorm : MonoBehaviour
     [System.NonSerialized] public UnityEvent EndedEvent = new();
 
     public bool Active => state == State.Active;
-    
+    public bool isWindy = false;
     private Coroutine coro;
 
     private float timeUntilChange = -1f;
@@ -46,8 +46,10 @@ public class DustStorm : MonoBehaviour
             StopCoroutine(coro);
             coro = null;
         }
-
-        AudioManager.Instance.Dim("WindWarning", true);
+        if(AudioManager.Instance)
+        {
+            AudioManager.Instance.Dim("WindWarning", true);
+        }
     }
 
     void Update()
@@ -73,11 +75,13 @@ public class DustStorm : MonoBehaviour
                 timeUntilChange = warningTime;
                 WarningEvent.Invoke();
                 AudioManager.Instance.Play("WindWarning");
+                isWindy = true;
                 break;
             case State.Warning:
                 state = State.Active;
                 timeUntilChange = duration;
                 StartedEvent.Invoke();
+                isWindy = false;
                 break;
         }
     }

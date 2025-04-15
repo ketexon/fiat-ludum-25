@@ -17,7 +17,7 @@ public class lightFlicker : MonoBehaviour
         shipLight.intensity = Random.Range(4, 8);
         if (isWindy)
         {
-            shipLight.intensity = Random.Range(1, 15);
+            shipLight.intensity = Random.Range(1, 20);
         } 
     }
 }
