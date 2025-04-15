@@ -818,6 +818,10 @@ PrefabInstance:
       propertyPath: 'CommandAliases.Array.data[0]'
       value: h
       objectReference: {fileID: 0}
+    - target: {fileID: 5865542335718874089, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -49.699997
+      objectReference: {fileID: 0}
     - target: {fileID: 5952964534544873057, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 50.199997
@@ -901,6 +905,10 @@ PrefabInstance:
     - target: {fileID: 6462996713365971045, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836755363724664554, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 31.600006
       objectReference: {fileID: 0}
     - target: {fileID: 6925776834341512071, guid: 48ef0f4551e377c4989485692b432f9d, type: 3}
       propertyPath: m_AnchoredPosition.y

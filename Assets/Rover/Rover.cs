@@ -170,7 +170,7 @@ public class Rover : MonoBehaviour
 
         else if ((resourcePos == 1) & (repairsNeeded == false)) // top right
         {
-            if ((roverTransform.position.x > 140) & (puzzles[3] == false))
+            if ((roverTransform.position.x > 240) & (puzzles[3] == false))
             {
                 // activate comms puzzle Y
                 // then show jumpscare
