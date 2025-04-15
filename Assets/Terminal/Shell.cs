@@ -80,7 +80,10 @@ public class Shell : TerminalProgram
 
 	void OnDisable()
 	{
-		dustStorm.enabled = false;
+		if (dustStorm)
+		{
+			dustStorm.enabled = false;
+		}
 	}
 
 	public override void OnSubmit()
