@@ -130,12 +130,12 @@ public class Rover : MonoBehaviour
     private void BreakRover()
     {
         // tutorials
-        if ((powerTut == false) && (roverTransform.position.z > 130) && (repairsNeeded == false))
+        if ((powerTut == false) && (roverTransform.position.z > 105) && (repairsNeeded == false))
         {
             powerTut = true;
             Status.Power = false;
         }
-        if ((commsTut == false) && (roverTransform.position.z > 135)  && (repairsNeeded == false))
+        if ((commsTut == false) && (roverTransform.position.z > 110)  && (repairsNeeded == false))
         {
             commsTut = true;
             Status.Comms = false;
