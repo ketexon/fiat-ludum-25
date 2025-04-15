@@ -5,6 +5,13 @@ using UnityEngine.Events;
 
 public class DustStorm : MonoBehaviour
 {
+    enum State
+    {
+        Idle,
+        Warning,
+        Active,
+    }
+    
     [SerializeField] private float delay = 40.0f;
     [SerializeField] private float warningTime = 10.0f;
     [SerializeField] private float duration = 10.0f;
@@ -13,14 +20,22 @@ public class DustStorm : MonoBehaviour
     [System.NonSerialized] public UnityEvent StartedEvent = new();
     [System.NonSerialized] public UnityEvent EndedEvent = new();
 
-    public bool Active { get; private set; } = false;
-    public bool isWindy { get; private set; } = false;
+    public bool Active => state == State.Active;
     
     private Coroutine coro;
+
+    private float timeUntilChange = -1f;
+
+    private State state = State.Active;
     
     private void OnEnable()
     {
-        coro = StartCoroutine(DustStormCoro());
+        if (timeUntilChange < 0)
+        {
+            NextState();
+        }
+
+        AudioManager.Instance.Dim("WindWarning", false);
     }
     
     private void OnDisable()
@@ -31,23 +46,39 @@ public class DustStorm : MonoBehaviour
             StopCoroutine(coro);
             coro = null;
         }
+
+        AudioManager.Instance.Dim("WindWarning", true);
     }
 
-    IEnumerator DustStormCoro()
+    void Update()
     {
-        while (true)
+        timeUntilChange -= Time.deltaTime;
+        if (timeUntilChange <= 0)
         {
-            yield return new WaitForSeconds(delay);
-            AudioManager.Instance.Play("WindWarning");
-            isWindy = true;
-            WarningEvent.Invoke();
-            yield return new WaitForSeconds(warningTime);
-            Active = true;
-            StartedEvent.Invoke();
-            yield return new WaitForSeconds(duration);
-            Active = false;
-            EndedEvent.Invoke();
-            isWindy = false;
+            NextState();
+        }
+    }
+
+    void NextState()
+    {
+        switch (state)
+        {
+            case State.Active:
+                state = State.Idle;
+                timeUntilChange = delay;
+                EndedEvent.Invoke();
+                break;
+            case State.Idle:
+                state = State.Warning;
+                timeUntilChange = warningTime;
+                WarningEvent.Invoke();
+                AudioManager.Instance.Play("WindWarning");
+                break;
+            case State.Warning:
+                state = State.Active;
+                timeUntilChange = duration;
+                StartedEvent.Invoke();
+                break;
         }
     }
 }

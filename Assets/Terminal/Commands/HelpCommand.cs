@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HelpCommand : ShellCommand
 {
-    protected override void OnExecute(string[] args)
+    public override void Execute(string[] args)
     {
         if (args.Length == 1)
         {

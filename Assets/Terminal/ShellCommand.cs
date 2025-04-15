@@ -6,12 +6,13 @@ public class ShellCommand : MonoBehaviour
     [SerializeField] public string CommandName;
     [SerializeField] public List<string> CommandAliases;
     [SerializeField] public string CommandDescription;
+    [Multiline]
     [SerializeField] public string CommandUsage;
 
     [System.NonSerialized] public Terminal Terminal;
     [System.NonSerialized] public Shell Shell;
     
-    public void Execute(string[] args)
+    public virtual void Execute(string[] args)
     {
         if(args.Length == 2 && args[1] == "help")
         {
