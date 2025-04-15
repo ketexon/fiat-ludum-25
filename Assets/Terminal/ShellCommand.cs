@@ -6,6 +6,7 @@ public class ShellCommand : MonoBehaviour
     [SerializeField] public string CommandName;
     [SerializeField] public List<string> CommandAliases;
     [SerializeField] public string CommandDescription;
+    [Multiline]
     [SerializeField] public string CommandUsage;
 
     [System.NonSerialized] public Terminal Terminal;
