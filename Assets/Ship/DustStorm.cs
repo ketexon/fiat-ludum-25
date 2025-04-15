@@ -30,7 +30,7 @@ public class DustStorm : MonoBehaviour
 
     private void Awake()
     {
-        timeUntilChange = duration;
+        timeUntilChange = delay;
         state = State.Idle;
     }
 
@@ -60,6 +60,7 @@ public class DustStorm : MonoBehaviour
 
     void Update()
     {
+        Debug.Log($"Time until change: {timeUntilChange}");
         timeUntilChange -= Time.deltaTime;
         if (timeUntilChange <= 0)
         {
