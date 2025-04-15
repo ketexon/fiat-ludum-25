@@ -14,6 +14,9 @@ public class Shell : TerminalProgram
 	public override bool InputHidden => false;
 	public IDictionary<string, ShellCommand> Commands = new SortedDictionary<string, ShellCommand>();
 	public IDictionary<string, string> Aliases = new Dictionary<string, string>();
+
+	private bool init = false;
+	
 	
 	public void TryExecuteCommand(string[] args)
 	{
@@ -53,11 +56,13 @@ public class Shell : TerminalProgram
 		var args = ParseArgs(argsString);
 		TryExecuteCommand(args);
 	}
-	
+
 	void OnEnable()
 	{
 		dustStorm.enabled = true;
 		Terminal.TakingInput = true;
+
+		if (init) return;
 		
 		var commandList = GetComponentsInChildren<ShellCommand>();
 		foreach (var command in commandList)
@@ -69,11 +74,13 @@ public class Shell : TerminalProgram
 				Aliases.Add(alias, command.CommandName);
 			}
 		}
+
+		init = true;
 	}
 
 	void OnDisable()
 	{
-		Commands.Clear();
+		dustStorm.enabled = false;
 	}
 
 	public override void OnSubmit()
