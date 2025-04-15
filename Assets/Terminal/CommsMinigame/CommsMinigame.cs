@@ -28,6 +28,7 @@ public class CommsMinigame : MinigameBase
             Terminal.Println("Comms are operational.");
             return;
         }
+        base.OnExecute(args);
     }
 
     protected override void OnReset()
