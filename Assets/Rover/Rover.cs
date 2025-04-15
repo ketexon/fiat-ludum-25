@@ -151,7 +151,7 @@ public class Rover : MonoBehaviour
                 puzzles[0] = true;
                 currentPuzzle++;
             }
-            else if (roverTransform.position.z > 140 & (puzzles[1] == false))
+            else if (roverTransform.position.z > 160 & (puzzles[1] == false))
             {
                 // activate power puzzle A
                 Status.Power = false;
